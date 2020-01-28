@@ -4,14 +4,24 @@
     <form class=" w-50 container" [formGroup]="signupForm"  (ngSubmit)="onSubmit()">
 
         <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control " id="name" formControlName="name"
-                placeholder="Enter your user name">
+            <label for="id">Id:</label>
+            <input type="text" class="form-control " id="id" formControlName="id"
+                placeholder="Enter your ID">
         </div>
         <div class="form-group">
             <label for="username">Username:</label>
             <input type="text" class="form-control" id="username" formControlName="username"
                 placeholder=" Should contain letters and numbers">
+        </div>
+        <div class="form-group">
+            <label for="password">password:</label>
+            <input type="password" class="form-control" id="password" formControlName="password"
+                placeholder=" Use Strong password">
+        </div>
+        <div class="form-group">
+            <label for="userType">User type:</label>
+            <input type="text" class="form-control" id="userType" formControlName="userType"
+                placeholder=" Enter user type">
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
@@ -21,20 +31,10 @@
             <label for="phone">phone:</label>
             <input type="number" class="form-control" id="phone" formControlName="phone" placeholder=" Phone Number">
         </div>
-        <div class="form-group">
-            <label for="password">password:</label>
-            <input type="password" class="form-control" id="password" formControlName="password"
-                placeholder=" Use Strong password">
-        </div>
-        <div class="form-group">
-            <label for="confirmPassword">confirm password:</label>
-            <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword"
-                placeholder=" Re-Enter the password">
-        </div>
 
         <div class="text-center mt-3 mb-5">
             <button type="reset" class="btn  btn-info px-5 mx-3" >Reset</button>
-            <button type="submit" class="btn  btn-success px-5 mx-3" >Submit</button>
+            <button type="submit" (click)="saveUser()" class="btn  btn-success px-5 mx-3" >Submit</button>
         </div>
     </form>
 

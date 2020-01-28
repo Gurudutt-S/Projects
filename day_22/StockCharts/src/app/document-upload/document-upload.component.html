@@ -1,0 +1,16 @@
+<h2 class="display-3 text-center my-3">Upload Excel</h2>
+<div class="container">
+
+    <form class="form-group w-50 container" [formGroup]="uploadFile">
+
+        <div class="form-control">
+            <label>Select excel file to be uploaded:</label>
+            <input type="text" class="form-control mb-3" formControlName="fileName" placeholder="File name">
+        </div>
+        <button class="btn">Choose File</button><br>
+        <div class="float-right">
+            <input type="submit" class="btn btn-lg btn-success px-5">
+        </div>
+
+    </form>
+</div>

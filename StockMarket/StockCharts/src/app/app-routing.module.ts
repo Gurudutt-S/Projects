@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MemberComponent } from './member/member.component';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'sign_up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
   { path: 'users', component: MemberComponent },
-  { path:'admin',component:AdminLandingPageComponent}
+  { path: 'admin', component: AdminLandingPageComponent },
+  { path: 'update-user', component: UpdateUserComponent }
 ];
 
 @NgModule({

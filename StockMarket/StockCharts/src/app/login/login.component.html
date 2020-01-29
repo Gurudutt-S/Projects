@@ -1,4 +1,5 @@
-<div class="container ">
+<div class="container mt-5">
+   <div class="card shadow"> 
     <h2 class="display-3 my-3 text-center">Sign In</h2>
     <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-group w-50 container">
         <label>Username:</label>
@@ -11,4 +12,5 @@
             <input [disabled]="!loginForm.valid" type="submit" class="btn btn-lg btn-success px-5">
         </div>
     </form>
+   </div> 
 </div>

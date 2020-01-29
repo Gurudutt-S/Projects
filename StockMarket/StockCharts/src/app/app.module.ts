@@ -12,6 +12,7 @@ import { UserLandingPageComponent } from './user-landing-page/user-landing-page.
 import { DocumentUploadComponent } from './document-upload/document-upload.component';
 import { MemberComponent } from './member/member.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     AdminLandingPageComponent,
     UserLandingPageComponent,
     DocumentUploadComponent,
-    MemberComponent
+    MemberComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

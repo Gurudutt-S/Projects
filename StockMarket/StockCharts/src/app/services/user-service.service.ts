@@ -20,7 +20,17 @@ export class UserServiceService {
     return this.httpClient.post<User>(this.httpUrl, user);
   }
 
-  deleteUser(id:string) {
-    return this.httpClient.delete(`${this.httpUrl}${id}`)
+  deleteUser(id: string):Observable<User> {
+    // return this.httpClient.delete(`${this.httpUrl}${id}`)
+    return this.httpClient.delete<User>(this.httpUrl+id);
   }
+
+  updateUserInfo(user: User): Observable<User> {
+    return this.httpClient.put<User>(this.httpUrl + user.id, user);
+  }
+
+  getUserById(id: string): Observable<User> {
+    return this.httpClient.get<User>(this.httpUrl + id);
+  }
+
 }

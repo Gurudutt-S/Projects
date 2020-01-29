@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { UserServiceService } from '../services/user-service.service';
 
 @Component({
@@ -16,12 +16,12 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
 
     this.signupForm = this.formBulder.group({
-      id: [''],
-      username: [''],
-      password: [''],
-      userType: [''],
-      email: [''],
-      phone: ['']
+      id: ['',Validators.required],
+      username: ['',Validators.required],
+      password: ['',Validators.required],
+      userType: ['',Validators.required],
+      email: ['',[Validators.required,Validators.email]],
+      phone: ['',Validators.required]
     });
 
   }
@@ -30,6 +30,7 @@ export class SignUpComponent implements OnInit {
     this.userService.saveNewUser(this.signupForm.value).subscribe(data => {
       console.log(data);
       console.log('User inserted succesfully');
+      alert("Data inserted succesfully")
     })
   }
 

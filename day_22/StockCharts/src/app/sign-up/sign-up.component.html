@@ -1,7 +1,7 @@
 <h2 class="display-3 text-center my-3 text-muted">Enter your Details Here</h2>
 <div class="container">
 
-    <form class=" w-50 container" [formGroup]="signupForm"  (ngSubmit)="onSubmit()">
+    <form class=" w-50 container" [formGroup]="signupForm"  (ngSubmit)="saveUser()">
 
         <div class="form-group">
             <label for="id">Id:</label>
@@ -34,7 +34,7 @@
 
         <div class="text-center mt-3 mb-5">
             <button type="reset" class="btn  btn-info px-5 mx-3" >Reset</button>
-            <button type="submit" (click)="saveUser()" class="btn  btn-success px-5 mx-3" >Submit</button>
+            <button type="submit" class="btn  btn-success px-5 mx-3" >Submit</button>
         </div>
     </form>
 

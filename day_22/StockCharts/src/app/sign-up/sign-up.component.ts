@@ -11,29 +11,25 @@ export class SignUpComponent implements OnInit {
 
   signupForm: FormGroup;
 
-  constructor(private formBulder:FormBuilder,private userService:UserServiceService) { }
+  constructor(private formBulder: FormBuilder, private userService: UserServiceService) { }
 
   ngOnInit() {
 
-    this.signupForm =this.formBulder.group({
-      id:[''],
-      username:[''],
+    this.signupForm = this.formBulder.group({
+      id: [''],
+      username: [''],
       password: [''],
       userType: [''],
-      email:[''],
+      email: [''],
       phone: ['']
     });
 
   }
 
-  onSubmit(){
-    console.log(this.signupForm.value);
-  }
-
-  saveUser(){
-    this.userService.saveNewUser(this.signupForm.value).subscribe(data =>{
+  saveUser() {
+    this.userService.saveNewUser(this.signupForm.value).subscribe(data => {
+      console.log(data);
       console.log('User inserted succesfully');
-      
     })
   }
 

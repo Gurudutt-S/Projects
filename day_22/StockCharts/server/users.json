@@ -1,22 +1,13 @@
 {
-    "users": [
-        {
-            "id": 101,
-            "username":"gurudutt",
-            "password":"asdf",
-            "userType":"user",
-            "email":"asd@asd.com",
-            "phone":12345556456,
-            "confirm":false
-        },
-        {
-            "id": 101,
-            "username":"gurudutt",
-            "password":"asdf",
-            "userType":"user",
-            "email":"asd@asd.com",
-            "phone":12345556456,
-            "confirm":false
-        }
-    ]
+  "users": [
+    {
+      "id": 101,
+      "username": "gurudutt",
+      "password": "asdf",
+      "userType": "user",
+      "email": "asd@asd.com",
+      "phone": 12345556456,
+      "confirm": false
+    }
+  ]
 }

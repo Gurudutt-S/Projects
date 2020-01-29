@@ -11,6 +11,7 @@ import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-pa
 import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component';
 import { DocumentUploadComponent } from './document-upload/document-upload.component';
 import { MemberComponent } from './member/member.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MemberComponent } from './member/member.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [],

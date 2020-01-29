@@ -9,11 +9,24 @@ import { User } from '../models/user';
 })
 export class MemberComponent implements OnInit {
 
-  user : User[];
+  userList: User[];
 
   constructor(private userService: UserServiceService) { }
 
   ngOnInit() {
-    this.userService.getUserData().subscribe(data => { this.user = data; });
+    this.getUsers();
+  }
+
+  getUsers() {
+    this.userService.getUserData().subscribe(data => {
+      this.userList = data;
+      console.log(data);
+    });
+  }
+  deleteUser(user) {
+    this.userService.deleteUser(user.id).subscribe(res => {
+      console.log(res);
+      this.getUsers();
+    })
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'; 
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
@@ -8,16 +8,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserServiceService {
 
-  httpUrl="http://localhost:8989/users/";
+  httpUrl = "http://localhost:3000/users/";
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  getUserData():Observable<User[]>{
+  getUserData(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.httpUrl);
   }
 
-  saveNewUser(user: User):Observable<User>{
-    return this.httpClient.post<User>(this.httpUrl,user);
+  saveNewUser(user: User): Observable<User> {
+    return this.httpClient.post<User>(this.httpUrl, user);
   }
 
+  deleteUser(id:string) {
+    return this.httpClient.delete(`${this.httpUrl}${id}`)
+  }
 }

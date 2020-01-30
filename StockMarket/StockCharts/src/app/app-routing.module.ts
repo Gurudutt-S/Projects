@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { MemberComponent } from './member/member.component';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { DocumentUploadComponent } from './document-upload/document-upload.component';
+import { CreateNewCompanyComponent } from './create-new-company/create-new-company.component';
 
 
 const routes: Routes = [
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'users', component: MemberComponent },
   { path: 'admin', component: AdminLandingPageComponent },
-  { path: 'update-user', component: UpdateUserComponent }
+  { path: 'update-user', component: UpdateUserComponent },
+  { path: 'import-data', component: DocumentUploadComponent },
+  { path: 'manage-company', component: CreateNewCompanyComponent }
 ];
 
 @NgModule({

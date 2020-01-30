@@ -16,12 +16,12 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
 
     this.signupForm = this.formBulder.group({
-      id: ['',Validators.required],
-      username: ['',Validators.required],
-      password: ['',Validators.required],
-      userType: ['',Validators.required],
-      email: ['',[Validators.required,Validators.email]],
-      phone: ['',Validators.required]
+      id: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      userType: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required]
     });
 
   }
@@ -31,6 +31,8 @@ export class SignUpComponent implements OnInit {
       console.log(data);
       console.log('User inserted succesfully');
       alert("Data inserted succesfully")
+    }, (err) => {
+      console.log('ERRRR:' + JSON.stringify(err));
     })
   }
 

@@ -9,14 +9,6 @@
       "phone": 12345556456
     },
     {
-      "id": "105",
-      "username": "Aniketh",
-      "password": "hello",
-      "userType": "user",
-      "email": "aniketh@gmail",
-      "phone": 7364823749183
-    },
-    {
       "id": "123",
       "username": "Syed",
       "password": "asdakjd",
@@ -25,12 +17,20 @@
       "phone": 39874219847
     },
     {
-      "id": "pyZuRIm",
-      "username": "",
-      "password": "",
-      "userType": "",
-      "email": "",
-      "phone": ""
+      "id": "456",
+      "username": "vishnu",
+      "password": "akjdnkjw",
+      "userType": "user",
+      "email": "vajoi@alkfjnal",
+      "phone": 342424242
+    },
+    {
+      "id": "324",
+      "username": "sree",
+      "password": "ghrs",
+      "userType": "fghst",
+      "email": "rfa@dgse",
+      "phone": 4234435
     }
   ]
 }

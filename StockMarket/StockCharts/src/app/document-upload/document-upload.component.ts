@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-document-upload',
@@ -8,11 +8,17 @@ import { FormGroup } from '@angular/forms';
 })
 export class DocumentUploadComponent implements OnInit {
 
-  uploadFile : FormGroup;
+  uploadFile: FormGroup;
 
-  constructor() { }
+  constructor(private formBulder: FormBuilder) { }
 
   ngOnInit() {
+
+    this.uploadFile = this.formBulder.group({
+      file: ['']
+    });
+
+
   }
 
 }

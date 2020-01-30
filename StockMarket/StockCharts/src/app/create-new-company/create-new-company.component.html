@@ -1,0 +1,33 @@
+<h2 class="display-3 text-center my-3">Create New Company</h2>
+<div class="container">
+
+    <form class="form-group w-50 container" [formGroup]="addCompany">
+
+        <div class="formGroup">
+            <label>Company Name:</label>
+            <input type="text" class="form-control" formControlName="companyName" placeholder="Enter company name">
+        </div>
+        <div class="formGroup">
+            <label>CEO name:</label>
+            <input type="text" class="form-control" formControlName="CEOName"
+                placeholder=" Name of CEO or a Board Member">
+        </div>
+        <div class="formGroup">
+            <label>TurnOver:</label>
+            <input type="text" class="form-control" formControlName="turnOver" placeholder=" TurnOver">
+        </div>
+        <div class="formGroup">
+            <label>Breif Description:</label>
+            <input type="text" class="form-control" formControlName="description" placeholder="Maximum 100 words">
+        </div>
+        <div class="formGroup">
+            <label>IPO Date:</label>
+            <input type="date" class="form-control" formControlName="IPOName" placeholder=" IPO date">
+        </div>
+        <div class="text-center mt-3">
+            <input type="reset" class="btn  btn-info px-5">
+            <input type="submit" class="btn btn-success px-5">
+        </div>
+
+    </form>
+</div>

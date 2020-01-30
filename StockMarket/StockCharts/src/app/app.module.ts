@@ -13,6 +13,7 @@ import { DocumentUploadComponent } from './document-upload/document-upload.compo
 import { MemberComponent } from './member/member.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { CreateNewCompanyComponent } from './create-new-company/create-new-company.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     UserLandingPageComponent,
     DocumentUploadComponent,
     MemberComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    CreateNewCompanyComponent
   ],
   imports: [
     BrowserModule,

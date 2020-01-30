@@ -1,39 +1,57 @@
-<h2 class="display-3 text-center my-3 text-muted">Update User</h2>
-<div class="container">
+<h2 class="display-5 text-center my-2 text-muted">Update User</h2>
+<hr>
 
-    <form class=" w-50 container" [formGroup]="updateUser" (ngSubmit)="saveUser()">
+<div class="row no-gutters">
 
-        <div class="form-group">
-            <label for="id">Id:</label>
-            <input type="text" class="form-control " id="id" formControlName="id" placeholder="Enter your ID" disabled>
-        </div>
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" class="form-control" id="username" formControlName="username"
-                placeholder=" Should contain letters and numbers">
-        </div>
-        <div class="form-group">
-            <label for="password">password:</label>
-            <input type="password" class="form-control" id="password" formControlName="password"
-                placeholder=" Use Strong password">
-        </div>
-        <div class="form-group">
-            <label for="userType">User type:</label>
-            <input type="text" class="form-control" id="userType" formControlName="userType"
-                placeholder=" Enter user type">
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" formControlName="email" placeholder=" asd@asd.com">
-        </div>
-        <div class="form-group">
-            <label for="phone">phone:</label>
-            <input type="number" class="form-control" id="phone" formControlName="phone" placeholder=" Phone Number">
+    <div class="w-25 border-right  col-3 h-75">
+
+        <div class="list-group list-group-flush  text-center">
+            <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
+            <a class="list-group-item list-group-item-action active" [routerLink]="['/users']">Manage Users</a>
+            <a class="list-group-item list-group-item-action">Manage Exchange</a>
+            <a class="list-group-item list-group-item-action">Update IPO Details</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
         </div>
 
-        <div class="text-center mt-3 mb-5">
-            <button type="submit" class="btn  btn-success px-5 mx-3" (click)="updateTheUser(user)">Update User</button>
-        </div>
-    </form>
+    </div>
 
+    <div class="container col">
+
+        <form class=" w-50 container" [formGroup]="updateUser" (ngSubmit)="saveUser()">
+    
+            <div class="form-group">
+                <label for="id">Id:</label>
+                <input type="text" class="form-control " id="id" formControlName="id" placeholder="Enter your ID" disabled>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" formControlName="username"
+                    placeholder=" Should contain letters and numbers">
+            </div>
+            <div class="form-group">
+                <label for="password">password:</label>
+                <input type="password" class="form-control" id="password" formControlName="password"
+                    placeholder=" Use Strong password">
+            </div>
+            <div class="form-group">
+                <label for="userType">User type:</label>
+                <input type="text" class="form-control" id="userType" formControlName="userType"
+                    placeholder=" Enter user type">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" formControlName="email" placeholder=" asd@asd.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">phone:</label>
+                <input type="number" class="form-control" id="phone" formControlName="phone" placeholder=" Phone Number">
+            </div>
+    
+            <div class="text-center mt-3 mb-5">
+                <button type="submit" class="btn  btn-success px-5 mx-3" (click)="updateTheUser(user)">Update User</button>
+            </div>
+        </form>
+    
+    </div>
 </div>

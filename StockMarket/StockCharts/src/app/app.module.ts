@@ -14,6 +14,9 @@ import { MemberComponent } from './member/member.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { CreateNewCompanyComponent } from './create-new-company/create-new-company.component';
+import { CompanyListComponent } from './company-list/company-list.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { CreateNewCompanyComponent } from './create-new-company/create-new-compa
     DocumentUploadComponent,
     MemberComponent,
     UpdateUserComponent,
-    CreateNewCompanyComponent
+    CreateNewCompanyComponent,
+    CompanyListComponent,
+    ContactUsComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

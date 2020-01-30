@@ -1,15 +1,22 @@
-<h2 class="display-5 text-muted text-center my-2">Welcome Admin</h2>
+<h2 class="display-5 text-center text-muted my-2">List of Companies</h2>
 <hr>
 
 <div class="row no-gutters">
-   
-        <div class="list-group list-group-flush text-center px-0 border-right col-3">
+
+    <div class=" border-right col-3 ">
+        <div class="list-group list-group-flush  text-center">
             <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
+            <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-company']">Manage
+                Company</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/users']">Manage Users</a>
             <a class="list-group-item list-group-item-action">Manage Exchange</a>
             <a class="list-group-item list-group-item-action">Update IPO Details</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
         </div>
+    </div>
+
+    <div class="col">
+        <button class="btn btn-success float-right" [routerLink]="['/add-company']">Add New Company</button>
+    </div>
 
 </div>

@@ -1,1 +1,1 @@
-# Projects
+1 FEB 2020 [day 27] : Hibernate project database using annotations.

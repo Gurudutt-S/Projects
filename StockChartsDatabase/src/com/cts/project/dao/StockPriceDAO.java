@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.cts.project.bean.StockPrice;
 
-
-
 public interface StockPriceDAO {
 
 	public boolean saveStockPrice(StockPrice Stock);

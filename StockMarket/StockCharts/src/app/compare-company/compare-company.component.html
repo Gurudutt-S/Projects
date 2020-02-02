@@ -1,0 +1,46 @@
+<h2 class="display-5 text-center text-muted my-2">Compare Company</h2>
+<hr>
+<div class="row no-gutters">
+
+    <div class="list-group list-group-flush text-center px-0 border-right col-3">
+        <a class="list-group-item list-group-item-action" [routerLink]="">IPO's</a>
+        <a class="list-group-item list-group-item-action" [routerLink]="">Compare Company</a>
+        <a class="list-group-item list-group-item-action" [routerLink]="">Compare Sectors</a>
+        <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
+    </div>
+
+    <div class="container col">
+
+        <form class="w-50 container" [formGroup]="compareCompany">
+
+            <div class="form-group">
+                <label for="selectCompany">Select Company:</label>
+                <input type="text" class="form-control mb-3" formControlName="selectCompany"
+                    placeholder="Enter company name">
+            </div>
+            <div class="form-group">
+                <label for="selectStock">Select Stock Exchange:</label>
+                <input type="text" class="form-control mb-3" formControlName="selectStock"
+                    placeholder=" Name of CEO or a Board Member">
+            </div>
+            <div class="form-group">
+                <label for="companyName">Company Name:</label>
+                <input type="text" class="form-control mb-3" formControlName="companyName" placeholder=" TurnOver">
+            </div>
+            <div class="form-group">
+                <label for="period">From period:</label>
+                <input type="text" class="form-control mb-3" formControlName="period" placeholder="" disabled>
+            </div>
+            <div>
+                <input type="reset" value="Add Company +" class="btn btn-lg btn-info px-5">
+            </div>
+            <br>
+            <div class="text-center">
+
+                <input type="submit" value="Generate Maps" class="btn btn-lg btn-success px-5">
+            </div>
+
+        </form>
+    </div>
+
+</div>

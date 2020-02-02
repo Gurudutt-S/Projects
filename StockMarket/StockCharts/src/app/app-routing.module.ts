@@ -12,6 +12,9 @@ import { CreateNewCompanyComponent } from './create-new-company/create-new-compa
 import { CompanyListComponent } from './company-list/company-list.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component';
+import { CompareCompanyComponent } from './compare-company/compare-company.component';
+import { CompareSectorsComponent } from './compare-sectors/compare-sectors.component';
 
 
 const routes: Routes = [
@@ -21,6 +24,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactUsComponent },
   { path: 'sign_up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'user-page', component: UserLandingPageComponent },
+  { path: 'compare-company', component: CompareCompanyComponent },
+  { path: 'compare-sectors', component: CompareSectorsComponent },
   { path: 'users', component: MemberComponent },
   { path: 'admin', component: AdminLandingPageComponent },
   { path: 'update-user', component: UpdateUserComponent },

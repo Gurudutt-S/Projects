@@ -17,6 +17,8 @@ import { CreateNewCompanyComponent } from './create-new-company/create-new-compa
 import { CompanyListComponent } from './company-list/company-list.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CompareCompanyComponent } from './compare-company/compare-company.component';
+import { CompareSectorsComponent } from './compare-sectors/compare-sectors.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
     CreateNewCompanyComponent,
     CompanyListComponent,
     ContactUsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    CompareCompanyComponent,
+    CompareSectorsComponent
   ],
   imports: [
     BrowserModule,

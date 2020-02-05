@@ -15,6 +15,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component';
 import { CompareCompanyComponent } from './compare-company/compare-company.component';
 import { CompareSectorsComponent } from './compare-sectors/compare-sectors.component';
+import { ManageExchangeComponent } from './manage-exchange/manage-exchange.component';
+import { ManageIpoComponent } from './manage-ipo/manage-ipo.component';
 
 
 const routes: Routes = [
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'user-page', component: UserLandingPageComponent },
   { path: 'compare-company', component: CompareCompanyComponent },
   { path: 'compare-sectors', component: CompareSectorsComponent },
+  { path: 'manage-exchange', component: ManageExchangeComponent },
+  { path: 'manage-ipo', component: ManageIpoComponent },
   { path: 'users', component: MemberComponent },
   { path: 'admin', component: AdminLandingPageComponent },
   { path: 'update-user', component: UpdateUserComponent },

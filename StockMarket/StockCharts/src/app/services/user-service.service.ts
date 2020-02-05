@@ -20,9 +20,9 @@ export class UserServiceService {
     return this.httpClient.post<User>(this.httpUrl, user);
   }
 
-  deleteUser(id: string):Observable<User> {
+  deleteUser(id: string): Observable<User> {
     // return this.httpClient.delete(`${this.httpUrl}${id}`)
-    return this.httpClient.delete<User>(this.httpUrl+id);
+    return this.httpClient.delete<User>(this.httpUrl + id);
   }
 
   updateUserInfo(user: User): Observable<User> {
@@ -32,5 +32,11 @@ export class UserServiceService {
   getUserById(id: string): Observable<User> {
     return this.httpClient.get<User>(this.httpUrl + id);
   }
+
+  isAdmin(): boolean {
+    return false;
+
+  }
+
 
 }

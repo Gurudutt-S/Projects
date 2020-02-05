@@ -7,8 +7,8 @@
             <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
             <a class="list-group-item list-group-item-action active" [routerLink]="['/users']">Manage Users</a>
-            <a class="list-group-item list-group-item-action">Manage Exchange</a>
-            <a class="list-group-item list-group-item-action">Update IPO Details</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">Manage Exchange</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
         </div>
 
@@ -35,6 +35,10 @@
                 <td><button class="btn btn-danger" (click)="deleteUser(user)">Delete</button></td>
             </tr>
         </table>
+
+        <div class="text-center">
+            <button class="btn btn-success w-25 " routerLink="/sign_up">Add New User</button>
+        </div>
 
     </div>
 </div>

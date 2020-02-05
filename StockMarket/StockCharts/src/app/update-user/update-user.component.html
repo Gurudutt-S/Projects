@@ -9,8 +9,8 @@
             <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
             <a class="list-group-item list-group-item-action active" [routerLink]="['/users']">Manage Users</a>
-            <a class="list-group-item list-group-item-action">Manage Exchange</a>
-            <a class="list-group-item list-group-item-action">Update IPO Details</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">Manage Exchange</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
         </div>
 
@@ -19,10 +19,11 @@
     <div class="container col">
 
         <form class=" w-50 container" [formGroup]="updateUser" (ngSubmit)="saveUser()">
-    
+
             <div class="form-group">
                 <label for="id">Id:</label>
-                <input type="text" class="form-control " id="id" formControlName="id" placeholder="Enter your ID" disabled>
+                <input type="text" class="form-control " id="id" formControlName="id" placeholder="Enter your ID"
+                    disabled>
             </div>
             <div class="form-group">
                 <label for="username">Username:</label>
@@ -45,13 +46,15 @@
             </div>
             <div class="form-group">
                 <label for="phone">phone:</label>
-                <input type="number" class="form-control" id="phone" formControlName="phone" placeholder=" Phone Number">
+                <input type="number" class="form-control" id="phone" formControlName="phone"
+                    placeholder=" Phone Number">
             </div>
-    
+
             <div class="text-center mt-3 mb-5">
-                <button type="submit" class="btn  btn-success px-5 mx-3" (click)="updateTheUser(user)">Update User</button>
+                <button type="submit" class="btn  btn-success px-5 mx-3" (click)="updateTheUser(user)">Update
+                    User</button>
             </div>
         </form>
-    
+
     </div>
 </div>

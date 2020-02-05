@@ -5,3 +5,5 @@
 2 FRB 2020 [Day 28] : Hibernate Collection, Inheritance, Mapping, Named Parameter.
 
 3 FEB 2020 [Day 29] : Inserting csv file to db, Servlets.
+
+4 FEB 2020 [Day 30] : JSP

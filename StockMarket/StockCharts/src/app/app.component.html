@@ -21,7 +21,7 @@
                 <li class="nav-item"><a [routerLink]="['contact']" class="nav-link">CONTACT US</a></li>
                 <li class="nav-item"><a [routerLink]="['about']" class="nav-link">ABOUT US</a></li>
             </ul>
-            <a href="sign_up" class="navbar-brand btn btn-outline-success text-success">SIGN UP</a>
+            
         </div>
     </nav>
 
@@ -29,7 +29,12 @@
 <!-- header -->
 <main>
 
-    <router-outlet></router-outlet>
+    <div *ngIf="isAdmin">
+        <app-admin-landing-page></app-admin-landing-page>
+    </div>
+    <div *ngIf="!isAdmin">
+        <router-outlet></router-outlet>
+    </div>
 
 </main>
 <!-- Footer -->

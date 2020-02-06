@@ -1,0 +1,25 @@
+{
+  "exchanges": [
+    {
+      "id": 101,
+      "stockExchangeName": "cts exchange",
+      "breif": "stock exchange",
+      "address": "bangalore",
+      "remarks": "good"
+    },
+    {
+      "id": "12",
+      "stockExchangeName": "asd",
+      "breif": "asd",
+      "address": "asd",
+      "remarks": "asd"
+    },
+    {
+      "id": "43",
+      "stockExchangeName": "lenovo",
+      "breif": "not bad",
+      "address": "chennai",
+      "remarks": "good"
+    }
+  ]
+}

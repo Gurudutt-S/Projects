@@ -5,7 +5,8 @@
 
         <div class="list-group list-group-flush  text-center">
             <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
-            <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-company']">Manage Company</a>
+            <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-company']">Manage
+                Company</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/users']">Manage Users</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">Manage Exchange</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
@@ -17,27 +18,30 @@
         <table class="table text-center">
             <tr>
                 <th>Id</th>
-                <th>username</th>
-                <th>password</th>
-                <th>user type</th>
-                <th>email</th>
-                <th>phone</th>
-                <th colspan="2">Actions</th>
+                <th>Company Name</th>
+                <th>CEO name</th>
+                <th>TurnOver</th>
+                <th>Board of Directors</th>
+                <th>Sector</th>
+                <th>Breif Description</th>
+                <th>IPO Name</th>
+                <th>Actions</th>
             </tr>
-            <tr *ngFor="let user of userList">
-                <td>{{user.id}}</td>
-                <td>{{user.username}}</td>
-                <td>{{user.password}}</td>
-                <td>{{user.userType}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.phone}}</td>
-                <td><button class="btn btn-info" (click)="updateUser(user)">Update</button></td>
-                <td><button class="btn btn-danger" (click)="deleteUser(user)">Delete</button></td>
+            <tr *ngFor="let company of companyList">
+                <td>{{company.id}}</td>
+                <td>{{company.companyName}}</td>
+                <td>{{company.CEOName}}</td>
+                <td>{{company.turnOver}}</td>
+                <td>{{company.boardOfDirectors}}</td>
+                <td>{{company.sector}}</td>
+                <td>{{company.description}}</td>
+                <td>{{company.IPOName}}</td>
+                <td><button class="btn btn-danger btn-sm" (click)="deleteCompany(company)">Delete</button></td>
             </tr>
         </table>
 
         <div class="text-center">
-            <button class="btn btn-success w-25 ">Add Company</button>
+            <button class="btn btn-success w-25 " routerLink="/add-company">Add Company</button>
         </div>
 
     </div>

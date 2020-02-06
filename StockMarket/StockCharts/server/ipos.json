@@ -1,0 +1,20 @@
+{
+  "ipos": [
+    {
+      "id": "456",
+      "companyName": "cts",
+      "stockExchange": "asd",
+      "pricePerShare": 1233,
+      "noOfShares": "23",
+      "openDate": "2019-02-03"
+    },
+    {
+      "id": "34",
+      "companyName": "lenovo",
+      "stockExchange": "123",
+      "pricePerShare": 1213121,
+      "noOfShares": "3",
+      "openDate": "2020-12-12"
+    }
+  ]
+}

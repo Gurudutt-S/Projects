@@ -21,6 +21,10 @@ import { CompareCompanyComponent } from './compare-company/compare-company.compo
 import { CompareSectorsComponent } from './compare-sectors/compare-sectors.component';
 import { ManageExchangeComponent } from './manage-exchange/manage-exchange.component';
 import { ManageIpoComponent } from './manage-ipo/manage-ipo.component';
+import { AddStockExchangeComponent } from './add-stock-exchange/add-stock-exchange.component';
+import { AddIpoComponent } from './add-ipo/add-ipo.component';
+import { LoginUserComponent } from './login-user/login-user.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +44,10 @@ import { ManageIpoComponent } from './manage-ipo/manage-ipo.component';
     CompareCompanyComponent,
     CompareSectorsComponent,
     ManageExchangeComponent,
-    ManageIpoComponent
+    ManageIpoComponent,
+    AddStockExchangeComponent,
+    AddIpoComponent,
+    LoginUserComponent
   ],
   imports: [
     BrowserModule,

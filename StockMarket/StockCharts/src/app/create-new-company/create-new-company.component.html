@@ -1,28 +1,42 @@
 <h2 class="display-4 text-center text-muted my-3">Create New Company</h2>
 <div class="container">
 
-    <form class="form-group w-50 container" [formGroup]="addCompany">
+    <form class="form-group w-50 container" [formGroup]="addCompany" (ngSubmit)="saveCompany()">
+
 
         <div class="formGroup">
-            <label>Company Name:</label>
-            <input type="text" class="form-control" formControlName="companyName" placeholder="Enter company name">
+            <label for="id">Id:</label>
+            <input type="text" class="form-control" formControlName="id" id="id" placeholder="Enter id">
         </div>
         <div class="formGroup">
-            <label>CEO name:</label>
-            <input type="text" class="form-control" formControlName="CEOName"
+            <label for="companyName">Company Name:</label>
+            <input type="text" class="form-control" formControlName="companyName" id="companyName" placeholder="Enter company name">
+        </div>
+        <div class="formGroup">
+            <label for="CEOName">CEO name:</label>
+            <input type="text" class="form-control" formControlName="CEOName" id="CEOName"
                 placeholder=" Name of CEO or a Board Member">
         </div>
         <div class="formGroup">
-            <label>TurnOver:</label>
-            <input type="text" class="form-control" formControlName="turnOver" placeholder=" TurnOver">
+            <label for="turnOver">TurnOver:</label>
+            <input type="text" class="form-control" formControlName="turnOver" id="turnOver" placeholder=" TurnOver">
         </div>
         <div class="formGroup">
-            <label>Breif Description:</label>
-            <input type="text" class="form-control" formControlName="description" placeholder="Maximum 100 words">
+            <label for="boardOfDirectors">Board of Directors:</label>
+            <input type="text" class="form-control" formControlName="boardOfDirectors" id="boardOfDirectors"
+                placeholder=" Board of Directors">
         </div>
         <div class="formGroup">
-            <label>IPO Date:</label>
-            <input type="date" class="form-control" formControlName="IPOName" placeholder=" IPO date">
+            <label class="sector"> Sector:</label>
+            <input type="text" class="form-control" formControlName="sector" id="sector" placeholder=" Name of Sector">
+        </div>
+        <div class="formGroup">
+            <label for="description">Breif Description:</label>
+            <input type="text" class="form-control" formControlName="description" id="description" placeholder="Maximum 100 words">
+        </div>
+        <div class="formGroup">
+            <label for="IPOName">IPO Name:</label>
+            <input type="text" class="form-control" formControlName="IPOName" id="IPOName" placeholder=" IPO Name">
         </div>
         <div class="text-center mt-3">
             <input type="reset" class="btn  btn-info px-5 mr-2">

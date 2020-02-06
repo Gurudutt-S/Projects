@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Exchange } from '../models/exchange';
+import { Router } from '@angular/router';
+import { ExchangeService } from '../services/exchange.service';
 
 @Component({
   selector: 'app-manage-exchange',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageExchangeComponent implements OnInit {
 
-  constructor() { }
+  exchangeList: Exchange[];
+
+  constructor(private exchangeService: ExchangeService, private router: Router) { }
 
   ngOnInit() {
+    this.getExchange();
+  }
+
+  getExchange() {
+    this.exchangeService.getExchangeData().subscribe(data => {
+      this.exchangeList = data;
+      console.log(data);
+    });
+  }
+  deleteExchange(exchange: Exchange) {
+    this.exchangeService.deleteExchange(exchange.id.toString()).subscribe(res => {
+      console.log(res);
+      this.getExchange();
+    });
   }
 
 }

@@ -17,27 +17,26 @@
         <table class="table text-center">
             <tr>
                 <th>Id</th>
-                <th>username</th>
-                <th>password</th>
-                <th>user type</th>
-                <th>email</th>
-                <th>phone</th>
+                <th>Company Name</th>
+                <th>Stock Exchange</th>
+                <th>Price per Share</th>
+                <th>Total Share</th>
+                <th>Open Date</th>
                 <th colspan="2">Actions</th>
             </tr>
-            <tr *ngFor="let user of userList">
-                <td>{{user.id}}</td>
-                <td>{{user.username}}</td>
-                <td>{{user.password}}</td>
-                <td>{{user.userType}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.phone}}</td>
-                <td><button class="btn btn-info" (click)="updateUser(user)">Update</button></td>
-                <td><button class="btn btn-danger" (click)="deleteUser(user)">Delete</button></td>
+            <tr *ngFor="let ipo of ipoList">
+                <td>{{ipo.id}}</td>
+                <td>{{ipo.companyName}}</td>
+                <td>{{ipo.stockExchange}}</td>
+                <td>{{ipo.pricePerShare}}</td>
+                <td>{{ipo.noOfShares}}</td>
+                <td>{{ipo.openDate}}</td>
+                <td><button class="btn btn-danger btn-sm" (click)="deleteIpo(ipo)">Delete</button></td>
             </tr>
         </table>
 
         <div class="text-center">
-            <button class="btn btn-success w-25">Add IPO</button>
+            <button class="btn btn-success w-25" routerLink="/add-ipo">Add IPO</button>
         </div>
 
     </div>

@@ -18,27 +18,24 @@
         <table class="table text-center">
             <tr>
                 <th>Id</th>
-                <th>username</th>
-                <th>password</th>
-                <th>user type</th>
-                <th>email</th>
-                <th>phone</th>
+                <th>Stock Exhange Name</th>
+                <th>Breif</th>
+                <th>Contact Address</th>
+                <th>Remarks</th>
                 <th colspan="2">Actions</th>
             </tr>
-            <tr *ngFor="let user of userList">
-                <td>{{user.id}}</td>
-                <td>{{user.username}}</td>
-                <td>{{user.password}}</td>
-                <td>{{user.userType}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.phone}}</td>
-                <td><button class="btn btn-info" (click)="updateUser(user)">Update</button></td>
-                <td><button class="btn btn-danger" (click)="deleteUser(user)">Delete</button></td>
+            <tr *ngFor="let exchange of exchangeList">
+                <td>{{exchange.id}}</td>
+                <td>{{exchange.stockExchangeName}}</td>
+                <td>{{exchange.breif}}</td>
+                <td>{{exchange.address}}</td>
+                <td>{{exchange.remarks}}</td>
+                <td><button class="btn btn-danger btn-sm" (click)="deleteExchange(exchange)">Delete</button></td>
             </tr>
         </table>
 
         <div class="text-center">
-            <button class="btn btn-success w-25 ">Add Exchange</button>
+            <button class="btn btn-success w-25 " routerLink="/add-exchange">Add Exchange</button>
         </div>
 
     </div>

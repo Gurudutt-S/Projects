@@ -1,0 +1,24 @@
+{
+  "companies": [
+    {
+      "id": 101,
+      "companyName": "cts",
+      "CEOName": "gds",
+      "turnOver": 12312,
+      "boardOfDirectors": "directors",
+      "sector": "it",
+      "description": "good",
+      "IPOName": "ipo"
+    },
+    {
+      "id": "79",
+      "companyName": "lenovo",
+      "CEOName": "gd",
+      "turnOver": "243242",
+      "boardOfDirectors": "3",
+      "sector": "lap",
+      "description": "nt bad",
+      "IPOName": "2020-12-12"
+    }
+  ]
+}

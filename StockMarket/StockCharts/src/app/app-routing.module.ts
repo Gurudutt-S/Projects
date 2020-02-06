@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
-import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MemberComponent } from './member/member.component';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
@@ -17,6 +16,9 @@ import { CompareCompanyComponent } from './compare-company/compare-company.compo
 import { CompareSectorsComponent } from './compare-sectors/compare-sectors.component';
 import { ManageExchangeComponent } from './manage-exchange/manage-exchange.component';
 import { ManageIpoComponent } from './manage-ipo/manage-ipo.component';
+import { AddStockExchangeComponent } from './add-stock-exchange/add-stock-exchange.component';
+import { AddIpoComponent } from './add-ipo/add-ipo.component';
+import { LoginUserComponent } from './login-user/login-user.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactUsComponent },
   { path: 'sign_up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'login-user', component: LoginUserComponent },
   { path: 'user-page', component: UserLandingPageComponent },
   { path: 'compare-company', component: CompareCompanyComponent },
   { path: 'compare-sectors', component: CompareSectorsComponent },
@@ -36,7 +39,9 @@ const routes: Routes = [
   { path: 'update-user', component: UpdateUserComponent },
   { path: 'import-data', component: DocumentUploadComponent },
   { path: 'manage-company', component: CompanyListComponent },
-  { path: 'add-company', component: CreateNewCompanyComponent }
+  { path: 'add-company', component: CreateNewCompanyComponent },
+  { path: 'add-exchange', component: AddStockExchangeComponent },
+  { path: 'add-ipo', component: AddIpoComponent }
 ];
 
 @NgModule({

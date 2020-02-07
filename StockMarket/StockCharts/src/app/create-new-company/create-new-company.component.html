@@ -1,38 +1,44 @@
 <h2 class="display-4 text-center text-muted my-3">Create New Company</h2>
-<div class="container">
+<div class="container shadow p-5 bg-light">
 
-    <form class="form-group w-50 container" [formGroup]="addCompany" (ngSubmit)="saveCompany()">
+    <form class="form-group w-75 container " [formGroup]="addCompany" (ngSubmit)="saveCompany()">
 
 
-        <div class="formGroup">
-            <label for="id">Id:</label>
-            <input type="text" class="form-control" formControlName="id" id="id" placeholder="Enter id">
-        </div>
-        <div class="formGroup">
-            <label for="companyName">Company Name:</label>
-            <input type="text" class="form-control" formControlName="companyName" id="companyName" placeholder="Enter company name">
+        <div class="row">
+            <div class="formGroup col">
+                <label for="id">Id:</label>
+                <input type="text" disabled class="form-control" formControlName="id" id="id" placeholder="Auto Generated">
+            </div>
+            <div class="formGroup col">
+                <label for="companyName">Company Name:</label>
+                <input type="text" class="form-control" formControlName="companyName" id="companyName"
+                    placeholder="Enter company name">
+            </div>
         </div>
         <div class="formGroup">
             <label for="CEOName">CEO name:</label>
             <input type="text" class="form-control" formControlName="CEOName" id="CEOName"
                 placeholder=" Name of CEO or a Board Member">
         </div>
-        <div class="formGroup">
-            <label for="turnOver">TurnOver:</label>
-            <input type="text" class="form-control" formControlName="turnOver" id="turnOver" placeholder=" TurnOver">
-        </div>
-        <div class="formGroup">
-            <label for="boardOfDirectors">Board of Directors:</label>
-            <input type="text" class="form-control" formControlName="boardOfDirectors" id="boardOfDirectors"
-                placeholder=" Board of Directors">
-        </div>
-        <div class="formGroup">
-            <label class="sector"> Sector:</label>
-            <input type="text" class="form-control" formControlName="sector" id="sector" placeholder=" Name of Sector">
+        <div class="row">
+            <div class="formGroup col">
+                <label for="turnOver">TurnOver:</label>
+                <input type="text" class="form-control" formControlName="turnOver" id="turnOver" placeholder=" TurnOver">
+            </div>
+            <div class="formGroup col">
+                <label for="boardOfDirectors">Board of Directors:</label>
+                <input type="text" class="form-control" formControlName="boardOfDirectors" id="boardOfDirectors"
+                    placeholder=" Board of Directors">
+            </div>
+            <div class="formGroup col">
+                <label class="sector"> Sector:</label>
+                <input type="text" class="form-control" formControlName="sector" id="sector" placeholder=" Name of Sector">
+            </div>
         </div>
         <div class="formGroup">
             <label for="description">Breif Description:</label>
-            <input type="text" class="form-control" formControlName="description" id="description" placeholder="Maximum 100 words">
+            <input type="text" class="form-control" formControlName="description" id="description"
+                placeholder="Maximum 100 words">
         </div>
         <div class="formGroup">
             <label for="IPOName">IPO Name:</label>

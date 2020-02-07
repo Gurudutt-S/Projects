@@ -19,6 +19,7 @@ import { ManageIpoComponent } from './manage-ipo/manage-ipo.component';
 import { AddStockExchangeComponent } from './add-stock-exchange/add-stock-exchange.component';
 import { AddIpoComponent } from './add-ipo/add-ipo.component';
 import { LoginUserComponent } from './login-user/login-user.component';
+import { UserIpoListComponent } from './user-ipo-list/user-ipo-list.component';
 
 
 const routes: Routes = [
@@ -41,7 +42,8 @@ const routes: Routes = [
   { path: 'manage-company', component: CompanyListComponent },
   { path: 'add-company', component: CreateNewCompanyComponent },
   { path: 'add-exchange', component: AddStockExchangeComponent },
-  { path: 'add-ipo', component: AddIpoComponent }
+  { path: 'add-ipo', component: AddIpoComponent },
+  { path: 'user-ipo-list', component: UserIpoListComponent }
 ];
 
 @NgModule({

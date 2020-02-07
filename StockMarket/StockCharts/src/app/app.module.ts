@@ -24,6 +24,7 @@ import { ManageIpoComponent } from './manage-ipo/manage-ipo.component';
 import { AddStockExchangeComponent } from './add-stock-exchange/add-stock-exchange.component';
 import { AddIpoComponent } from './add-ipo/add-ipo.component';
 import { LoginUserComponent } from './login-user/login-user.component';
+import { UserIpoListComponent } from './user-ipo-list/user-ipo-list.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { LoginUserComponent } from './login-user/login-user.component';
     ManageIpoComponent,
     AddStockExchangeComponent,
     AddIpoComponent,
-    LoginUserComponent
+    LoginUserComponent,
+    UserIpoListComponent
   ],
   imports: [
     BrowserModule,

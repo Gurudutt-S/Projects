@@ -15,7 +15,7 @@
 
     </div>
     <div class="container float-right col w-75">
-        <table class="table text-center">
+        <table class="table text-center table-striped table-info table-hover">
             <tr>
                 <th>Id</th>
                 <th>Company Name</th>
@@ -27,6 +27,8 @@
                 <th>IPO Name</th>
                 <th>Actions</th>
             </tr>
+
+           <tbody>
             <tr *ngFor="let company of companyList">
                 <td>{{company.id}}</td>
                 <td>{{company.companyName}}</td>
@@ -38,6 +40,7 @@
                 <td>{{company.IPOName}}</td>
                 <td><button class="btn btn-danger btn-sm" (click)="deleteCompany(company)">Delete</button></td>
             </tr>
+           </tbody>
         </table>
 
         <div class="text-center">

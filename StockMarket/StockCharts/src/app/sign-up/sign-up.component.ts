@@ -18,8 +18,8 @@ export class SignUpComponent implements OnInit {
     this.signupForm = this.formBulder.group({
       id: ['', Validators.required],
       username: ['', Validators.required],
-      password: ['', Validators.required],
       userType: ['', Validators.required],
+      password: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required]
     });

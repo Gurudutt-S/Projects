@@ -1,9 +1,9 @@
 <h2 class="display-5 text-muted text-center my-2">Users List</h2>
 <hr>
-<div class="row no-gutters">
-    <div class="w-25 border-right  col-3 h-75">
+<div class="row no-gutters ">
+    <div class="w-25 border-right  col-3 h-75 ">
 
-        <div class="list-group list-group-flush  text-center">
+        <div class="list-group list-group-flush  text-center ">
             <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
             <a class="list-group-item list-group-item-action active" [routerLink]="['/users']">Manage Users</a>
@@ -14,7 +14,7 @@
 
     </div>
     <div class="container float-right col w-75">
-        <table class="table text-center">
+        <table class="table text-center table-striped table-hover table-info">
             <tr>
                 <th>Id</th>
                 <th>username</th>
@@ -24,16 +24,18 @@
                 <th>phone</th>
                 <th colspan="2">Actions</th>
             </tr>
-            <tr *ngFor="let user of userList">
-                <td>{{user.id}}</td>
-                <td>{{user.username}}</td>
-                <td>{{user.password}}</td>
-                <td>{{user.userType}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.phone}}</td>
-                <td><button class="btn btn-info" (click)="updateUser(user)">Update</button></td>
-                <td><button class="btn btn-danger" (click)="deleteUser(user)">Delete</button></td>
-            </tr>
+            <tbody>
+                <tr *ngFor="let user of userList">
+                    <td>{{user.id}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.password}}</td>
+                    <td>{{user.userType}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                    <td><button class="btn btn-info" (click)="updateUser(user)">Update</button></td>
+                    <td><button class="btn btn-danger" (click)="deleteUser(user)">Delete</button></td>
+                </tr>
+            </tbody>
         </table>
 
         <div class="text-center">

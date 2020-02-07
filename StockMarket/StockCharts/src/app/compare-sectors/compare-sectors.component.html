@@ -1,16 +1,51 @@
-<h2 class="display-5 text-center text-muted my-2">Compare Sectors</h2>
+<h2 class="display-5 text-center text-muted my-2">Compare Sector</h2>
 <hr>
 <div class="row no-gutters">
 
     <div class="list-group list-group-flush text-center px-0 border-right col-3">
-        <a class="list-group-item list-group-item-action" [routerLink]="">IPO's</a>
-        <a class="list-group-item list-group-item-action" [routerLink]="['/compare-company']">Compare Company</a>
+        <a class="list-group-item list-group-item-action" [routerLink]="['/user-ipo-list']">IPO's</a>
+        <a class="list-group-item list-group-item-action " [routerLink]="['/compare-company']">Compare Company</a>
         <a class="list-group-item list-group-item-action active" [routerLink]="['/compare-sectors']">Compare Sectors</a>
         <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
     </div>
 
-    <div>
-        <h3>Compare Sectors</h3>
+    <div class="container col">
+
+        <form class="w-75 container" [formGroup]="compareSector">
+
+            <div class="row">
+                <div class="form-group col">
+                    <label for="selectSector">Select Sector:</label>
+                    <input type="text" class="form-control mb-3" formControlName="selectSector"
+                        placeholder="Enter Sector name">
+                </div>
+                <div class="form-group col">
+                    <label for="selectStock">Select Stock Exchange:</label>
+                    <input type="text" class="form-control mb-3" formControlName="selectStock"
+                        placeholder=" Name of CEO or a Board Member">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="companyName">Company Name:</label>
+                    <input type="text" class="form-control mb-3" formControlName="companyName" placeholder=" TurnOver">
+                </div>
+                <div class="form-group col">
+                    <label for="period">From period:</label>
+                    <input type="text" class="form-control mb-3" formControlName="period" placeholder="" disabled>
+                </div>
+
+            </div>
+            <div class="row text-center">
+                <div class="col ">
+                    <input type="reset" value="Add Sector +" class="btn btn-lg btn-info px-5">
+                </div>
+                <div class=" col">
+                    <input type="submit" value="Generate Maps" class="btn btn-lg btn-success px-5">
+                </div>
+            </div>
+
+        </form>
     </div>
 
 </div>

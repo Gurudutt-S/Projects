@@ -14,11 +14,11 @@ export class CompareCompanyComponent implements OnInit {
 
   ngOnInit() {
 
-    this.compareCompany=this.formBulder.group({
-      selectCompany:[''],
-      selectStock:[''],
-      companyName:[''],
-      period:['']
+    this.compareCompany = this.formBulder.group({
+      selectCompany: [''],
+      selectStock: [''],
+      companyName: [''],
+      period: ['']
     });
 
   }

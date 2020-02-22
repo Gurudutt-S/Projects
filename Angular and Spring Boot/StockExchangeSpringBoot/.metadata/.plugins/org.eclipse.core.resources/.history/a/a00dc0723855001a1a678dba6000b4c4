@@ -1,0 +1,10 @@
+spring.jpa.hibernate.ddl-auto=create-drop
+
+# mysql connection
+
+spring.datasource.url=jdbc:mysql://localhost:3306/cts
+spring.datasource.username=root
+spring.datasource.password=password
+spring.jpa.show-sql=true
+
+server.port=8002

@@ -1,0 +1,39 @@
+<h2 class="display-5 text-muted text-center my-2">IPO List</h2>
+<hr>
+<div class="row no-gutters ">
+    <div class="w-25 border-right col-3 h-75">
+
+        <div class="list-group list-group-flush  text-center">
+            <a class="list-group-item list-group-item-action active" [routerLink]="['/user-ipo-list']">IPO's</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/compare-company']">Compare Company</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/compare-sectors']">Compare
+                Sectors</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
+        </div>
+
+    </div>
+
+    <div class="container float-right col w-75">
+        <table class="table table-striped table-hover table-info text-center ">
+            <tr>
+                <th>Id</th>
+                <th>Company Name</th>
+                <th>Stock Exchange</th>
+                <th>Price per Share</th>
+                <th>Total Share</th>
+                <th>Open Date</th>
+            </tr>
+            <tbody>
+                <tr *ngFor="let ipo of ipoList">
+                    <td>{{ipo.id}}</td>
+                    <td>{{ipo.companyName}}</td>
+                    <td>{{ipo.stockExchange}}</td>
+                    <td>{{ipo.pricePerShare}}</td>
+                    <td>{{ipo.noOfShares}}</td>
+                    <td>{{ipo.openDate}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

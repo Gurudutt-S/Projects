@@ -1,0 +1,16 @@
+<div class="container mt-5">
+    <div class="card shadow">
+        <h2 class="display-3 my-3 text-center">Sign In</h2>
+        <form [formGroup]="userLoginForm" (ngSubmit)="login()" class="form-group w-50 container">
+            <label>Username:</label>
+            <input type="text" class="form-control mb-3" formControlName="userName" placeholder="Enter your user name">
+            <label>Password:</label>
+            <input type="text" class="form-control mb-3" formControlName="password" placeholder="Enter your password">
+
+            <div class="text-center mt-5">
+                <input [disabled]="!userLoginForm.valid" type="reset" class="btn btn-lg btn-info px-5 mx-3">
+                <input [disabled]="!userLoginForm.valid" type="submit" class="btn btn-lg btn-success px-5">
+            </div>
+        </form>
+    </div>
+</div>

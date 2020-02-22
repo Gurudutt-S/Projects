@@ -9,3 +9,5 @@
 4 FEB 2020 [Day 30] : JSP
 
 5 FEB 2020 [Day 31] : Spring, bean factory, application context.
+
+22 FEB 2020 [Day 45] : Angular and Spring Boot Integration

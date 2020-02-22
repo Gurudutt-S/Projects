@@ -1,0 +1,42 @@
+<h2 class="display-5 text-muted text-center my-2">Manage Exchange</h2>
+<hr>
+<div class="row no-gutters">
+    <div class="w-25 border-right  col-3 h-75">
+
+        <div class="list-group list-group-flush  text-center">
+            <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/users']">Manage Users</a>
+            <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-exchange']">Manage
+                Exchange</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
+        </div>
+
+    </div>
+    <div class="container float-right col w-75">
+        <table class="table text-center">
+            <tr>
+                <th>Id</th>
+                <th>Stock Exhange Name</th>
+                <th>Breif</th>
+                <th>Contact Address</th>
+                <th>Remarks</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            <tr *ngFor="let exchange of exchangeList">
+                <td>{{exchange.id}}</td>
+                <td>{{exchange.stockExchangeName}}</td>
+                <td>{{exchange.breif}}</td>
+                <td>{{exchange.address}}</td>
+                <td>{{exchange.remarks}}</td>
+                <td><button class="btn btn-danger btn-sm" (click)="deleteExchange(exchange)">Delete</button></td>
+            </tr>
+        </table>
+
+        <div class="text-center">
+            <button class="btn btn-success w-25 " routerLink="/add-exchange">Add Exchange</button>
+        </div>
+
+    </div>
+</div>

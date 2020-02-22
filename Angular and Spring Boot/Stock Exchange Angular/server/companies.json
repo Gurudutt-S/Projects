@@ -1,0 +1,44 @@
+{
+  "companies": [
+    {
+      "id": 101,
+      "companyName": "cts",
+      "CEOName": "gds",
+      "turnOver": 12312,
+      "boardOfDirectors": "directors",
+      "sector": "it",
+      "description": "good",
+      "IPOName": "ipo"
+    },
+    {
+      "id": "98",
+      "companyName": "acsia",
+      "CEOName": "sree",
+      "turnOver": "4536365",
+      "boardOfDirectors": "3",
+      "sector": "it",
+      "description": "good",
+      "IPOName": "asd"
+    },
+    {
+      "id": 103,
+      "companyName": "Apple",
+      "CEOName": "Tim Cook",
+      "turnOver": "786876",
+      "boardOfDirectors": "10",
+      "sector": "Software and IT",
+      "description": "no.1",
+      "IPOName": "Apple.inc"
+    },
+    {
+      "id": 104,
+      "companyName": "Google",
+      "CEOName": "Sundhar Piche",
+      "turnOver": "969869898",
+      "boardOfDirectors": "20",
+      "sector": "IT and software",
+      "description": "best",
+      "IPOName": "Google.llc"
+    }
+  ]
+}

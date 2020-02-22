@@ -1,0 +1,11 @@
+package com.cts.project.bean;
+
+public class StockExchange {
+
+	private Integer id;
+	private String stockExchangeName;
+	private String breif;
+	private String address;
+	private String remarks;
+
+}

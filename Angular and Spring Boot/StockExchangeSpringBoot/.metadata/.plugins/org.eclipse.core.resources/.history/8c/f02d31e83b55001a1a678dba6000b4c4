@@ -1,0 +1,31 @@
+package com.cts.project.dao.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cts.project.bean.User;
+import com.cts.project.dao.UserDAO;
+
+@RestController
+public class UserDAOImpl {
+
+	@Autowired
+	UserDAO userDao;
+
+	@GetMapping("/user")
+	public List<User> getUsers() {
+		return userDao.findAll();
+	}
+
+	@PostMapping("/user")
+	public User saveUser(@RequestBody User user) {
+		User newUser = userDao.save(user);
+		return newUser;
+	}
+
+}

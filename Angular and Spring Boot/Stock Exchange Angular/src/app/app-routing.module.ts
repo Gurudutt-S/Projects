@@ -20,6 +20,11 @@ import { AddStockExchangeComponent } from './add-stock-exchange/add-stock-exchan
 import { AddIpoComponent } from './add-ipo/add-ipo.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { UserIpoListComponent } from './user-ipo-list/user-ipo-list.component';
+import { UpdateIpoComponent } from './update-ipo/update-ipo.component';
+import { UpdateCompanyComponent } from './update-company/update-company.component';
+import { UpdateExchangeComponent } from './update-exchange/update-exchange.component';
+import { ManageStockPriceComponent } from './manage-stock-price/manage-stock-price.component';
+import { AddStockPriceComponent } from './add-stock-price/add-stock-price.component';
 
 
 const routes: Routes = [
@@ -35,14 +40,19 @@ const routes: Routes = [
   { path: 'compare-sectors', component: CompareSectorsComponent },
   { path: 'manage-exchange', component: ManageExchangeComponent },
   { path: 'manage-ipo', component: ManageIpoComponent },
+  { path: 'manage-stockPrice', component: ManageStockPriceComponent },
   { path: 'users', component: MemberComponent },
   { path: 'admin', component: AdminLandingPageComponent },
   { path: 'update-user', component: UpdateUserComponent },
+  { path: 'update-ipo', component: UpdateIpoComponent },
+  { path: 'update-company', component: UpdateCompanyComponent },
+  { path: 'update-exchange', component: UpdateExchangeComponent },
   { path: 'import-data', component: DocumentUploadComponent },
   { path: 'manage-company', component: CompanyListComponent },
   { path: 'add-company', component: CreateNewCompanyComponent },
   { path: 'add-exchange', component: AddStockExchangeComponent },
   { path: 'add-ipo', component: AddIpoComponent },
+  { path: 'add-stockPrice', component: AddStockPriceComponent },
   { path: 'user-ipo-list', component: UserIpoListComponent }
 ];
 

@@ -10,6 +10,8 @@
             <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-exchange']">Manage
                 Exchange</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">Manage Stock
+                Price</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
         </div>
 
@@ -30,6 +32,7 @@
                 <td>{{exchange.breif}}</td>
                 <td>{{exchange.address}}</td>
                 <td>{{exchange.remarks}}</td>
+                <td><button class="btn btn-warning btn-sm" (click)="updateExchange(exchange)">Update</button></td>
                 <td><button class="btn btn-danger btn-sm" (click)="deleteExchange(exchange)">Delete</button></td>
             </tr>
         </table>

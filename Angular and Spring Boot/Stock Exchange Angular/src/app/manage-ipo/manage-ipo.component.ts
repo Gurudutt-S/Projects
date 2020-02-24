@@ -31,5 +31,10 @@ export class ManageIpoComponent implements OnInit {
     });
   }
 
+  updateIpo(ipo: Ipo) {
+    localStorage.removeItem('ipoId');
+    localStorage.setItem('ipoId', ipo.id.toString());
+    this.router.navigate(['update-ipo']);
+  }
 
 }

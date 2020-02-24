@@ -1,4 +1,4 @@
-<h2 class="display-5 text-center my-2 text-muted">Add IPO</h2>
+<h2 class="display-5 text-center my-2 text-muted">Add Stock Price</h2>
 <hr>
 
 <div class="row no-gutters">
@@ -10,8 +10,8 @@
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/users']">Manage Users</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">Manage Exchange</a>
-            <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-ipo']">Manage IPO</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">Manage Stock
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
+            <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-stockPrice']">Manage Stock
                 Price</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
         </div>
@@ -20,13 +20,13 @@
 
     <div class="container col">
 
-        <form class=" w-75 container" [formGroup]="addIpo" (ngSubmit)="saveIpo()">
+        <form class=" w-75 container" [formGroup]="addStockPrice" (ngSubmit)="saveStockPrice()">
 
-                <div class="form-group ">
-                    <label for="companyName">Company Name:</label>
-                    <input type="text" class="form-control" id="companyName" formControlName="companyName"
-                        placeholder=" Add Company Name Here">
-                </div>
+            <div class="form-group ">
+                <label for="companyCode">Company Code:</label>
+                <input type="text" class="form-control" id="companyCode" formControlName="companyCode"
+                    placeholder=" Add Company Code Here">
+            </div>
             <div class="row">
                 <div class="form-group col">
                     <label for="stockExchange">Stock Exchange:</label>
@@ -34,32 +34,25 @@
                         placeholder=" Add Stock Exchange">
                 </div>
                 <div class="form-group col">
-                    <label for="pricePerShare">Price Per Share:</label>
-                    <input type="number" class="form-control" id="pricePerShare" formControlName="pricePerShare"
+                    <label for="currentPrice">Current Price :</label>
+                    <input type="number" class="form-control" id="currentPrice" formControlName="currentPrice"
                         placeholder=" Price in Rupees">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col">
-                    <label for="noOfShares">No. of Shares:</label>
-                    <input type="text" class="form-control" id="noOfShares" formControlName="noOfShares"
-                        placeholder=" Total no. of Shares">
+                    <label for="date">Date:</label>
+                    <input type="text" class="form-control" id="date" formControlName="date" placeholder="  dd/mm/yyyy">
                 </div>
                 <div class="form-group col">
-                    <label for="openDate">Open Date:</label>
-                    <input type="date" class="form-control" id="openDate" formControlName="openDate"
-                        placeholder=" dd/mm/yyyy">
+                    <label for="time">Time:</label>
+                    <input type="time" class="form-control" id="time" formControlName="time" placeholder="Time">
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="remarks">remarks:</label>
-                <textarea type="text" class="form-control" id="remarks" formControlName="remarks"
-                    placeholder=" remarks"></textarea>
             </div>
 
             <div class="text-center mt-3 mb-5">
                 <button type="submit" class="btn  btn-success px-5 mx-3">Add
-                    IPO</button>
+                    Stock Price</button>
             </div>
         </form>
 

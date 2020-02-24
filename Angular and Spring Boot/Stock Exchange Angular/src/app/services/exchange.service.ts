@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ExchangeService {
 
-  httpUrl = "http://localhost:8002/stockExchange ";
+  httpUrl = "http://localhost:8002/stockExchange/";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,6 +23,14 @@ export class ExchangeService {
   deleteExchange(id: string): Observable<Exchange> {
     // return this.httpClient.delete(`${this.httpUrl}${id}`)
     return this.httpClient.delete<Exchange>(this.httpUrl + id);
+  }
+
+  updateExchangeinfo(exchange: Exchange): Observable<Exchange> {
+    return this.httpClient.put<Exchange>(this.httpUrl, exchange);
+  }
+
+  getExchangeById(id: string):Observable<Exchange> {
+    return this.httpClient.get<Exchange>(this.httpUrl + id);
   }
 
 }

@@ -8,7 +8,7 @@ import { Company } from '../models/company';
 })
 export class CompanyService {
 
-  httpUrl="http://localhost:8002/company/";
+  httpUrl = "http://localhost:8002/company/";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,6 +23,14 @@ export class CompanyService {
   deleteCompany(id: string): Observable<Company> {
     // return this.httpClient.delete(`${this.httpUrl}${id}`)
     return this.httpClient.delete<Company>(this.httpUrl + id);
+  }
+
+  updateCompanyInfo(company: Company): Observable<Company> {
+    return this.httpClient.put<Company>(this.httpUrl, company);
+  }
+
+  getCompanyById(id: string): Observable<Company> {
+    return this.httpClient.get<Company>(this.httpUrl + id);
   }
 
 }

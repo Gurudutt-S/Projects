@@ -8,8 +8,8 @@
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/users']">Manage Users</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">Manage Exchange</a>
-            <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-ipo']">Manage IPO</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">Manage Stock
+            <a class="list-group-item list-group-item-action " [routerLink]="['/manage-ipo']">Manage IPO</a>
+            <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-stockPrice']">Manage Stock
                 Price</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
         </div>
@@ -19,27 +19,27 @@
         <table class="table text-center">
             <tr>
                 <th>Id</th>
-                <th>Company Name</th>
+                <th>Company Code</th>
                 <th>Stock Exchange</th>
-                <th>Price per Share</th>
-                <th>Total Share</th>
-                <th>Open Date</th>
+                <th>Current Price</th>
+                <th>Date</th>
+                <th>Time</th>
                 <th colspan="2">Actions</th>
             </tr>
-            <tr *ngFor="let ipo of ipoList">
-                <td>{{ipo.id}}</td>
-                <td>{{ipo.companyName}}</td>
-                <td>{{ipo.stockExchange}}</td>
-                <td>{{ipo.pricePerShare}}</td>
-                <td>{{ipo.noOfShares}}</td>
-                <td>{{ipo.openDate}}</td>
+            <tr *ngFor="let price of ipoList">
+                <td>{{price.id}}</td>
+                <td>{{price.companyCode}}</td>
+                <td>{{price.stockExchange}}</td>
+                <td>{{price.currentPrice}}</td>
+                <td>{{price.date}}</td>
+                <td>{{price.time}}</td>
                 <td><button class="btn btn-warning btn-sm" (click)="updateIpo(ipo)">Update</button></td>
                 <td><button class="btn btn-danger btn-sm" (click)="deleteIpo(ipo)">Delete</button></td>
             </tr>
         </table>
 
         <div class="text-center">
-            <button class="btn btn-success w-25" routerLink="/add-ipo">Add IPO</button>
+            <button class="btn btn-success w-25" routerLink="/add-stockPrice">Add Stock Price</button>
         </div>
 
     </div>

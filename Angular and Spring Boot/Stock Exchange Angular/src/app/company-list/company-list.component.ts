@@ -31,4 +31,10 @@ export class CompanyListComponent implements OnInit {
     });
   }
 
+  updateCompany(company: Company) {
+    localStorage.removeItem('companyId');
+    localStorage.setItem('companyId', company.id.toString());
+    this.router.navigate(['update-company']);
+  }
+
 }

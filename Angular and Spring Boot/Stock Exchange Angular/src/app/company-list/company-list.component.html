@@ -10,6 +10,8 @@
             <a class="list-group-item list-group-item-action" [routerLink]="['/users']">Manage Users</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">Manage Exchange</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">Manage Stock
+                Price</a>
             <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
         </div>
 
@@ -27,18 +29,19 @@
                 <th>Actions</th>
             </tr>
 
-           <tbody>
-            <tr *ngFor="let company of companyList">
-                <td>{{company.id}}</td>
-                <td>{{company.companyName}}</td>
-                <td>{{company.ceoName}}</td>
-                <td>{{company.turnover}}</td>
-                <td>{{company.boardOfDirectors}}</td>
-                <td>{{company.sector}}</td>
-                <td>{{company.iponame}}</td>
-                <td><button class="btn btn-danger btn-sm" (click)="deleteCompany(company)">Delete</button></td>
-            </tr>
-           </tbody>
+            <tbody>
+                <tr *ngFor="let company of companyList">
+                    <td>{{company.id}}</td>
+                    <td>{{company.companyName}}</td>
+                    <td>{{company.ceoName}}</td>
+                    <td>{{company.turnover}}</td>
+                    <td>{{company.boardOfDirectors}}</td>
+                    <td>{{company.sector}}</td>
+                    <td>{{company.iponame}}</td>
+                    <td><button class="btn btn-info btn-sm" (click)="updateCompany(company)">Update</button></td>
+                    <td><button class="btn btn-danger btn-sm" (click)="deleteCompany(company)">Delete</button></td>
+                </tr>
+            </tbody>
         </table>
 
         <div class="text-center">

@@ -1,0 +1,67 @@
+<h2 class="display-5 text-center my-2 text-muted">Update IPO</h2>
+<hr>
+
+<div class="row no-gutters">
+
+    <div class="w-25 border-right  col-3 h-75">
+
+        <div class="list-group list-group-flush  text-center">
+            <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/users']">Manage Users</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">Manage Exchange</a>
+            <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-ipo']">Manage IPO</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">Manage Stock
+                Price</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
+        </div>
+
+    </div>
+
+    <div class="container col">
+
+        <form class=" w-50 container" [formGroup]="updateIpo">
+
+            <div class="form-group">
+                <label for="id">Id:</label>
+                <input type="text" class="form-control " id="id" formControlName="id" placeholder="Enter your ID"
+                    disabled>
+            </div>
+            <div class="form-group">
+                <label for="companyName">Company Name:</label>
+                <input type="text" class="form-control" id="companyName" formControlName="companyName"
+                    placeholder=" Add Company Name Here">
+            </div>
+            <div class="form-group">
+                <label for="stockExchange">Stock Exchange:</label>
+                <input type="text" class="form-control" id="stockExchange" formControlName="stockExchange"
+                    placeholder=" Add Stock Exchange">
+            </div>
+            <div class="form-group">
+                <label for="pricePerShare">Price Per Share:</label>
+                <input type="number" class="form-control" id="pricePerShare" formControlName="pricePerShare"
+                    placeholder=" Price in Rupees">
+            </div>
+            <div class="form-group">
+                <label for="noOfShares">No. of Shares:</label>
+                <input type="text" class="form-control" id="noOfShares" formControlName="noOfShares"
+                    placeholder=" Total no. of Shares">
+            </div>
+            <div class="form-group">
+                <label for="openDate">Open Date:</label>
+                <input type="date" class="form-control" id="openDate" formControlName="openDate"
+                    placeholder=" dd/mm/yyyy">
+            </div>
+            <div class="form-group">
+                <label for="remarks">remarks:</label>
+                <input type="text" class="form-control" id="remarks" formControlName="remarks" placeholder=" remarks">
+            </div>
+
+            <div class="text-center mt-3 mb-5">
+                <button type="submit" class="btn  btn-success px-5 mx-3" (click)="updateTheIpo(ipo)">Update
+                    IPO</button>
+            </div>
+        </form>
+
+    </div>
+</div>

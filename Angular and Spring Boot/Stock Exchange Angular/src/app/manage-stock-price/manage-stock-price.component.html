@@ -26,15 +26,15 @@
                 <th>Time</th>
                 <th colspan="2">Actions</th>
             </tr>
-            <tr *ngFor="let price of ipoList">
+            <tr *ngFor="let price of stockPriceList">
                 <td>{{price.id}}</td>
                 <td>{{price.companyCode}}</td>
                 <td>{{price.stockExchange}}</td>
                 <td>{{price.currentPrice}}</td>
                 <td>{{price.date}}</td>
                 <td>{{price.time}}</td>
-                <td><button class="btn btn-warning btn-sm" (click)="updateIpo(ipo)">Update</button></td>
-                <td><button class="btn btn-danger btn-sm" (click)="deleteIpo(ipo)">Delete</button></td>
+                <td><button class="btn btn-warning btn-sm" (click)="updateStockPrice(price)">Update</button></td>
+                <td><button class="btn btn-danger btn-sm" (click)="deleteStockPrice(pice)">Delete</button></td>
             </tr>
         </table>
 

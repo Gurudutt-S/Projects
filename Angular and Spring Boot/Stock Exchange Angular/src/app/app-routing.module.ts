@@ -25,6 +25,7 @@ import { UpdateCompanyComponent } from './update-company/update-company.componen
 import { UpdateExchangeComponent } from './update-exchange/update-exchange.component';
 import { ManageStockPriceComponent } from './manage-stock-price/manage-stock-price.component';
 import { AddStockPriceComponent } from './add-stock-price/add-stock-price.component';
+import { UpdateStockPriceComponent } from './update-stock-price/update-stock-price.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,7 @@ const routes: Routes = [
   { path: 'update-ipo', component: UpdateIpoComponent },
   { path: 'update-company', component: UpdateCompanyComponent },
   { path: 'update-exchange', component: UpdateExchangeComponent },
+  { path: 'update-stockPrice', component: UpdateStockPriceComponent },
   { path: 'import-data', component: DocumentUploadComponent },
   { path: 'manage-company', component: CompanyListComponent },
   { path: 'add-company', component: CreateNewCompanyComponent },

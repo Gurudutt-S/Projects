@@ -19,3 +19,8 @@ main{
       padding-left: 0;
     } */
   }
+
+  .display-6{
+    font-size: 25px;
+    text-align: justify;
+  }

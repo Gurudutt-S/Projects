@@ -1,6 +1,6 @@
 import { Time } from '@angular/common';
 
-export class stockPrice {
+export class StockPrice {
     id: string;
     companyCode: string;
     stockExchange: string;

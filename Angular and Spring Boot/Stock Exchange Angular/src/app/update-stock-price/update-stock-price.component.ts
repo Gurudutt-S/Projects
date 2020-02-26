@@ -17,6 +17,7 @@ export class UpdateStockPriceComponent implements OnInit {
 
   ngOnInit() {
     this.updateStockPrice = this.formBuilder.group({
+      id:[''],
       companyCode: [''],
       stockExchange: [''],
       currentPrice: [''],

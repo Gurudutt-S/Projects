@@ -26,6 +26,7 @@ import { UpdateExchangeComponent } from './update-exchange/update-exchange.compo
 import { ManageStockPriceComponent } from './manage-stock-price/manage-stock-price.component';
 import { AddStockPriceComponent } from './add-stock-price/add-stock-price.component';
 import { UpdateStockPriceComponent } from './update-stock-price/update-stock-price.component';
+import { ActivateComponent } from './activate/activate.component';
 
 
 const routes: Routes = [
@@ -55,7 +56,8 @@ const routes: Routes = [
   { path: 'add-exchange', component: AddStockExchangeComponent },
   { path: 'add-ipo', component: AddIpoComponent },
   { path: 'add-stockPrice', component: AddStockPriceComponent },
-  { path: 'user-ipo-list', component: UserIpoListComponent }
+  { path: 'user-ipo-list', component: UserIpoListComponent },
+  { path: 'activate', component: ActivateComponent }
 ];
 
 @NgModule({

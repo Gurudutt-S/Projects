@@ -13,3 +13,5 @@
 22 FEB 2020 [Day 45] : Angular and Spring Boot Integration
 
 24 FEB 2020 [Day 46] : Angular and Spring Boot Integration
+
+25 FEB 2020 [Day 47] : user e-mail verification

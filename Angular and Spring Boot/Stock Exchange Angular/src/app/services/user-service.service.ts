@@ -33,6 +33,10 @@ export class UserServiceService {
     return this.httpClient.get<User>(this.httpUrl + id);
   }
 
+  serviceActivation(obj) {
+    return this.httpClient.post('http://localhost:8080/users', obj)
+  }
+
   isAdmin(): boolean {
     return false;
 

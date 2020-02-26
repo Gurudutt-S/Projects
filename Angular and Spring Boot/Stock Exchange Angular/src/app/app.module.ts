@@ -31,6 +31,7 @@ import { UpdateExchangeComponent } from './update-exchange/update-exchange.compo
 import { AddStockPriceComponent } from './add-stock-price/add-stock-price.component';
 import { ManageStockPriceComponent } from './manage-stock-price/manage-stock-price.component';
 import { UpdateStockPriceComponent } from './update-stock-price/update-stock-price.component';
+import { ActivateComponent } from './activate/activate.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { UpdateStockPriceComponent } from './update-stock-price/update-stock-pri
     UpdateExchangeComponent,
     AddStockPriceComponent,
     ManageStockPriceComponent,
-    UpdateStockPriceComponent
+    UpdateStockPriceComponent,
+    ActivateComponent
   ],
   imports: [
     BrowserModule,

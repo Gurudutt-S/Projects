@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +25,9 @@ public class UserDAOImpl {
 	@Autowired
 	UserDAO userDao;
 
+	@Autowired
+	JavaMailSender jms;
+
 	@GetMapping("/user")
 	public List<User> getUsers() {
 		return userDao.findAll();
@@ -38,6 +43,21 @@ public class UserDAOImpl {
 	@PostMapping("/user")
 	public User saveUser(@RequestBody User user) {
 		User newUser = userDao.save(user);
+
+		try {
+			SimpleMailMessage sm = new SimpleMailMessage();
+			sm.setFrom("sanju4932@gmail.com");
+			sm.setTo(newUser.getEmail());
+			sm.setSubject("Testing Mail from me");
+//			sm.setText("Account created <a href='http://localhost:4200/user/activate?mail=" + newUser.getEmail()
+//					+ "'> click </a> here" );
+//			jms.send(sm);
+			sm.setText("Account created click on <a href ='http://localhost:4200/activate?" + newUser.getEmail()
+					+ "'>Click</a>");
+			jms.send(sm);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return newUser;
 	}
 

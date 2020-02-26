@@ -63,13 +63,14 @@ import { ActivateComponent } from './activate/activate.component';
     AddStockPriceComponent,
     ManageStockPriceComponent,
     UpdateStockPriceComponent,
-    ActivateComponent
+    ActivateComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

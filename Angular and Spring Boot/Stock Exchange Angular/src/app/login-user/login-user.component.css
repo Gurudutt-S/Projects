@@ -1,0 +1,25 @@
+main{
+    background-image: url('../../assets/images/back1.jpg');
+    background-size: cover;
+    border-radius: 10px;
+  }
+
+  input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+  }
+  
+  input:focus{
+    outline: none !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    border-bottom-color: steelblue;
+  }
+  
+  .form-control{
+    box-shadow: none;
+  }

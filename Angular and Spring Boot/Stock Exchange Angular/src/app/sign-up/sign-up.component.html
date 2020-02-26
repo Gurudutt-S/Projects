@@ -1,5 +1,6 @@
-<h2 class="display-3 text-center my-3 text-muted">Enter your Details Here</h2>
-<form class=" w-75  shadow p-5 container bg-light" [formGroup]="signupForm" (ngSubmit)="saveUser()">
+<main>
+    <h2 class="display-4 text-center pt-3 text-muted">Enter your Details Here</h2>
+<form class=" w-75  p-5 container shadow" [formGroup]="signupForm" (ngSubmit)="saveUser()">
     <!-- <div class="form-group">
         <label for="id">Id:</label>
         <input type="text" disabled class="form-control " id="id" formControlName="id" placeholder="Auto Generated">
@@ -37,3 +38,4 @@
         <input type="submit" [disabled]="!signupForm.valid" class="btn  btn-success px-5 mx-3">
     </div>
 </form>
+</main>

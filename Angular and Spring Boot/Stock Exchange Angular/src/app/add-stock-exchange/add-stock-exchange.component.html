@@ -1,34 +1,58 @@
-<h2 class="display-4 text-center text-muted my-3">Add New Stock Exchange</h2>
+<h2 class="display-5 text-muted text-center my-2">Add Stock Exchange</h2>
+<hr>
 
-<div class="container">
+<div class="row no-gutters">
 
-    <form class="form-group w-50 container" [formGroup]="addStockExchange" (ngSubmit)="saveExchange()">
+    <div class="w-25 border-right  col-3 h-75">
 
-        <div class="formGroup">
-            <label for="id">id:</label>
-            <input type="text" class="form-control" formControlName="id" id="id" placeholder="id">
-        </div>
-        <div class="formGroup">
-            <label for="stockExchangeName">Stock Exhange Name:</label>
-            <input type="text" class="form-control" formControlName="stockExchangeName" id="stockExchangeName"
-                placeholder="Enter name of stock exchange">
-        </div>
-        <div class="formGroup">
-            <label for="breif">Breif:</label>
-            <input type="text" class="form-control" formControlName="breif" id="breif" placeholder="not more than 50 words">
-        </div>
-        <div class="formGroup">
-            <label for="address">Contact Address:</label>
-            <input type="text" class="form-control" formControlName="address" id="address" placeholder="enter contact address">
-        </div>
-        <div class="formGroup">
-            <label for="remarks">Remarks:</label>
-            <input type="text" class="form-control" formControlName="remarks" id="remarks" placeholder=" not more than 100 words">
-        </div>
-        <div class="text-center mt-3">
-            <input type="reset" class="btn  btn-info px-5 mr-2">
-            <input type="submit" class="btn btn-success px-5 ml-2">
+        <div class="list-group list-group-flush  text-center">
+            <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage
+                Company</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/users']">Manage Users</a>
+            <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-exchange']">Manage Exchange</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
+            <a class="list-group-item list-group-item-action " [routerLink]="['/manage-stockPrice']">Manage Stock
+                Price</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
         </div>
 
-    </form>
+    </div>
+
+
+    <div class="col container">
+
+        <form class=" w-50 container" [formGroup]="addStockExchange" (ngSubmit)="saveExchange()">
+
+            <div class="formGroup">
+                <label for="id">id:</label>
+                <input type="text" class="form-control" formControlName="id" id="id" placeholder="id">
+            </div>
+            <div class="formGroup">
+                <label for="stockExchangeName">Stock Exhange Name:</label>
+                <input type="text" class="form-control" formControlName="stockExchangeName" id="stockExchangeName"
+                    placeholder="Enter name of stock exchange">
+            </div>
+            <div class="formGroup">
+                <label for="breif">Breif:</label>
+                <input type="text" class="form-control" formControlName="breif" id="breif"
+                    placeholder="not more than 50 words">
+            </div>
+            <div class="formGroup">
+                <label for="address">Contact Address:</label>
+                <input type="text" class="form-control" formControlName="address" id="address"
+                    placeholder="enter contact address">
+            </div>
+            <div class="formGroup">
+                <label for="remarks">Remarks:</label>
+                <input type="text" class="form-control" formControlName="remarks" id="remarks"
+                    placeholder=" not more than 100 words">
+            </div>
+            <div class="text-center mt-3">
+                <input type="reset" class="btn  btn-info px-5 mr-2">
+                <input type="submit" class="btn btn-success px-5 ml-2">
+            </div>
+
+        </form>
+    </div>
 </div>

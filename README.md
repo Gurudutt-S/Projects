@@ -17,3 +17,5 @@
 25 FEB 2020 [Day 47] : user e-mail verification
 
 26 FEB 2020 [Day 48] : Angular Modifications
+
+27 FEB 2020 [Day 49] : profiles

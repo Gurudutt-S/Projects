@@ -1,7 +1,6 @@
 main{
     background-image: url('../../assets/images/back1.jpg');
     background-size: cover;
-    border-radius: 10px;
   }
 
   input[type=text]{

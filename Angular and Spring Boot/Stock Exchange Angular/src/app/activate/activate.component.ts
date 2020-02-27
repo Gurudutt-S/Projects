@@ -19,10 +19,10 @@ export class ActivateComponent implements OnInit {
     str = str.substring(0, str.length - 1);
     this.service.serviceActivation({ email: str }).subscribe(dt => {
       if (dt.result == 1) {
-        this.msg = "activation successfull"
+        this.msg = "Congratulations!!! your account activated.."
       }
       else {
-        this.msg = "already activated"
+        this.msg = "Your account is already activated"
       }
     });
   }

@@ -1,21 +1,29 @@
-<h2 class="display-5 text-muted text-center my-2">Welcome Admin</h2>
+<h2 class="display-5 text-muted text-center my-3">Welcome Admin</h2>
 <hr>
 
-<div class="row no-gutters">
-
-    <div class="list-group list-group-flush text-center px-0 border-right col-3">
-        <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
-        <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
-        <a class="list-group-item list-group-item-action" [routerLink]="['/users']">Manage Users</a>
-        <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">Manage Exchange</a>
-        <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
-        <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">Manage Stock
-            Price</a>
-        <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
+<div class="row no-gutters border-right">
+    <div class="w-25 border-right  col-2 h-75">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']"><i
+                    class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Import Data</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']"><i
+                    class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp; Manage Company</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/users']">
+                <i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp; Manage Users</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">
+                <i class="fa fa-exchange fa-lg" aria-hidden="true"></i>&nbsp; Manage Exchange</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">
+                <i class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; Manage IPO</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">
+                <i class="fa fa-inr fa-lg" aria-hidden="true"></i>&nbsp; Manage Stock
+                Price</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">
+                <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp;Logout</a>
+        </div>
     </div>
 
     <div class="col">
-            <h4 class=" text-info">&lt;-----Select through the options</h4>
+        <h4 class=" text-info">&lt;-----Select through the options</h4>
     </div>
 
 </div>

@@ -1,46 +1,52 @@
-<h2 class="display-5 text-center my-2 text-muted">Update User</h2>
+<h2 class="display-5 text-center my-3 text-muted"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i>&nbsp;Update User
+</h2>
 <hr>
 
 <div class="row no-gutters">
 
-    <div class="w-25 border-right  col-3 h-75">
+    <div class="w-25 border-right  col-2 h-75">
 
-        <div class="list-group list-group-flush  text-center">
-            <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
-            <a class="list-group-item list-group-item-action active" [routerLink]="['/users']">Manage Users</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">Manage Exchange</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">Manage Stock
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action " [routerLink]="['/import-data']"><i
+                    class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Import Data</a>
+            <a class="list-group-item list-group-item-action " [routerLink]="['/manage-company']"><i
+                    class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp; Manage Company</a>
+            <a class="list-group-item list-group-item-action bg-info text-light" [routerLink]="['/users']">
+                <i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp; Manage Users</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">
+                <i class="fa fa-exchange fa-lg" aria-hidden="true"></i>&nbsp; Manage Exchange</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">
+                <i class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; Manage IPO</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">
+                <i class="fa fa-inr fa-lg" aria-hidden="true"></i>&nbsp; Manage Stock
                 Price</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">
+                <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp;Logout</a>
         </div>
 
     </div>
 
     <div class="container col">
 
-        <form class=" w-50 container" [formGroup]="updateUser" (ngSubmit)="saveUser()">
+        <form class=" w-75 container" [formGroup]="updateUser" (ngSubmit)="saveUser()">
 
-            <div class="form-group">
-                <label for="id">Id:</label>
-                <input type="text" class="form-control " id="id" formControlName="id" placeholder="Enter your ID"
-                    disabled>
-            </div>
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" class="form-control" id="username" formControlName="username"
-                    placeholder=" Should contain letters and numbers">
+            <div class="row">
+                <div class="form-group col">
+                    <label for="id">Id:</label>
+                    <input type="text" class="form-control " id="id" formControlName="id" placeholder="Enter your ID"
+                        disabled>
+                </div>
+                <div class="form-group col">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" formControlName="username"
+                        placeholder=" Should contain letters and numbers">
+                </div>
+
             </div>
             <div class="form-group">
                 <label for="password">password:</label>
                 <input type="password" class="form-control" id="password" formControlName="password"
                     placeholder=" Use Strong password">
-            </div>
-            <div class="form-group">
-                <label for="userType">User type:</label>
-                <input type="text" class="form-control" id="userType" formControlName="userType"
-                    placeholder=" Enter user type">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>

@@ -34,7 +34,7 @@ export class UserServiceService {
   }
 
   serviceActivation(obj) {
-    return this.httpClient.post('http://localhost:8080/users', obj)
+    return this.httpClient.put('http://localhost:8002/activate', obj)
   }
 
   isAdmin(): boolean {

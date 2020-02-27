@@ -1,20 +1,28 @@
-<h2 class="display-5 text-center text-muted my-2">Upload Excel</h2>
+<h2 class="display-5 text-center text-muted my-3"><i class="fa fa-file-excel-o fa-lg" aria-hidden="true"></i>
+    &nbsp;Upload
+    Excel</h2>
 <hr>
 
 <div class="row no-gutters">
 
+    <div class="w-25 border-right col-2 ">
 
-    <div class="w-25 border-right col-3 ">
-
-        <div class="list-group list-group-flush text-center">
-            <a class="list-group-item list-group-item-action active" [routerLink]="['/import-data']">Import Data</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/users']">Manage Users</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">Manage Exchange</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">Manage Stock
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action bg-info text-light" [routerLink]="['/import-data']"><i
+                    class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Import Data</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']"><i
+                    class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp; Manage Company</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/users']">
+                <i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp; Manage Users</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">
+                <i class="fa fa-exchange fa-lg" aria-hidden="true"></i>&nbsp; Manage Exchange</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">
+                <i class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; Manage IPO</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">
+                <i class="fa fa-inr fa-lg" aria-hidden="true"></i>&nbsp; Manage Stock
                 Price</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">
+                <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp;Logout</a>
         </div>
 
     </div>
@@ -27,7 +35,7 @@
             </div>
 
             <div class="float-right mt-2">
-                <input type="submit" class="btn btn-success px-5">
+                <input type="submit" class="btn border-dark px-5">
             </div>
         </form>
 

@@ -1,24 +1,30 @@
-<h2 class="display-5 text-muted text-center my-2">Manage Exchange</h2>
+<h2 class="display-5 text-muted text-center my-3"><i class="fa fa-exchange fa-lg" aria-hidden="true"></i>&nbsp; Manage Exchange</h2>
 <hr>
 <div class="row no-gutters">
-    <div class="w-25 border-right  col-3 h-75">
+    <div class="w-25 border-right  col-2 h-75">
 
-        <div class="list-group list-group-flush  text-center">
-            <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']">Import Data</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']">Manage Company</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/users']">Manage Users</a>
-            <a class="list-group-item list-group-item-action active" [routerLink]="['/manage-exchange']">Manage
-                Exchange</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">Manage IPO</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">Manage Stock
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']"><i
+                    class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Import Data</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']"><i
+                    class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp; Manage Company</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/users']">
+                <i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp; Manage Users</a>
+            <a class="list-group-item list-group-item-action  bg-info text-light" [routerLink]="['/manage-exchange']">
+                <i class="fa fa-exchange fa-lg" aria-hidden="true"></i>&nbsp; Manage Exchange</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">
+                <i class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; Manage IPO</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">
+                <i class="fa fa-inr fa-lg" aria-hidden="true"></i>&nbsp; Manage Stock
                 Price</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">Logout</a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">
+                <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp;Logout</a>
         </div>
 
     </div>
     <div class="container float-right col w-75">
-        <table class="table text-center">
-            <tr>
+        <table class="table text-center table-striped table-hover table-light">
+            <tr class="text-info">
                 <th>Id</th>
                 <th>Stock Exhange Name</th>
                 <th>Breif</th>
@@ -26,15 +32,17 @@
                 <th>Remarks</th>
                 <th colspan="2">Actions</th>
             </tr>
-            <tr *ngFor="let exchange of exchangeList">
-                <td>{{exchange.id}}</td>
-                <td>{{exchange.stockExchangeName}}</td>
-                <td>{{exchange.breif}}</td>
-                <td>{{exchange.address}}</td>
-                <td>{{exchange.remarks}}</td>
-                <td><button class="btn btn-warning btn-sm" (click)="updateExchange(exchange)">Update</button></td>
-                <td><button class="btn btn-danger btn-sm" (click)="deleteExchange(exchange)">Delete</button></td>
-            </tr>
+            <tbody>
+                <tr *ngFor="let exchange of exchangeList">
+                    <td>{{exchange.id}}</td>
+                    <td>{{exchange.stockExchangeName}}</td>
+                    <td>{{exchange.breif}}</td>
+                    <td>{{exchange.address}}</td>
+                    <td>{{exchange.remarks}}</td>
+                    <td><button class="btn btn-warning btn-sm" (click)="updateExchange(exchange)">Update</button></td>
+                    <td><button class="btn btn-danger btn-sm" (click)="deleteExchange(exchange)">Delete</button></td>
+                </tr>
+            </tbody>
         </table>
 
         <div class="text-center">

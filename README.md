@@ -19,3 +19,5 @@
 26 FEB 2020 [Day 48] : Angular Modifications
 
 27 FEB 2020 [Day 49] : profiles
+
+28 FEB 2020 [Day 50] : spring boot services.

@@ -1,4 +1,5 @@
-<h2 class="display-5 text-muted text-center my-3"><i class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; Manage IPO</h2>
+<h2 class="display-5 text-muted text-center my-3"><i class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; Manage IPO
+</h2>
 <hr>
 <div class="row no-gutters">
     <div class="w-25 border-right  col-2 h-75">
@@ -23,7 +24,7 @@
 
     </div>
     <div class="container float-right col w-75">
-        <table class="table text-center table-striped table-hover table-light">
+        <table class="table table-striped table-hover table-light">
             <tr>
                 <th>Id</th>
                 <th>Company Name</th>
@@ -41,14 +42,15 @@
                     <td>{{ipo.pricePerShare}}</td>
                     <td>{{ipo.noOfShares}}</td>
                     <td>{{ipo.openDate}}</td>
-                    <td><button class="btn btn-warning btn-sm" (click)="updateIpo(ipo)">Update</button></td>
-                    <td><button class="btn btn-danger btn-sm" (click)="deleteIpo(ipo)">Delete</button></td>
+                    <td><i class="fa fa-pencil fa-lg" aria-hidden="true" (click)="updateIpo(ipo)"></i></td>
+                    <td><i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteIpo(ipo)"></i></td>
                 </tr>
             </tbody>
         </table>
 
         <div class="text-center">
-            <button class="btn btn-success w-25" routerLink="/add-ipo">Add IPO</button>
+            <button class="btn border-dark" routerLink="/add-ipo"><i class="fa fa-money fa-lg"
+                    aria-hidden="true"></i>&nbsp; Add IPO</button>
         </div>
 
     </div>

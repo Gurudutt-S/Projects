@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 101,
+      "name": "Aniketh Andale",
+      "email": "asd@asd.com",
+      "phone": 29874209438
+    },
+    {
+      "id": 102,
+      "name": "Sai Ram",
+      "email": "akdjha@asd.com",
+      "phone": 3897923843
+    },
+    {
+      "id": 103,
+      "name": "Tanu Sri",
+      "email": "asdfed@asd.com",
+      "phone": 34234342111
+    },
+    {
+      "id": 123,
+      "name": "asd",
+      "email": "asd@ada",
+      "phone": 213123123
+    }
+  ]
+}

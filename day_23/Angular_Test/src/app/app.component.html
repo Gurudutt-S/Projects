@@ -1,0 +1,43 @@
+<h2 class="display-1 text-center my-5">{{title}}</h2>
+
+<div class="text-center container">
+  <table class="table ">
+    <thead class="table-secondary">
+      <tr>
+        <th>user id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>phone</th>
+      </tr>
+    </thead>
+    <tbody class="table-info">
+      <tr>
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<a href="Register" class="btn">Click here</a>
+<a href="addUser" class="btn">Add User</a>
+
+<router-outlet></router-outlet>
+
+
+<button style="color:green" [ngStyle]="MyStyle()">GDS</button>
+
+<button class='colorClass' [ngClass]='applyClasses()'>Pankaj Saini</button>
+
+
+<p *ngIf="showElement">Show Element</p>      
+	<div [ngSwitch]="inpvalue">      
+	<p style='color:blue'  *ngSwitchCase="1">You have selected M S Dhoni</p>      
+	<p style='color:blue'  *ngSwitchCase="2">You have selected Sachin Tendulkar</p>      
+	<p style='color:blue'  *ngSwitchCase="3">You have selected Satyaprakash Samantaray</p>     
+	<p style='color:red'  *ngSwitchDefault>Sorry! Invalid selection....</p>      
+  </div>
+  
+<app-test></app-test>

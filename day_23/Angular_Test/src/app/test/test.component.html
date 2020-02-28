@@ -1,0 +1,18 @@
+{{today}}
+
+<table class="table" >
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Actions</td>
+    </tr>
+    <tr *ngFor="let user of user">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button></td>
+    </tr>
+</table>

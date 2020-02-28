@@ -4,12 +4,21 @@
     margin:0;
     box-sizing: border-box;
 }
-
-main{
-height:85vh;
+body{
+  background-image: url('assets/images/back2.jpg');
+  background-size: cover;
 }
 
-.no-gutters {
+main{
+min-height:85vh;
+}
+
+.list-group-item {
+  background-color: rgba(0, 0, 0, 0.2);
+  color:white;
+  }
+
+.row {
     margin-right: 0;
     margin-left: 0;
   

@@ -1,0 +1,68 @@
+<div class="responsive container rounded w-75 my-4 py-4 px-5 shadow  shadow form-back  text-center">
+    <form [formGroup]="placeOrderForm">
+        <h2 class="text-center pb-4 text-danger display-4">Place Gift Order</h2>
+        <div class="form-group">
+            <label for="giftCardAmount">Gift Card Amount :</label>
+            <input type="number" class="form-control-sm " formControlName="giftCardRAmount" size="2"
+                id="giftCardRAmount" placeholder="INR" name="giftCardAmount" required> :
+            <input type="text" class="form-control-sm " formControlName="giftCardPAmount" size="2" id="giftCardPAmount"
+                placeholder="Paisa" name="giftCardAmount" size="2" pattern="[0-9]*" minlength=0 maxlength=2>
+        </div>
+        <div class="form-group">
+            <label for="receipentName">Receipent Name :</label>
+            <input type="text" class="form-control-md" formControlName="receipentFirstName" id="receipentFirstName"
+                placeholder="Enter First Name" name="ReceipentFirstName" pattern="[A-Za-z\\s]*" required> :
+            <input type="text" class="form-control-md" formControlName="receipentLastName" id="receipentLastName"
+                placeholder="Enter Last Name" name="ReceipentName" pattern="[A-Za-z\\s]*">
+        </div>
+        <div class="responsive shadow rounded h-50">
+            <div class="card-body">
+                <h3 class="text-center text-muted">Shipping Address</h3>
+                <div class="form-group">
+                    <input type="text" class="form-control " formControlName="street" id="street"
+                        placeholder="Enter Street Address" name="saddress" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control-sm" formControlName="city" id="city" placeholder="Enter City"
+                        name="city" required> :
+                    <input type="text" class="form-control-sm" formControlName="state" id="state"
+                        placeholder="Enter state" name="state" required>
+                </div>
+                <div class="form-group">
+                    <select id="country" formControlName="country" class="rounded">
+                        <option value="">Select</option>
+                        <option value="India">India</option>
+                        <option value="London">London</option>
+                        <option value="Australia">Australia</option>
+                        <option value="America">America</option>
+                    </select> :
+                    <input type="text" class="form-control-md " size="9" maxlength=6 minlength=6
+                        formControlName="pincode" id="pincode" placeholder="Enter Pincode" name="pincode"
+                        pattern="[0-9]*" required>
+                </div>
+            </div>
+        </div><br>
+        <div class="form-group">
+            <label for="buyer'sname">Buyer's Name :</label>
+            <input type="text" class="form-control-sm" formControlName="buyerFirstName" id="buyerFirstName"
+                placeholder="Enter FirstName" name="buyer'sFirstName" pattern="[A-Za-z\\s]*" required> :
+            <input type="text" class="form-control-sm" formControlName="buyerLastName" id="buyerLastName"
+                placeholder="Enter LastName" name="buyer'sLastNmae" pattern="[A-Za-z\\s]*" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number :</label>
+            <input type="text" max-length="10" class="form-control" formControlName="phoneNumber" id="phoneNumber"
+                placeholder="Enter Phone Number" name="phoneNumber" maxlength=10 minlength=10 size="10" pattern="[0-9]*"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" class="form-control-sm" formControlName="email" id="email" placeholder="Enter Email"
+                name="email" required>
+        </div>
+        <div class="text-center my-4">
+            <button type="submit" class="btn border-dark w-50" (click)="addPlaceOrder()"
+                [disabled]="!placeOrderForm.valid"><i class="fa fa-shopping-cart fa-lg"></i>&nbsp; Place Order</button>
+        </div>
+    </form>
+</div>

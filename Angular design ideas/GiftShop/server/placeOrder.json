@@ -1,0 +1,20 @@
+{
+  "placeOrder": [
+    {
+      "id": "101",
+      "giftCardRAmount": "100",
+      "giftCardPAmount": "33",
+      "receipentFirstName": "B",
+      "receipentLastName": "Vaishnavi",
+      "street": "Sai baba temple lane",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "country": "India",
+      "pincode": "50013",
+      "buyerFirstName": "Prasanna",
+      "buyerLastName": "laxmi",
+      "phoneNumber": "9561616163",
+      "email": "vaishnavi@gmail.com"
+    }
+  ]
+}

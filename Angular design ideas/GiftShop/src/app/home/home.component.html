@@ -1,26 +1,88 @@
-<h2 class="text-center display-4">Order List</h2>
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../../assets/images/1.jpg" class="d-block w-100" height="400px" alt="img1">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 class="text-dark display-5">Friend</h2>
+                <p>friendship is a gift with strings attached heartStrings </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="../../assets/images/2.jpg" class="d-block w-100" height="400px" alt="img2">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 class="text-dark display-5">Love</h2>
+                <p> To love  another person is to see a face of god</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="../../assets/images/4.jpg" class="d-block w-100" height="400px" alt="img3">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 class="text-dark display-5">Family</h2>
+                <p>I sustain myself with the love of family</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
 
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>sunday</th>
-                <th>monday</th>
-                <th>tuesday</th>
-                <th>wednesday</th>
-                <th>thursday</th>
-                <th>friday</th>
-                <th>saturday</th>
-            </tr>
-        </thead>
-        <tbody>
-            <td>maths</td>
-            <td>science</td>
-            <td>biology</td>
-            <td>physics</td>
-            <td>chemistry</td>
-            <td>lab</td>
-            <td>computer</td>
-        </tbody>
-    </table>
+<!-- 
+
+<div class="container text-center bg-custom mt-3 p-3">
+    <h2 class="text-light display-4">Welcome to Gift Shop</h2>
+    <h2 class="display-5 text-light">You are at the perfect place for your Gift Shopping</h2>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="card-deck pt-5 mx-auto">
+            <div class="col pb-3">
+                <a [routerLink]="['/place-order']" style="text-decoration: none;">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-header">
+                            <img src="../../assets/images/13.jpg" width="200px">
+                        </div>
+                        <div class="card-body">
+                            <h2 class="text-center text-dark">Friend</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col pb-3">
+                <a [routerLink]="['/place-order']" style="text-decoration: none;">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-header">
+                            <img src="../../assets/images/12.jpg" width="200px">
+                        </div>
+                        <div class="card-body">
+                            <h2 class="text-center text-dark">Love</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col pb-3">
+                <a [routerLink]="['/place-order']" style="text-decoration: none;">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-header">
+                            <img src="../../assets/images/10.jpg" width="200px">
+                        </div>
+                        <div class="card-body">
+                            <h2 class="text-center text-dark">Family</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

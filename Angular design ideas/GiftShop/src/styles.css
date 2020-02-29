@@ -7,7 +7,7 @@
 }
 
 body{
-    background-image: url('assets/images/2.jpg');
+    background-image: url('assets/images/3.jpg');
     background-size: cover;
     background-repeat: repeat-y;
 }
@@ -20,3 +20,8 @@ main{
     margin-left: 0;
     margin-right: 0;
 }
+
+.bg-custom{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+

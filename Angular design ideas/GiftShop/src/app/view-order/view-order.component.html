@@ -1,0 +1,27 @@
+<h2 class="text-center display-4 text-white">Order List</h2>
+
+<div class="table-responsive">
+    <table class="table table-light table-striped table-hover">
+        <thead>
+            <tr>
+                <th class="h5">Buyer's Name</th>
+                <th class="h5">Shipping Address</th>
+                <th class="h5">City</th>
+                <th class="h5">Amount</th>
+                <th class="h5">Phone Number</th>
+                <th class="h5">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders">
+                <td>{{order.buyerFirstName}} {{order.buyerLastName}}</td>
+                <td>{{order.street}}</td>
+                <td>{{order.city}}</td>
+                <td>{{order.giftCardRAmount+"."+order.giftCardPAmount | currency:"INR"}}</td>
+                <td>{{order.phoneNumber}}</td>
+                <td><button class="btn"><i class="fa fa-trash fa-lg" (click)="deleteOrder(order)"></i></button>
+               <!-- <button class="btn btn-success" (click)="updateOrder(order)"> Update</button></td> -->
+            </tr>
+        </tbody>
+        </table>
+</div>

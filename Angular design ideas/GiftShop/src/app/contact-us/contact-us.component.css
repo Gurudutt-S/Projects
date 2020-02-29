@@ -1,0 +1,25 @@
+.form-back{
+    background-image: url('../../assets/images/7.jpg');
+    background-size: cover;
+}
+
+input[type=text],[type=number],[type=email],textarea{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    border-bottom-color: steelblue;
+  }
+  
+  input:focus{
+    outline: none !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    border-bottom-color: crimson;
+  }
+  
+  .form-control{
+    box-shadow: none;
+  }

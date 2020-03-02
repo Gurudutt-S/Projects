@@ -8,12 +8,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserServiceService {
 
-  httpUrl = "http://localhost:8002/user/";
+  httpUrl = "http://localhost:8000/user/";
 
   constructor(private httpClient: HttpClient) { }
 
   getUserData(): Observable<User[]> {
-    return this.httpClient.get<User[]>(this.httpUrl);
+    return this.httpClient.get<User[]>('http://localhost:8000/user');
   }
 
   saveNewUser(user: User): Observable<User> {
@@ -34,7 +34,7 @@ export class UserServiceService {
   }
 
   serviceActivation(obj) {
-    return this.httpClient.put('http://localhost:8002/activate', obj)
+    return this.httpClient.put('http://localhost:8000/activate', obj)
   }
 
   isAdmin(): boolean {

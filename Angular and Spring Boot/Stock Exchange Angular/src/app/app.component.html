@@ -14,22 +14,22 @@
         </ul>
     </div> -->
 
-    <nav class="navbar navbar-expand-md navbar-light  ">
+    <nav class="navbar navbar-expand-md navbar-light ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <a routerLink="/home"><img src="../assets/images/logo.png" width="80" height="80" alt="logo"></a>
-            <h2 class="display-4 text-white text-info">&nbsp;<span class="text-dark">S</span>tock <span
-                    class="text-dark">C</span>harts</h2>
+            <h2 class="display-4 text-white text-muted">&nbsp;<span class="text-dark">S</span>tock <span
+                    class="text-dark ">C</span>harts</h2>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a [routerLink]="['home']" class="nav-link"
-                        [routerLinkActive]="['active']">HOME</a></li>
-                <li class="nav-item"><a [routerLink]="['contact']" class="nav-link"
-                        [routerLinkActive]="['active']">CONTACT US</a></li>
-                <li class="nav-item"><a [routerLink]="['about']" class="nav-link" [routerLinkActive]="['active']">ABOUT
-                        US</a></li>
+                <li class="nav-item"><a [routerLink]="['home']" class="nav-link" [routerLinkActive]="['active']"><i
+                            class="fa fa-home"></i>HOME</a></li>
+                <li class="nav-item"><a [routerLink]="['contact']" class="nav-link" [routerLinkActive]="['active']"><i
+                            class="fa fa-phone"></i>CONTACT US</a></li>
+                <li class="nav-item"><a [routerLink]="['about']" class="nav-link" [routerLinkActive]="['active']">
+                        <i class="fa fa-user"></i> ABOUT US</a></li>
             </ul>
 
         </div>
@@ -50,7 +50,7 @@
 <!-- Footer -->
 <footer class="page-footer sticky-bottom font-small bg-dark text-light">
     <div class="text-center py-3">&copy; 2020 Copyright:
-        <a href="#">Stock Charts</a>
+        <a routerLink="/home">Stock Charts</a>
     </div>
 
 </footer>

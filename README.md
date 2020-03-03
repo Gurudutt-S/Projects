@@ -23,3 +23,5 @@
 28 FEB 2020 [Day 50] : Spring Boot Services
 
 28 FEB 2020 [Day 50] : spring boot services.
+
+3 FEB 2020 [Day 53] : netflix eureka, ribbon

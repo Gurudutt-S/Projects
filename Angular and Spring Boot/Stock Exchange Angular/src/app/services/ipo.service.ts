@@ -8,7 +8,7 @@ import { Ipo } from '../models/ipo';
 })
 export class IpoService {
 
-  httpUrl = "http://localhost:8002/ipo/";
+  httpUrl = "http://localhost:8004/ipo/";
 
   constructor(private httpClient: HttpClient) { }
 

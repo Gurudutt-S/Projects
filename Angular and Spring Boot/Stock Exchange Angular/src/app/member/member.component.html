@@ -1,4 +1,4 @@
-<h2 class="display-5 text-muted text-center my-3"><i class="fa fa-user fa-lg text-info" aria-hidden="true"></i>&nbsp; Users List
+<h2 class="display-5 text-muted text-center my-3"><i class="fa fa-user fa-lg " aria-hidden="true"></i>&nbsp; Users List
 </h2>
 <hr>
 <div class="row no-gutters ">
@@ -6,7 +6,7 @@
 
         <div class="list-group list-group-flush">
             <a class="list-group-item list-group-item-action " [routerLink]="['/import-data']"><i
-                    class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Import Data</a>
+                    class="fa fa-file-excel-o fa-lg" aria-hidden="true"></i>&nbsp; Import Data</a>
             <a class="list-group-item list-group-item-action " [routerLink]="['/manage-company']"><i
                     class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp; Manage Company</a>
             <a class="list-group-item list-group-item-action bg-info text-light" [routerLink]="['/users']">
@@ -24,30 +24,32 @@
 
     </div>
     <div class="container float-right col w-75">
-        <table class="table  table-striped table-hover table-light">
-            <tr>
-                <th>Id</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>User Type</th>
-                <th>E-mail</th>
-                <th>Phone</th>
-                <th colspan="2">Actions</th>
-            </tr>
-            <tbody>
-                <tr *ngFor="let user of userList">
-                    <td>{{user.id}}</td>
-                    <td>{{user.username}}</td>
-                    <td>{{user.password}}</td>
-                    <td>{{user.userType}}</td>
-                    <td>{{user.email}}</td>
-                    <td>{{user.phone}}</td>
-                    <td><i class="fa fa-pencil fa-lg" aria-hidden="true" (click)="updateUser(user)"></i></td>
-                    <td><i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteUser(user)"></i></td>
-
+        <div class="table-responsive">
+            <table class="table  table-striped table-hover table-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>User Type</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                    <th colspan="2">Actions</th>
                 </tr>
-            </tbody>
-        </table>
+                <tbody>
+                    <tr *ngFor="let user of userList">
+                        <td>{{user.id}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.password}}</td>
+                        <td>{{user.userType}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phone}}</td>
+                        <td><i class="fa fa-pencil fa-lg" aria-hidden="true" (click)="updateUser(user)"></i></td>
+                        <td><i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteUser(user)"></i></td>
+    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <div class="text-center">
             <button class="btn border-dark " routerLink="/sign_up"> <i class="fa fa-user-plus fa-lg"

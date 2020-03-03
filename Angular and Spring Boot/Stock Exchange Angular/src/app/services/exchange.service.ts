@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ExchangeService {
 
-  httpUrl = "http://localhost:8002/stockExchange/";
+  httpUrl = "http://localhost:8005/stockExchange/";
 
   constructor(private httpClient: HttpClient) { }
 

@@ -24,29 +24,31 @@
 
     </div>
     <div class="container float-right col w-75">
-        <table class="table table-striped table-hover table-light">
-            <tr>
-                <th>Id</th>
-                <th>Company Name</th>
-                <th>Stock Exchange</th>
-                <th>Price per Share</th>
-                <th>Total Share</th>
-                <th>Open Date</th>
-                <th colspan="2">Actions</th>
-            </tr>
-            <tbody>
-                <tr *ngFor="let ipo of ipoList">
-                    <td>{{ipo.id}}</td>
-                    <td>{{ipo.companyName}}</td>
-                    <td>{{ipo.stockExchange}}</td>
-                    <td>{{ipo.pricePerShare}}</td>
-                    <td>{{ipo.noOfShares}}</td>
-                    <td>{{ipo.openDate}}</td>
-                    <td><i class="fa fa-pencil fa-lg" aria-hidden="true" (click)="updateIpo(ipo)"></i></td>
-                    <td><i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteIpo(ipo)"></i></td>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Company Name</th>
+                    <th>Stock Exchange</th>
+                    <th>Price per Share</th>
+                    <th>Total Share</th>
+                    <th>Open Date</th>
+                    <th colspan="2">Actions</th>
                 </tr>
-            </tbody>
-        </table>
+                <tbody>
+                    <tr *ngFor="let ipo of ipoList">
+                        <td>{{ipo.id}}</td>
+                        <td>{{ipo.companyName}}</td>
+                        <td>{{ipo.stockExchange}}</td>
+                        <td>{{ipo.pricePerShare}}</td>
+                        <td>{{ipo.noOfShares}}</td>
+                        <td>{{ipo.openDate}}</td>
+                        <td><i class="fa fa-pencil fa-lg" aria-hidden="true" (click)="updateIpo(ipo)"></i></td>
+                        <td><i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteIpo(ipo)"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <div class="text-center">
             <button class="btn border-dark" routerLink="/add-ipo"><i class="fa fa-money fa-lg"

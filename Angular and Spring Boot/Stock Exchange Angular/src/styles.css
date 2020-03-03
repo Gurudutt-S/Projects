@@ -19,8 +19,8 @@ min-height:85vh;
   }
 
 .row {
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
   
     /* > .col,
     > [class*="col-"] {

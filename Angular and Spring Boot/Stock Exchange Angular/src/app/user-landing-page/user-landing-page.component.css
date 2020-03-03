@@ -1,0 +1,8 @@
+.card-hover:hover{
+    background-color: rgb(73, 185, 185) !important;
+    color: white !important;
+}
+
+.card-hover{
+    transition: all ease-in 0.2s;
+}

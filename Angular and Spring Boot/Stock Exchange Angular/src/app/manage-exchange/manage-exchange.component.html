@@ -24,27 +24,29 @@
 
     </div>
     <div class="container float-right col w-75">
-        <table class="table table-striped table-hover table-light">
-            <tr>
-                <th>Id</th>
-                <th>Stock Exhange Name</th>
-                <th>Breif</th>
-                <th>Contact Address</th>
-                <th>Remarks</th>
-                <th colspan="2">Actions</th>
-            </tr>
-            <tbody>
-                <tr *ngFor="let exchange of exchangeList">
-                    <td>{{exchange.id}}</td>
-                    <td>{{exchange.stockExchangeName}}</td>
-                    <td>{{exchange.breif}}</td>
-                    <td>{{exchange.address}}</td>
-                    <td>{{exchange.remarks}}</td>
-                    <td><i class="fa fa-pencil fa-lg" aria-hidden="true" (click)="updateExchange(exchange)"></i></td>
-                    <td><i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteExchange(exchange)"></i></td>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Stock Exhange Name</th>
+                    <th>Breif</th>
+                    <th>Contact Address</th>
+                    <th>Remarks</th>
+                    <th colspan="2">Actions</th>
                 </tr>
-            </tbody>
-        </table>
+                <tbody>
+                    <tr *ngFor="let exchange of exchangeList">
+                        <td>{{exchange.id}}</td>
+                        <td>{{exchange.stockExchangeName}}</td>
+                        <td>{{exchange.breif}}</td>
+                        <td>{{exchange.address}}</td>
+                        <td>{{exchange.remarks}}</td>
+                        <td><i class="fa fa-pencil fa-lg" aria-hidden="true" (click)="updateExchange(exchange)"></i></td>
+                        <td><i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteExchange(exchange)"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <div class="text-center">
             <button class="btn border-dark " routerLink="/add-exchange"><i class="fa fa-exchange fa-lg"

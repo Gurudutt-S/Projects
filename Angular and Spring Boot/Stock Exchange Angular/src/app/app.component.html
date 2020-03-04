@@ -15,14 +15,14 @@
     </div> -->
 
     <nav class="navbar navbar-expand-md navbar-light ">
+        <a routerLink="/home"><img src="../assets/images/logo.png" width="80" height="80" alt="logo"></a>
+        <h2 class="display-4  text-white text-muted">&nbsp;<span class="text-dark">S</span>tock <span
+                class="text-dark ">C</span>harts</h2>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a routerLink="/home"><img src="../assets/images/logo.png" width="80" height="80" alt="logo"></a>
-            <h2 class="display-4 text-white text-muted">&nbsp;<span class="text-dark">S</span>tock <span
-                    class="text-dark ">C</span>harts</h2>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a [routerLink]="['home']" class="nav-link" [routerLinkActive]="['active']"><i
                             class="fa fa-home"></i>HOME</a></li>
@@ -31,7 +31,6 @@
                 <li class="nav-item"><a [routerLink]="['about']" class="nav-link" [routerLinkActive]="['active']">
                         <i class="fa fa-user"></i> ABOUT US</a></li>
             </ul>
-
         </div>
     </nav>
 

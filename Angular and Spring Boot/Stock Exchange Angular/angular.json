@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/assets/font-awesome-4.7.0/css/font-awesome.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -121,6 +122,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "StockCharts"
 }

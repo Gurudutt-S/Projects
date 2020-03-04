@@ -25,3 +25,5 @@
 28 FEB 2020 [Day 50] : spring boot services.
 
 3 FEB 2020 [Day 53] : netflix eureka, ribbon
+
+4 FEB 2020 [Day 54] : Integration testing and mock testing.

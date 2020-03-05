@@ -1,8 +1,9 @@
 package com.cts.project.stockPriceservice;
 
 import java.util.List;
-import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +20,13 @@ public class StockPriceRestController {
 
 	@Autowired
 	StockPriceService stockPriceService;
+
+	@Autowired
+	private CompanyServiceProxy companyServiceProxy;
+
+//	Logger logger =LoggerFactory.getLogger(StockPriceRestController.class);
+	// or
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@GetMapping("/stockPrice")
 	public List<StockPrice> getAllStockPrice() {
@@ -46,6 +54,14 @@ public class StockPriceRestController {
 	public StockPrice updateStockPrice(@RequestBody StockPrice stockPrice) {
 		StockPrice price = stockPriceService.updateStockPrice(stockPrice);
 		return price;
+	}
+
+	@GetMapping("/stockPrice/company")
+	public List<CompanyDTO> getAllCompanyByStockPrice() {
+		logger.info("getAllCompany invoked......");
+		List<CompanyDTO> companyDto=companyServiceProxy.getAllCompany(); 
+		logger.info("Information --> {}", companyDto );
+		return companyDto;
 	}
 
 }

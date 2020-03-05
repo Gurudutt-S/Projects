@@ -40,5 +40,7 @@ public class StockPriceServiceImpl implements StockPriceService {
 		StockPrice price = stockPriceRepo.save(stockPrice);
 		return price;
 	}
+	
+	
 
 }

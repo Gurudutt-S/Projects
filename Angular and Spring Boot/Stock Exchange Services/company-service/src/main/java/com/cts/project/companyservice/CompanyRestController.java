@@ -21,6 +21,7 @@ public class CompanyRestController {
 
 	@Autowired
 	CompanyService companyService;
+	
 
 	@GetMapping("/company")
 	public List<Company> getAllCompany() {

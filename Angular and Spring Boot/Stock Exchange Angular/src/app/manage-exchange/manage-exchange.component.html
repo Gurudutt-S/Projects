@@ -1,29 +1,15 @@
 <h2 class="display-5 text-muted text-center my-3"><i class="fa fa-exchange fa-lg" aria-hidden="true"></i>&nbsp; Manage
     Exchange</h2>
 <hr>
-<div class="row no-gutters">
-    <div class="w-25 border-right  col-auto col-md-2 h-75">
 
-        <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action" [routerLink]="['/import-data']"><i
-                    class="fa fa-file-excel-o fa-lg" aria-hidden="true"></i>&nbsp; Import Data</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']"><i
-                    class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp; Manage Company</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/users']">
-                <i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp; Manage Users</a>
-            <a class="list-group-item list-group-item-action  bg-info text-light" [routerLink]="['/manage-exchange']">
-                <i class="fa fa-exchange fa-lg" aria-hidden="true"></i>&nbsp; Manage Exchange</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">
-                <i class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; Manage IPO</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">
-                <i class="fa fa-inr fa-lg" aria-hidden="true"></i>&nbsp; Manage Stock
-                Price</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">
-                <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp;Logout</a>
-        </div>
+<div class="text-center mb-3">
+    <button class="btn border-dark " routerLink="/add-exchange"><i class="fa fa-exchange fa-lg"
+            aria-hidden="true"></i>&nbsp; Add Exchange</button>
+</div>
 
-    </div>
-    <div class="container float-right col-auto col-md-10 w-75">
+<div class="row">
+
+    <div class="container-fluid col-12 col-md-10 w-75">
         <div class="table-responsive">
             <table class="table table-striped table-hover table-light">
                 <tr>
@@ -41,16 +27,12 @@
                         <td>{{exchange.breif}}</td>
                         <td>{{exchange.address}}</td>
                         <td>{{exchange.remarks}}</td>
-                        <td><i class="fa fa-pencil fa-lg" aria-hidden="true" (click)="updateExchange(exchange)"></i></td>
+                        <td><i class="fa fa-pencil fa-lg" aria-hidden="true" (click)="updateExchange(exchange)"></i>
+                        </td>
                         <td><i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteExchange(exchange)"></i></td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-
-        <div class="text-center">
-            <button class="btn border-dark " routerLink="/add-exchange"><i class="fa fa-exchange fa-lg"
-                    aria-hidden="true"></i>&nbsp; Add Exchange</button>
         </div>
 
     </div>

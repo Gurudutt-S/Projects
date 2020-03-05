@@ -1,29 +1,4 @@
-.card-hover:hover{
-    background-color: rgba(73, 185, 185) !important;
-    color: white !important;
-}
-
-.card-hover{
-    transition: all ease-in 0.2s;
-}
-
-
-@media (min-width: 576px){
-    .card-columns{
-        column-count: 2;
-    }
-}
-
-@media (min-width: 768px){
-    .card-columns{
-        column-count: 3;
-        width: 100%;
-    }
-}
-
-@media (min-width: 980px){
-    .card-columns{
-        column-count: 3;
-        width: 65%;
-    }
+.navbar-custom{
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 0px 5px 0.1px rgba(0, 0, 0, 0.5);
 }

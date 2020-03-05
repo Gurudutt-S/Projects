@@ -3,33 +3,11 @@
     Excel</h2>
 <hr>
 
-<div class="row no-gutters">
+<div class="row mt-5">
 
-    <div class="w-25 border-right col-auto col-md-2 ">
-
-        <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action bg-info text-light" [routerLink]="['/import-data']"><i
-                    class="fa fa-file-excel-o fa-lg" aria-hidden="true"></i>&nbsp; Import Data</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-company']"><i
-                    class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp; Manage Company</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/users']">
-                <i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp; Manage Users</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">
-                <i class="fa fa-exchange fa-lg" aria-hidden="true"></i>&nbsp; Manage Exchange</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">
-                <i class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; Manage IPO</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">
-                <i class="fa fa-inr fa-lg" aria-hidden="true"></i>&nbsp; Manage Stock
-                Price</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">
-                <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp;Logout</a>
-        </div>
-
-    </div>
-
-    <div class=" col-4 col-md-10 align-self-center" style="height: 250px;">
-        <div class="card" style="background: none;border: none;">
-            <form [formGroup]="uploadFile" class="custom-file form-control " style="width: 400px; margin: auto;">
+    <div class=" col-12">
+        <div class="card" style="background:none;border:none;">
+            <form [formGroup]="uploadFile" class="custom-file form-control" style="width: 400px; margin: auto;">
                 <div class="formGroup">
                     <input type="file" formControlName="file" class="formControl custom-file-input ">
                     <label class="custom-file-label" for="customFile">Choose file</label>

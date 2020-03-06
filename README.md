@@ -29,3 +29,5 @@
 4 FEB 2020 [Day 54] : Integration testing and mock testing.
 
 5 FEB 2020 [Day 55] : inter-services communication, netflix feingclient, zool. 
+
+6 FEB 2020 [Day 56] : Docker. 

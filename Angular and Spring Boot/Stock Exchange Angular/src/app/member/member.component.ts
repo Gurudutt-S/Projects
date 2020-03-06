@@ -34,7 +34,7 @@ export class MemberComponent implements OnInit {
   updateUser(user: User) {
     localStorage.removeItem('userId');
     localStorage.setItem('userId', user.id.toString());
-    this.router.navigate(['update-user']);
+    this.router.navigate(['admin/update-user']);
   }
 
 }

@@ -2,73 +2,43 @@
     Price</h2>
 <hr>
 
-<div class="row no-gutters">
+<div class="row">
+    <div class="container-fluid col-12 col-md-10">
+        <form class=" p-1 p-md-5 jumbotron shadow" [formGroup]="addStockPrice" (ngSubmit)="saveStockPrice()">
 
-    <div class="w-25 border-right col-auto h-75 col-md-2">
-
-        <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action " [routerLink]="['/import-data']"><i
-                    class="fa fa-file-excel-o fa-lg" aria-hidden="true"></i>&nbsp; Import Data</a>
-            <a class="list-group-item list-group-item-action " [routerLink]="['/manage-company']"><i
-                    class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp; Manage Company</a>
-            <a class="list-group-item list-group-item-action " [routerLink]="['/users']">
-                <i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp; Manage Users</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">
-                <i class="fa fa-exchange fa-lg" aria-hidden="true"></i>&nbsp; Manage Exchange</a>
-            <a class="list-group-item list-group-item-action " [routerLink]="['/manage-ipo']">
-                <i class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; Manage IPO</a>
-            <a class="list-group-item list-group-item-action bg-info text-light" [routerLink]="['/manage-stockPrice']">
-                <i class="fa fa-inr fa-lg" aria-hidden="true"></i>&nbsp; Manage Stock
-                Price</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">
-                <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp;Logout</a>
-        </div>
-
-    </div>
-
-    <div class="container col">
-
-        <div class="row">
-            <div class="col">
-                <form class="container p-1 p-md-5 jumbotron shadow" [formGroup]="addStockPrice"
-                    (ngSubmit)="saveStockPrice()">
-
-                    <div class="form-group ">
-                        <label for="companyCode">Company Code:</label>
-                        <input type="text" class="form-control" id="companyCode" formControlName="companyCode"
-                            placeholder=" Add Company Code Here">
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-12 col-md-6">
-                            <label for="stockExchange">Stock Exchange:</label>
-                            <input type="text" class="form-control" id="stockExchange" formControlName="stockExchange"
-                                placeholder=" Add Stock Exchange">
-                        </div>
-                        <div class="form-group col-12 col-md-6">
-                            <label for="currentPrice">Current Price :</label>
-                            <input type="number" class="form-control" id="currentPrice" formControlName="currentPrice"
-                                placeholder=" Price in Rupees">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-12 col-md-6">
-                            <label for="date">Date:</label>
-                            <input type="text" class="form-control" id="date" formControlName="date"
-                                placeholder="  dd/mm/yyyy">
-                        </div>
-                        <div class="form-group col-12 col-md-6">
-                            <label for="time">Time:</label>
-                            <input type="time" class="form-control" id="time" formControlName="time" placeholder="Time">
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-3 mb-5">
-                        <button type="submit" class="btn  btn-success px-5 mx-3">Add
-                            Stock Price</button>
-                    </div>
-                </form>
-
+            <div class="form-group ">
+                <label for="companyCode">Company Code:</label>
+                <input type="text" class="form-control" id="companyCode" formControlName="companyCode"
+                    placeholder=" Add Company Code Here">
             </div>
-        </div>
+            <div class="row">
+                <div class="form-group col-12 col-md-6">
+                    <label for="stockExchange">Stock Exchange:</label>
+                    <input type="text" class="form-control" id="stockExchange" formControlName="stockExchange"
+                        placeholder=" Add Stock Exchange">
+                </div>
+                <div class="form-group col-12 col-md-6">
+                    <label for="currentPrice">Current Price :</label>
+                    <input type="number" class="form-control" id="currentPrice" formControlName="currentPrice"
+                        placeholder=" Price in Rupees">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12 col-md-6">
+                    <label for="date">Date:</label>
+                    <input type="text" class="form-control" id="date" formControlName="date" placeholder="  dd/mm/yyyy">
+                </div>
+                <div class="form-group col-12 col-md-6">
+                    <label for="time">Time:</label>
+                    <input type="time" class="form-control" id="time" formControlName="time" placeholder="Time">
+                </div>
+            </div>
+
+            <div class="text-center mt-3 mb-5">
+                <button type="submit" class="btn  btn-success px-5 mx-3">Add
+                    Stock Price</button>
+            </div>
+        </form>
+
     </div>
 </div>

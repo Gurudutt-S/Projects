@@ -2,41 +2,19 @@
 </h2>
 <hr>
 
-<div class="row no-gutters">
+<div class="row">
 
-    <div class="w-25 border-right col-auto h-75 col-md-2">
+    <div class="container-fluid col-12 col-md-10">
 
-        <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action " [routerLink]="['/import-data']"><i
-                    class="fa fa-file-excel-o fa-lg" aria-hidden="true"></i>&nbsp; Import Data</a>
-            <a class="list-group-item list-group-item-action " [routerLink]="['/manage-company']"><i
-                    class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp; Manage Company</a>
-            <a class="list-group-item list-group-item-action bg-info text-light" [routerLink]="['/users']">
-                <i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp; Manage Users</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">
-                <i class="fa fa-exchange fa-lg" aria-hidden="true"></i>&nbsp; Manage Exchange</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">
-                <i class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; Manage IPO</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">
-                <i class="fa fa-inr fa-lg" aria-hidden="true"></i>&nbsp; Manage Stock
-                Price</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">
-                <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp;Logout</a>
-        </div>
-
-    </div>
-
-    <div class="container col">
-
-        <form class=" w-75 container" [formGroup]="updateUser" (ngSubmit)="saveUser()">
+        <form class="p-1 p-md-5 jumbotron shadow" [formGroup]="updateUser" (ngSubmit)="saveUser()">
 
             <div class="row">
-                <div class="form-group col">
+                <div class="form-group col-12 col-md-6">
                     <label for="id">Id:</label>
                     <input type="text" class="form-control " id="id" formControlName="id" placeholder="Enter your ID"
                         disabled>
                 </div>
-                <div class="form-group col">
+                <div class="form-group col-12 col-md-6">
                     <label for="username">Username:</label>
                     <input type="text" class="form-control" id="username" formControlName="username"
                         placeholder=" Should contain letters and numbers">
@@ -58,7 +36,7 @@
                     placeholder=" Phone Number">
             </div>
 
-            <div class="text-center mt-3 mb-5">
+            <div class="text-center mt-4 mb-2">
                 <button type="submit" class="btn  btn-success px-5 mx-3" (click)="updateTheUser(user)">Update
                     User</button>
             </div>

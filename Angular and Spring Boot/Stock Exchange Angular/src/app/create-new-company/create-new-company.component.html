@@ -1,87 +1,59 @@
 <h2 class="display-5 text-muted text-center my-3"><i class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp;Create
     New Company</h2>
 <hr>
-<div class="row no-gutters">
 
-    <div class="w-25 border-right col-auto h-75 col-md-2">
+<div class="row">
+    <div class="container-fluid col-12 col-md-10">
+        <form class="p-2 p-md-5 jumbotron shadow" [formGroup]="addCompany" (ngSubmit)="saveCompany()">
 
-        <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action " [routerLink]="['/import-data']"><i
-                    class="fa fa-file-excel-o ga-lg" aria-hidden="true"></i>&nbsp; Import Data</a>
-            <a class="list-group-item list-group-item-action bg-info text-light" [routerLink]="['/manage-company']"><i
-                    class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp; Manage Company</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/users']">
-                <i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp; Manage Users</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-exchange']">
-                <i class="fa fa-exchange fa-lg" aria-hidden="true"></i>&nbsp; Manage Exchange</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-ipo']">
-                <i class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; Manage IPO</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/manage-stockPrice']">
-                <i class="fa fa-inr fa-lg" aria-hidden="true"></i>&nbsp; Manage Stock
-                Price</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/home']">
-                <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp;Logout</a>
-        </div>
-
-    </div>
-
-    <div class="container col">
-
-        <div class="row">
-            <div class="col-12">
-                <form class="p-2 p-md-5 container jumbotron shadow" [formGroup]="addCompany" (ngSubmit)="saveCompany()">
-
-                    <div class="row">
-                        <div class="form-group col-12 col-md-6">
-                            <label for="companyName">Company Name:</label>
-                            <input type="text" class="form-control" formControlName="companyName" id="companyName"
-                                placeholder="Enter company name">
-                        </div>
-                        <div class="form-group col col-12 col-md-6">
-                            <label for="CEOName">CEO name:</label>
-                            <input type="text" class="form-control" formControlName="ceoName" id="CEOName"
-                                placeholder=" Name of CEO or a Board Member">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col col-12 col-md-6">
-                            <label for="turnOver">TurnOver:</label>
-                            <input type="text" class="form-control" formControlName="turnover" id="turnOver"
-                                placeholder=" TurnOver">
-                        </div>
-                        <div class="form-group col col-12 col-md-6">
-                            <label for="boardOfDirectors">Board of Directors:</label>
-                            <input type="text" class="form-control" formControlName="boardOfDirectors"
-                                id="boardOfDirectors" placeholder=" Board of Directors">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col col-12 col-md-6">
-                            <label class="sector"> Sector:</label>
-                            <input type="text" class="form-control" formControlName="sector" id="sector"
-                                placeholder=" Name of Sector">
-                        </div>
-                        <div class="form-group col col-12 col-md-6">
-                            <label for="IPOName">IPO Name:</label>
-                            <input type="text" class="form-control" formControlName="iponame" id="IPOName"
-                                placeholder=" IPO Name">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Breif:</label>
-                        <textarea class="form-control" formControlName="description" id="description"
-                            placeholder="Maximum 100 words"></textarea>
-                    </div>
-
-                    <div class="text-center mt-3">
-                        <input type="reset" class="btn btn-sm-sm  btn-info px-1 px-md-5 mr-2">
-                        <input type="submit" class="btn  btn-sm-sm btn-success px-1 px-md-5 ml-2">
-                    </div>
-
-                </form>
+            <div class="row">
+                <div class="form-group col-12 col-md-6">
+                    <label for="companyName">Company Name:</label>
+                    <input type="text" class="form-control" formControlName="companyName" id="companyName"
+                        placeholder="Enter company name">
+                </div>
+                <div class="form-group col col-12 col-md-6">
+                    <label for="CEOName">CEO name:</label>
+                    <input type="text" class="form-control" formControlName="ceoName" id="CEOName"
+                        placeholder=" Name of CEO or a Board Member">
+                </div>
             </div>
-        </div>
-    </div>
 
+            <div class="row">
+                <div class="form-group col col-12 col-md-6">
+                    <label for="turnOver">TurnOver:</label>
+                    <input type="text" class="form-control" formControlName="turnover" id="turnOver"
+                        placeholder=" TurnOver">
+                </div>
+                <div class="form-group col col-12 col-md-6">
+                    <label for="boardOfDirectors">Board of Directors:</label>
+                    <input type="text" class="form-control" formControlName="boardOfDirectors" id="boardOfDirectors"
+                        placeholder=" Board of Directors">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col col-12 col-md-6">
+                    <label class="sector"> Sector:</label>
+                    <input type="text" class="form-control" formControlName="sector" id="sector"
+                        placeholder=" Name of Sector">
+                </div>
+                <div class="form-group col col-12 col-md-6">
+                    <label for="IPOName">IPO Name:</label>
+                    <input type="text" class="form-control" formControlName="iponame" id="IPOName"
+                        placeholder=" IPO Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Breif:</label>
+                <textarea class="form-control" formControlName="description" id="description"
+                    placeholder="Maximum 100 words"></textarea>
+            </div>
+
+            <div class="text-center mt-3">
+                <input type="reset" class="btn btn-sm-sm  btn-info px-1 px-md-5 mr-2">
+                <input type="submit" class="btn  btn-sm-sm btn-success px-1 px-md-5 ml-2">
+            </div>
+
+        </form>
+    </div>
 </div>

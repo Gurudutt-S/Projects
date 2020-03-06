@@ -49,17 +49,18 @@ const routes: Routes = [
       { path: 'manage-stockPrice', component: ManageStockPriceComponent },
       { path: 'manage-company', component: CompanyListComponent },
       { path: 'import-data', component: DocumentUploadComponent },
+      { path: 'add-company', component: CreateNewCompanyComponent },
+      { path: 'add-exchange', component: AddStockExchangeComponent },
+      { path: 'add-ipo', component: AddIpoComponent },
+      { path: 'add-stockPrice', component: AddStockPriceComponent },
+      { path: 'update-user', component: UpdateUserComponent }
     ]
   },
-  { path: 'update-user', component: UpdateUserComponent },
+
   { path: 'update-ipo', component: UpdateIpoComponent },
   { path: 'update-company', component: UpdateCompanyComponent },
   { path: 'update-exchange', component: UpdateExchangeComponent },
   { path: 'update-stockPrice', component: UpdateStockPriceComponent },
-  { path: 'add-company', component: CreateNewCompanyComponent },
-  { path: 'add-exchange', component: AddStockExchangeComponent },
-  { path: 'add-ipo', component: AddIpoComponent },
-  { path: 'add-stockPrice', component: AddStockPriceComponent },
   { path: 'user-ipo-list', component: UserIpoListComponent },
   { path: 'activate', component: ActivateComponent }
 ];

@@ -37,7 +37,7 @@ export class UpdateUserComponent implements OnInit {
 
   updateTheUser(user: User) {
     this.userService.updateUserInfo(this.updateUser.value).subscribe(u => {
-      this.router.navigate(['users']);
+      this.router.navigate(['admin/users']);
     })
   }
 

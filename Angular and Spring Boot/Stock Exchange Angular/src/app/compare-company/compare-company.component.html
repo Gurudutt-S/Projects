@@ -1,53 +1,29 @@
-<h2 class="display-5 text-center text-muted my-2">Compare Company</h2>
+<h2 class="display-5 text-muted text-center my-3"><i class="fa fa-building fa-lg"></i>&nbsp; Compare Company</h2>
 <hr>
-<div class="row no-gutters">
 
-    <div class=" col-2">
-        <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action" [routerLink]="['/user-ipo-list']"><i
-                    class="fa fa-money fa-lg" aria-hidden="true"></i>&nbsp; IPO's</a>
-            <a class="list-group-item list-group-item-action  bg-info text-light" [routerLink]="['/compare-company']"><i
-                    class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp; Compare Company</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/compare-sectors']"><i
-                    class="fa fa-desktop fa-lg" aria-hidden="true"></i>&nbsp; Compare Sectors</a>
-            <a class="list-group-item list-group-item-action" [routerLink]="['/home']"><i class="fa fa-sign-out fa-lg"
-                    aria-hidden="true"></i>&nbsp; Logout</a>
-        </div>
-    </div>
+<div class="row">
+    <div class="container-fluid col-12 col-md-10">
+        <form class="p-2 p-md-5 jumbotron shadow" [formGroup]="compareCompany">
 
-    <div class="container col">
-
-        <div class="row">
-            <div class="col">
-                <form class="p-1 p-md-5 jumbotron shadow container" [formGroup]="compareCompany">
-
-                    <div class="form-group">
-                        <label for="selectCompany1">Select Company:</label>
-                        <select name="selectCompany1" class="form-control" formControlName="selectCompany1">
-                            <option *ngFor="let comp of company" value={{comp.id}}>{{comp.companyName}}</option>
-                        </select>
-                        <small class="text-muted">select the company</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="selectCompany2">Select Company:</label>
-                        <select name="selectCompany2" class="form-control" formControlName="selectCompany2">
-                            <option *ngFor="let comp of company" value={{comp.id}}>{{comp.companyName}}</option>
-                        </select>
-                        <small class="text-muted">select the company</small>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-12 col-md-12">
-                            <input type="submit" (click)="compareCompanies()" value="Compare"
-                                class="btn btn-info w-25">
-                        </div>
-                        <div class=" col-12 col-md-12">
-                            <input type="submit" value="Generate Maps" class="btn btn-success w-25">
-                        </div>
-                    </div>
-
-                </form>
+            <div class="form-group">
+                <label for="selectCompany1">Select Company:</label>
+                <select name="selectCompany1" class="form-control" formControlName="selectCompany1">
+                    <option *ngFor="let comp of company" value={{comp.id}}>{{comp.companyName}}</option>
+                </select>
+                <small class="text-muted">select the company</small>
             </div>
-        </div>
-    </div>
+            <div class="form-group">
+                <label for="selectCompany2">Select Company:</label>
+                <select name="selectCompany2" class="form-control" formControlName="selectCompany2">
+                    <option *ngFor="let comp of company" value={{comp.id}}>{{comp.companyName}}</option>
+                </select>
+                <small class="text-muted">select the company</small>
+            </div>
+            <div class="row justify-content-center">
+                <input type="submit" (click)="compareCompanies()" value="Compare" class="btn btn-info mx-1 px-1 px-md-5">
+                <input type="submit" value="Generate Maps" class="btn btn-success mx-1 px-1 px-md-5">
+            </div>
 
+        </form>
+    </div>
 </div>

@@ -1,46 +1,31 @@
-<div class="row mt-3">
-    <div class="col-4 offset-4">
-        <h2 class="display-5 text-muted text-center">Welcome User</h2>
-    </div>
-    <div class="col-4">
-        <button class="btn border-dark float-right mr-5"><i class="fa fa-sign-out fa-lg"></i>Logout</button>
-    </div>
-</div>
-<hr>
-<br>
+<div class="shadow rounded" style="background-color: rgba(0,0,0, 0.199); min-height: 85vh;">
 
-<div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
 
-    <div class="row no-gutters">
-        <div class="card-deck mx-auto">
-            <div class="col">
-                <div class="card text-center shadow" style="width:13rem;">
-                    <a [routerLink]="['/user-ipo-list']" class="bg-dark p-4 card-hover text-muted"> <i
-                            class="fa fa-file-excel-o fa-5x" aria-hidden="true"></i></a>
-                    <div class=" bg-light">
-                        <h5 class="card-title">IPO's</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card text-center shadow" style="width: 13rem;">
-                    <a [routerLink]="['/compare-company']" class="bg-dark p-4 card-hover text-muted"> <i
-                            class="fa fa-building fa-5x" aria-hidden="true"></i></a>
-                    <div class=" bg-light">
-                        <h5 class="card-title">Compare Company</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card text-center shadow" style="width: 13rem;">
-                    <a [routerLink]="['/compare-sectors']" class="bg-dark p-4 card-hover text-muted"> <i
-                            class="fa fa-user fa-5x" aria-hidden="true"></i></a>
-                    <div class="bg-light">
-                        <h5 class="card-title">Compare Sectors</h5>
-                    </div>
-                </div>
-            </div>
+        <a [routerLink]="['./user-profile']" class="text-light  text-decoration-none display-5">
+            <span class="text-info">USER</span></a>
 
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#adminNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="adminNavbar">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a [routerLink]="['./user-ipo-list']" [routerLinkActive]="['active']"
+                        class="nav-link">IPO</a></li>
+                <li class="nav-item"><a [routerLink]="['./user-company']" [routerLinkActive]="['active']"
+                        class="nav-link">Company</a></li>
+                <li class="nav-item"><a [routerLink]="['./compare-company']" [routerLinkActive]="['active']"
+                        class="nav-link">Compare company</a></li>
+                <li class="nav-item"><a [routerLink]="['./compare-sectors']" [routerLinkActive]="['active']"
+                        class="nav-link">Compare Sectors</a></li>
+            </ul>
+            <a [routerLink]="['/home']" class="text-success  text-decoration-none">Logout</a>
         </div>
+
+    </nav>
+
+    <div class="container-fluid">
+        <router-outlet></router-outlet>
     </div>
 </div>

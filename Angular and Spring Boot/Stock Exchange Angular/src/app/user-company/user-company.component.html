@@ -1,0 +1,34 @@
+<h2 class="display-5 text-muted text-center my-3"><i class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp;
+    Company List</h2>
+<hr>
+
+<div class="row">
+
+    <div class="container-fluid col-12 col-md-10">
+        <div class="table-responsive">
+            <table class="table table-striped table-light table-hover">
+                <tr>
+                    <th>Id</th>
+                    <th>Company Name</th>
+                    <th>CEO name</th>
+                    <th>TurnOver</th>
+                    <th>Board of Directors</th>
+                    <th>Sector</th>
+                    <th>IPO Name</th>
+                </tr>
+
+                <tbody>
+                    <tr *ngFor="let company of companyList">
+                        <td>{{company.id}}</td>
+                        <td>{{company.companyName}}</td>
+                        <td>{{company.ceoName}}</td>
+                        <td>{{company.turnover}}</td>
+                        <td>{{company.boardOfDirectors}}</td>
+                        <td>{{company.sector}}</td>
+                        <td>{{company.iponame}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

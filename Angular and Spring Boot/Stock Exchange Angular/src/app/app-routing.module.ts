@@ -27,6 +27,8 @@ import { ManageStockPriceComponent } from './manage-stock-price/manage-stock-pri
 import { AddStockPriceComponent } from './add-stock-price/add-stock-price.component';
 import { UpdateStockPriceComponent } from './update-stock-price/update-stock-price.component';
 import { ActivateComponent } from './activate/activate.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserCompanyComponent } from './user-company/user-company.component';
 
 
 const routes: Routes = [
@@ -37,9 +39,16 @@ const routes: Routes = [
   { path: 'sign_up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
   { path: 'login-user', component: LoginUserComponent },
-  { path: 'user-page', component: UserLandingPageComponent },
-  { path: 'compare-company', component: CompareCompanyComponent },
-  { path: 'compare-sectors', component: CompareSectorsComponent },
+  {
+    path: 'user-page', component: UserLandingPageComponent, children: [
+      { path: '', redirectTo: 'user-ipo-list', pathMatch: 'full' },
+      { path: 'user-profile', component: UserProfileComponent },
+      { path: 'user-ipo-list', component: UserIpoListComponent },
+      { path: 'compare-company', component: CompareCompanyComponent },
+      { path: 'compare-sectors', component: CompareSectorsComponent },
+      { path: 'user-company', component: UserCompanyComponent }
+    ]
+  },
   {
     path: 'admin', component: AdminLandingPageComponent, children: [
       { path: '', redirectTo: 'users', pathMatch: 'full' },
@@ -56,12 +65,11 @@ const routes: Routes = [
       { path: 'update-user', component: UpdateUserComponent }
     ]
   },
-
   { path: 'update-ipo', component: UpdateIpoComponent },
   { path: 'update-company', component: UpdateCompanyComponent },
   { path: 'update-exchange', component: UpdateExchangeComponent },
   { path: 'update-stockPrice', component: UpdateStockPriceComponent },
-  { path: 'user-ipo-list', component: UserIpoListComponent },
+
   { path: 'activate', component: ActivateComponent }
 ];
 

@@ -32,6 +32,8 @@ import { AddStockPriceComponent } from './add-stock-price/add-stock-price.compon
 import { ManageStockPriceComponent } from './manage-stock-price/manage-stock-price.component';
 import { UpdateStockPriceComponent } from './update-stock-price/update-stock-price.component';
 import { ActivateComponent } from './activate/activate.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserCompanyComponent } from './user-company/user-company.component';
 
 
 @NgModule({
@@ -64,6 +66,8 @@ import { ActivateComponent } from './activate/activate.component';
     ManageStockPriceComponent,
     UpdateStockPriceComponent,
     ActivateComponent,
+    UserProfileComponent,
+    UserCompanyComponent,
   
   ],
   imports: [

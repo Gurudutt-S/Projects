@@ -29,46 +29,48 @@ export class LoginComponent implements OnInit {
 
   }
 
-
-
   login() {
-    let uname = this.loginForm.controls.userName.value;
-    let password = this.loginForm.controls.password.value;
-    let flag: boolean = false;
-    for (let user of this.users) {
-      if (uname === user.username && password === user.password) {
-        flag = true;
-        this.current_user = user;
-        break;
-      }
-    }
-    if (flag) {
-      localStorage.removeItem('userId');
-      localStorage.setItem('userId', this.current_user.id.toString());
-
-      if (this.isAdmin()) {
-        alert("Admin Logged in Succesully");
-        this.router.navigate(['/admin']);
-      } else {
-        alert("User Logged in Succesully");
-        this.router.navigate(['/user']);
-      }
-    }else{
-      alert("invalid username or password");
-    }
+    this.router.navigate(['/admin']);
   }
 
-  isAdmin() {
-    let id = localStorage.getItem('userId');
-    let validUser: User;
-    this.userService.getUserById(id).subscribe(u => {
-      validUser = u;
-    });
-    if (validUser.id == "29") {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // login() {
+  //   let uname = this.loginForm.controls.userName.value;
+  //   let password = this.loginForm.controls.password.value;
+  //   let flag: boolean = false;
+  //   for (let user of this.users) {
+  //     if (uname === user.username && password === user.password) {
+  //       flag = true;
+  //       this.current_user = user;
+  //       break;
+  //     }
+  //   }
+  //   if (flag) {
+  //     localStorage.removeItem('userId');
+  //     localStorage.setItem('userId', this.current_user.id.toString());
+
+  //     if (this.isAdmin()) {
+  //       alert("Admin Logged in Succesully");
+  //       this.router.navigate(['/admin']);
+  //     } else {
+  //       alert("User Logged in Succesully");
+  //       this.router.navigate(['/user']);
+  //     }
+  //   }else{
+  //     alert("invalid username or password");
+  //   }
+  // }
+
+  // isAdmin() {
+  //   let id = localStorage.getItem('userId');
+  //   let validUser: User;
+  //   this.userService.getUserById(id).subscribe(u => {
+  //     validUser = u;
+  //   });
+  //   if (validUser.id == "29") {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
 }

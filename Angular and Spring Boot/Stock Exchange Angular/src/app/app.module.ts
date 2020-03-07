@@ -34,7 +34,12 @@ import { UpdateStockPriceComponent } from './update-stock-price/update-stock-pri
 import { ActivateComponent } from './activate/activate.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserCompanyComponent } from './user-company/user-company.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CompanyChartComponent } from './company-chart/company-chart.component';
 
+import {HighchartsChartComponent} from 'highcharts-angular';
+import { SectorChartComponent } from './sector-chart/sector-chart.component';
+import { UpdateUserProfileComponent } from './update-user-profile/update-user-profile.component';
 
 @NgModule({
   declarations: [
@@ -68,13 +73,20 @@ import { UserCompanyComponent } from './user-company/user-company.component';
     ActivateComponent,
     UserProfileComponent,
     UserCompanyComponent,
+    CompanyChartComponent,
   
+    HighchartsChartComponent,
+  
+    SectorChartComponent,
+  
+    UpdateUserProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

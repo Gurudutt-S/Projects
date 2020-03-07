@@ -1,0 +1,23 @@
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=password] {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: none;
+}
+
+input:focus {
+  outline: none !important;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: none;
+  border-bottom-color: steelblue;
+
+}
+
+.form-control {
+  box-shadow: none;
+}

@@ -29,6 +29,9 @@ import { UpdateStockPriceComponent } from './update-stock-price/update-stock-pri
 import { ActivateComponent } from './activate/activate.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserCompanyComponent } from './user-company/user-company.component';
+import { CompanyChartComponent } from './company-chart/company-chart.component';
+import { SectorChartComponent } from './sector-chart/sector-chart.component';
+import { UpdateUserProfileComponent } from './update-user-profile/update-user-profile.component';
 
 
 const routes: Routes = [
@@ -46,7 +49,10 @@ const routes: Routes = [
       { path: 'user-ipo-list', component: UserIpoListComponent },
       { path: 'compare-company', component: CompareCompanyComponent },
       { path: 'compare-sectors', component: CompareSectorsComponent },
-      { path: 'user-company', component: UserCompanyComponent }
+      { path: 'user-company', component: UserCompanyComponent },
+      { path: 'company-chart', component: CompanyChartComponent },
+      { path: 'sector-chart', component: SectorChartComponent },
+      { path: 'update-user-profile', component: UpdateUserProfileComponent}
     ]
   },
   {

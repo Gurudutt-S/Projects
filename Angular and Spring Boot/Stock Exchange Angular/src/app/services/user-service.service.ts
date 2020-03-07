@@ -37,6 +37,10 @@ export class UserServiceService {
     return this.httpClient.put('http://localhost:8000/activate', obj)
   }
 
+  getUserByUsername(name: string): Observable<User> {
+    return this.httpClient.get<User>(this.httpUrl+"username/" + name);
+  }
+
   isAdmin(): boolean {
     return false;
 

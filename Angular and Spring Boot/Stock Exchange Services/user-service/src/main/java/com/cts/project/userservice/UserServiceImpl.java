@@ -88,4 +88,12 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	@Override
+	public UserDTO getUserByUsername(String name) {
+		User user = userRepo.findByUsername(name);
+		UserDTO userDTO = new UserDTO();
+		BeanUtils.copyProperties(user, userDTO);
+		return userDTO;
+	}
+
 }

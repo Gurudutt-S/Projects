@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Company } from '../models/company';
 import { CompanyService } from '../services/company.service';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-user-company',

@@ -32,6 +32,11 @@ export class StockPriceService {
   updateStockPrice(stockPrice: StockPrice): Observable<StockPrice> {
     return this.httpClient.put<StockPrice>(this.httpUrl, stockPrice);
   }
+
+  uploadStockSheet(formData: FormData): Observable<void> {
+    return this.httpClient.post<void>(this.httpUrl + "uploadStockSheet", formData);
+  }
+
 }
 
 

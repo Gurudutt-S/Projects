@@ -2,6 +2,8 @@ package com.cts.project.stockPriceservice;
 
 import java.util.List;
 
+import javax.mail.Multipart;
+
 public interface StockPriceService {
 
 	public List<StockPrice> getAllStockPrices();
@@ -13,5 +15,7 @@ public interface StockPriceService {
 	public void deleteStockPrice(int id);
 
 	public StockPrice updateStockPrice(StockPrice stockPrice);
+	
+	public importSummary addStockPricesFromExcelSheet(Multipart file)throws Exception;
 
 }

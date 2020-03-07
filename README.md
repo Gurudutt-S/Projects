@@ -30,4 +30,6 @@
 
 5 FEB 2020 [Day 55] : inter-services communication, netflix feingclient, zool. 
 
-6 FEB 2020 [Day 56] : Docker. 
+6 FEB 2020 [Day 56] : Docker.
+
+7 FEB 2020 [Day 57] : file upload, highcharts 

@@ -3,6 +3,8 @@ package com.cts.project.stockPriceservice;
 import java.util.List;
 import java.util.Optional;
 
+import javax.mail.Multipart;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +41,12 @@ public class StockPriceServiceImpl implements StockPriceService {
 	public StockPrice updateStockPrice(StockPrice stockPrice) {
 		StockPrice price = stockPriceRepo.save(stockPrice);
 		return price;
+	}
+
+	@Override
+	public importSummary addStockPricesFromExcelSheet(Multipart file) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

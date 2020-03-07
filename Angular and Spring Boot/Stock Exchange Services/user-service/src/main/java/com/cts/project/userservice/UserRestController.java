@@ -42,7 +42,7 @@ public class UserRestController {
 		}
 	}
 
-	@GetMapping("user/{id}")
+	@GetMapping("/user/{id}")
 	public ResponseEntity<?> getUserById(@PathVariable("id") int id) {
 		try {
 			UserDTO user = userService.getUserById(id);
@@ -80,6 +80,16 @@ public class UserRestController {
 	@PutMapping("/user")
 	public ResponseEntity<?> updateUser(@RequestBody UserDTO userDTO) {
 		return new ResponseEntity<UserDTO>(userService.updateUser(userDTO), HttpStatus.OK);
+	}
+
+	@GetMapping("/user/username/{username}")
+	public ResponseEntity<?> findByUsername(@PathVariable("username") String username) {
+		try {
+			UserDTO user = userService.getUserByUsername(username);
+			return new ResponseEntity<UserDTO>(user, HttpStatus.OK);
+		} catch (NoSuchElementException e) {
+			return new ResponseEntity<String>("No Such User Found\n" + e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
 	}
 
 }

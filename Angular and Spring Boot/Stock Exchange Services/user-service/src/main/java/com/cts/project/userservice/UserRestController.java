@@ -32,6 +32,11 @@ public class UserRestController {
 
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	@GetMapping("/login")
+	public ResponseEntity<?> login() {
+		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+	}
+
 	@GetMapping("/user")
 	public ResponseEntity<?> getUsers() {
 		List<UserDTO> list = userService.getAllUsers();

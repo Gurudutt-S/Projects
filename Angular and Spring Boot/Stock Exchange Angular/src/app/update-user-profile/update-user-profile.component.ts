@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from '../services/user-service.service';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
@@ -20,23 +20,23 @@ export class UpdateUserProfileComponent implements OnInit {
 
     this.userProfile = this.formBuilder.group({
       id: [''],
-      username: [''],
-      password: [''],
-      phone: [''],
-      email: ['']
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
+      userType: [''],
+      enabled: ['']
     });
-    const id = localStorage.getItem('userId');
-    if (id !== null) {
-      this.userService.getUserById(id).subscribe(
-        data => {
-          this.userProfile.patchValue(data);
-        }
-      );
+    const id = localStorage.getItem('loginId');
+    if (+id > 0) {
+      this.userService.getUserById(id).subscribe(user => {
+        this.userProfile.patchValue(user);
+      })
     }
   }
   updateTheUserProfile(user: User) {
     this.userService.updateUserInfo(this.userProfile.value).subscribe(u => {
-      this.router.navigate(['/user-page/user-profile']);
+      this.router.navigate(['user-page/user-profile']);
     })
   }
 

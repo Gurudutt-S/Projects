@@ -21,24 +21,25 @@ public class User implements Serializable {
 	private Integer id;
 	private String username;
 	private String password;
-	private String userType;
 	private String email;
 	private long phone;
 	private boolean enabled;
+	private String userType;
 
 	public User() {
 
 	}
 
-	public User(Integer id, String username, String password, String userType, String email, long phone, boolean enabled) {
+	public User(Integer id, String username, String password, String email, long phone, boolean enabled,
+			String userType) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.userType = userType;
 		this.email = email;
 		this.phone = phone;
 		this.enabled = enabled;
+		this.userType = userType;
 	}
 
 	public Integer getId() {
@@ -65,14 +66,6 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public String getUserType() {
-		return userType;
-	}
-
-	public void setUserType(String userType) {
-		this.userType = userType;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -97,10 +90,22 @@ public class User implements Serializable {
 		this.enabled = enabled;
 	}
 
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", userType=" + userType
-				+ ", email=" + email + ", phone=" + phone + ", enabled=" + enabled + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + ", phone="
+				+ phone + ", enabled=" + enabled + ", userType=" + userType + "]";
 	}
 
 }

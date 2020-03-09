@@ -23,7 +23,6 @@ import { ManageExchangeComponent } from './manage-exchange/manage-exchange.compo
 import { ManageIpoComponent } from './manage-ipo/manage-ipo.component';
 import { AddStockExchangeComponent } from './add-stock-exchange/add-stock-exchange.component';
 import { AddIpoComponent } from './add-ipo/add-ipo.component';
-import { LoginUserComponent } from './login-user/login-user.component';
 import { UserIpoListComponent } from './user-ipo-list/user-ipo-list.component';
 import { UpdateIpoComponent } from './update-ipo/update-ipo.component';
 import { UpdateCompanyComponent } from './update-company/update-company.component';
@@ -66,7 +65,6 @@ import { MatInputModule } from '@angular/material/input'
     ManageIpoComponent,
     AddStockExchangeComponent,
     AddIpoComponent,
-    LoginUserComponent,
     UserIpoListComponent,
     UpdateIpoComponent,
     UpdateCompanyComponent,
@@ -78,11 +76,8 @@ import { MatInputModule } from '@angular/material/input'
     UserProfileComponent,
     UserCompanyComponent,
     CompanyChartComponent,
-  
     HighchartsChartComponent,
-  
     SectorChartComponent,
-  
     UpdateUserProfileComponent,
   ],
   imports: [

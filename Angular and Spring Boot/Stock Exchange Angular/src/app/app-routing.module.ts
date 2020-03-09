@@ -18,7 +18,6 @@ import { ManageExchangeComponent } from './manage-exchange/manage-exchange.compo
 import { ManageIpoComponent } from './manage-ipo/manage-ipo.component';
 import { AddStockExchangeComponent } from './add-stock-exchange/add-stock-exchange.component';
 import { AddIpoComponent } from './add-ipo/add-ipo.component';
-import { LoginUserComponent } from './login-user/login-user.component';
 import { UserIpoListComponent } from './user-ipo-list/user-ipo-list.component';
 import { UpdateIpoComponent } from './update-ipo/update-ipo.component';
 import { UpdateCompanyComponent } from './update-company/update-company.component';
@@ -41,7 +40,6 @@ const routes: Routes = [
   { path: 'contact', component: ContactUsComponent },
   { path: 'sign_up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'login-user', component: LoginUserComponent },
   {
     path: 'user-page', component: UserLandingPageComponent, children: [
       { path: '', redirectTo: 'user-ipo-list', pathMatch: 'full' },

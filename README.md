@@ -33,3 +33,5 @@
 6 FEB 2020 [Day 56] : Docker.
 
 7 FEB 2020 [Day 57] : file upload, highcharts 
+
+9 FEB 2020 [Day 58] : Angular interceptor 

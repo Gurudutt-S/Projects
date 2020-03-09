@@ -14,7 +14,7 @@ export class UserProfileComponent implements OnInit {
   userProfile: FormGroup;
   userList: User;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserServiceService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserServiceService, private router: Router) { }
 
 
   ngOnInit() {
@@ -24,14 +24,21 @@ export class UserProfileComponent implements OnInit {
       phone: [''],
       email: ['']
     });
-    const id = localStorage.getItem('userId');
+    const id = localStorage.getItem('loginId');
     if (id !== null) {
       this.userService.getUserById(id).subscribe(
         data => {
           this.userProfile.patchValue(data);
+          this.userList=data;
         }
       );
     }
+  }
+
+  updateTheUserProfile(user: User) {
+    localStorage.removeItem('profile_id');
+    localStorage.setItem('profile_id', this.userList.id.toString());
+    this.router.navigate(['/user-page/update-user-profile']);
   }
 
 }

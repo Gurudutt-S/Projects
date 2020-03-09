@@ -5,7 +5,7 @@
     <div class="container-fluid col-12 col-md-10">
         <form class="p-2 p-md-5 jumbotron shadow" [formGroup]="compareCompany">
             <mat-form-field class="example-full-width">
-                <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="selectCompany1"
+                <input type="text" placeholder="Select company 1" aria-label="Number" matInput formControlName="selectCompany1"
                     [matAutocomplete]="auto">
                 <mat-autocomplete #auto="matAutocomplete">
                     <mat-option *ngFor="let option of companyList1 | async" [value]="company">
@@ -13,8 +13,9 @@
                     </mat-option>
                 </mat-autocomplete>
             </mat-form-field>
+            <br>
             <mat-form-field class="example-full-width">
-                <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="selectCompany2"
+                <input type="text" placeholder="Select company 2" aria-label="Number" matInput formControlName="selectCompany2"
                     [matAutocomplete]="auto">
                 <mat-autocomplete #auto="matAutocomplete">
                     <mat-option *ngFor="let option of companyList2 | async" [value]="company">

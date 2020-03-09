@@ -40,6 +40,10 @@ import { CompanyChartComponent } from './company-chart/company-chart.component';
 import {HighchartsChartComponent} from 'highcharts-angular';
 import { SectorChartComponent } from './sector-chart/sector-chart.component';
 import { UpdateUserProfileComponent } from './update-user-profile/update-user-profile.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'
+
 
 @NgModule({
   declarations: [
@@ -87,6 +91,9 @@ import { UpdateUserProfileComponent } from './update-user-profile/update-user-pr
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

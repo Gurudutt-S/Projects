@@ -1,11 +1,13 @@
 package com.cts.project.stockPriceservice;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -66,6 +68,28 @@ public class StockPriceRestController {
 		List<CompanyDTO> companyDto = companyServiceProxy.getAllCompany();
 		logger.info("Information --> {}", companyDto);
 		return companyDto;
+	}
+
+	@PostMapping(value = "stockPrice/uploadStocksSheet", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public ResponseEntity<?> uploadStockSheet(@RequestParam("stocksSheet") MultipartFile file) {
+		logger.info("File received:{}", file.getOriginalFilename());
+		if (file.getOriginalFilename().endsWith(".xls") || file.getOriginalFilename().endsWith(".xlsx")) {
+			try {
+				return new ResponseEntity<importSummary>(stockPriceService.addStockPricesFromExcelSheet(file),
+						HttpStatus.OK);
+			} catch (IOException e) {
+				e.printStackTrace();
+				return new ResponseEntity<String>("Error reading file", HttpStatus.BAD_REQUEST);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+			}
+
+		} else {
+
+			return new ResponseEntity<String>("Wrong file extension", HttpStatus.BAD_REQUEST);
+		}
 	}
 
 }

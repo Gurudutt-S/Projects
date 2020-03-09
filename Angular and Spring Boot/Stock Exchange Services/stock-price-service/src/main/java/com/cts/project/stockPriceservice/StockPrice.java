@@ -1,6 +1,8 @@
 package com.cts.project.stockPriceservice;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,19 +20,20 @@ public class StockPrice implements Serializable {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	private int companyCode;
+	private String companyCode;
 	private String stockExchange;
 	private int currentPrice;
-	private String date;
-	private String time;
+	private LocalDate date;
+	private LocalTime time;
 
 	public StockPrice() {
 
 	}
 
-	public StockPrice(Integer id, int companyCode, String stockExchange, int currentPrice, String date, String time) {
+	public StockPrice( String companyCode, String stockExchange, int currentPrice, LocalDate date,
+			LocalTime time) {
 		super();
-		this.id = id;
+		
 		this.companyCode = companyCode;
 		this.stockExchange = stockExchange;
 		this.currentPrice = currentPrice;
@@ -46,11 +49,11 @@ public class StockPrice implements Serializable {
 		this.id = id;
 	}
 
-	public int getCompanyCode() {
+	public String getCompanyCode() {
 		return companyCode;
 	}
 
-	public void setCompanyCode(int companyCode) {
+	public void setCompanyCode(String companyCode) {
 		this.companyCode = companyCode;
 	}
 
@@ -70,20 +73,24 @@ public class StockPrice implements Serializable {
 		this.currentPrice = currentPrice;
 	}
 
-	public String getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
-	public String getTime() {
+	public LocalTime getTime() {
 		return time;
 	}
 
-	public void setTime(String time) {
+	public void setTime(LocalTime time) {
 		this.time = time;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override
@@ -91,5 +98,7 @@ public class StockPrice implements Serializable {
 		return "StockPrice [id=" + id + ", companyCode=" + companyCode + ", stockExchange=" + stockExchange
 				+ ", currentPrice=" + currentPrice + ", date=" + date + ", time=" + time + "]";
 	}
-
+	
+	
+	
 }

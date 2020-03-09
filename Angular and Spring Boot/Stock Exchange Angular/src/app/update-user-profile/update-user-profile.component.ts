@@ -19,7 +19,7 @@ export class UpdateUserProfileComponent implements OnInit {
   ngOnInit() {
 
     this.userProfile = this.formBuilder.group({
-      id:[''],
+      id: [''],
       username: [''],
       password: [''],
       phone: [''],
@@ -27,7 +27,7 @@ export class UpdateUserProfileComponent implements OnInit {
     });
     const id = localStorage.getItem('userId');
     if (id !== null) {
-      this.userService.getUserByUsername(id).subscribe(
+      this.userService.getUserById(id).subscribe(
         data => {
           this.userProfile.patchValue(data);
         }

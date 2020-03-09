@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { StockPriceService } from '../services/stock-price.service';
+import bsCustomFileInput from 'bs-custom-file-input';
 
 @Component({
   selector: 'app-document-upload',
@@ -9,40 +10,31 @@ import { StockPriceService } from '../services/stock-price.service';
 })
 export class DocumentUploadComponent implements OnInit {
 
-  uploadFile: FormGroup;
-  file: File;
-  isError: boolean = false;
-  errrorMessage: string = "";
-
-  constructor(private formBulder: FormBuilder, private stockPriceService: StockPriceService) { }
+  file:File;
+  isError:boolean=false;
+  errorMessage:string="";
+  constructor(private uploadService:StockPriceService) { }
 
   ngOnInit() {
 
-    this.uploadFile = this.formBulder.group({
-      file: ['']
-    });
+    bsCustomFileInput.init();
+
+   
+  }
+  onFileChange(e){
+    this.file=e.target.files[0];
   }
 
-  onFileChange(e) {
-    console.log(e);
-    this.file = e.target.files[0];
-  }
-
-  uploadData() {
-    this.isError = false;
-    const uploadSheetData = new FormData();
-    uploadSheetData.append("stocksSheet", this.file, this.file.name);
-    this.stockPriceService.uploadStockSheet(uploadSheetData).subscribe(
-      data => {
+  uploadData(){
+    const uploadSheetData=new FormData();
+    uploadSheetData.append("stocksSheet",this.file,this.file.name);
+    this.uploadService.uploadStockSheet(uploadSheetData).subscribe(
+      data=>{
         console.log("Uploaded");
-        console.log(data);
-      },
-      error => {
-        if (typeof (error.error) == "string") {
-          this.isError = true;
-          this.errrorMessage = error.error;
-        }
-      });
+      }
+    );
+    
   }
+
 
 }

@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.mail.Multipart;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public interface StockPriceService {
 
 	public List<StockPrice> getAllStockPrices();
@@ -16,6 +18,6 @@ public interface StockPriceService {
 
 	public StockPrice updateStockPrice(StockPrice stockPrice);
 	
-	public importSummary addStockPricesFromExcelSheet(Multipart file)throws Exception;
+	public importSummary addStockPricesFromExcelSheet(MultipartFile file)throws Exception;
 
 }

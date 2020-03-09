@@ -3,7 +3,7 @@
 
 <div class="row">
     <div class="col-12 col-md-8 offset-md-2">
-        <form class="p-5 p-md-5 jumbotron shadow" [formGroup]='userProfile'>
+        <form class="p-5 p-md-5 jumbotron shadow" [formGroup]='userProfile' (ngSubmit)="updateTheUserProfile(user)">
             <div class="form-group">
                 <label for="id">Id : </label>
                 <input type="text" class="form-control" [value]="userProfile.value.id" formontrolName="id" disabled>
@@ -28,7 +28,7 @@
                     formontrolName="email">
             </div>
             <div class="text-center mt-4 mb-2">
-                <button type="submit" class="btn  btn-success px-5 mx-3" (click)="updateTheUserProfile(user)">Update
+                <button type="submit" class="btn  btn-success px-5 mx-3" >Update
                     Profile</button>
             </div>
         </form>

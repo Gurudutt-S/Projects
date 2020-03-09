@@ -27,12 +27,8 @@ export class SignUpComponent implements OnInit {
 
   saveUser() {
     this.userService.saveNewUser(this.signupForm.value).subscribe(data => {
-      console.log(data);
-      console.log('User inserted succesfully');
-      alert("Data inserted succesfully")
-    }, (err) => {
-      console.log('ERRRR:' + JSON.stringify(err));
-    })
+      alert("Data inserted succesfully");
+    });
   }
 
 }

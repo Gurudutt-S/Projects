@@ -20,21 +20,19 @@ export class ManageExchangeComponent implements OnInit {
 
   getExchange() {
     this.exchangeService.getExchangeData().subscribe(data => {
-      this.exchangeList = data;
-      console.log(data);
+      this.exchangeList = data
     });
   }
   deleteExchange(exchange: Exchange) {
     this.exchangeService.deleteExchange(exchange.id.toString()).subscribe(res => {
-      console.log(res);
-      this.getExchange();
+      this.getExchange()
     });
   }
 
   updateExchange(exchange: Exchange) {
     localStorage.removeItem('exchangeId');
     localStorage.setItem('exchangeId', exchange.id.toString());
-    this.router.navigate(['update-exchange']);
+    this.router.navigate(['/admin/update-exchange']);
   }
 
 }

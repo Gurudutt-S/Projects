@@ -22,8 +22,7 @@ export class UserCompanyComponent implements OnInit {
   getCompany() {
     this.companyService.getCompanyData().subscribe(data => {
       this.companyList = data;
-      console.log(data);
-    })
+    });
   }
 
 }

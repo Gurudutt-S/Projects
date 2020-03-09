@@ -30,14 +30,9 @@ export class AddIpoComponent implements OnInit {
 
   saveIpo() {
     this.ipoService.saveNewIpo(this.addIpo.value).subscribe(data => {
-      console.log(data);
-      console.log('User inserted succesfully');
-      alert("Data inserted succesfully")
-      this.router.navigate(['manage-ipo'])
-    }, (err) => {
-      console.log('ERRRR:' + JSON.stringify(err));
-    })
-
+      alert("Data inserted succesfully");
+      this.router.navigate(['manage-ipo']);
+    });
   }
 
 }

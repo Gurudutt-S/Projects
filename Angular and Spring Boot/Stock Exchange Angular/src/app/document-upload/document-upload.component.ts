@@ -10,30 +10,29 @@ import bsCustomFileInput from 'bs-custom-file-input';
 })
 export class DocumentUploadComponent implements OnInit {
 
-  file:File;
-  isError:boolean=false;
-  errorMessage:string="";
-  constructor(private uploadService:StockPriceService) { }
+  file: File;
+  isError: boolean = false;
+  errorMessage: string = "";
+  constructor(private uploadService: StockPriceService) { }
 
   ngOnInit() {
 
     bsCustomFileInput.init();
 
-   
+
   }
-  onFileChange(e){
-    this.file=e.target.files[0];
+  onFileChange(e) {
+    this.file = e.target.files[0];
   }
 
-  uploadData(){
-    const uploadSheetData=new FormData();
-    uploadSheetData.append("stocksSheet",this.file,this.file.name);
+  uploadData() {
+    const uploadSheetData = new FormData();
+    uploadSheetData.append("stocksSheet", this.file, this.file.name);
     this.uploadService.uploadStockSheet(uploadSheetData).subscribe(
-      data=>{
-        console.log("Uploaded");
+      data => {
       }
     );
-    
+
   }
 
 

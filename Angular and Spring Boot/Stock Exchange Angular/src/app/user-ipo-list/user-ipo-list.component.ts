@@ -21,8 +21,7 @@ export class UserIpoListComponent implements OnInit {
   getIpo() {
     this.ipoService.getIpoData().subscribe(data => {
       this.ipoList = data;
-      console.log(data);
-    })
+    });
   }
 
 }

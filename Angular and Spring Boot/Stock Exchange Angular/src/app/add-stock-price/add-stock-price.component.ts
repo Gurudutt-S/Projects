@@ -25,11 +25,7 @@ export class AddStockPriceComponent implements OnInit {
 
   saveStockPrice() {
     this.stockPriceService.saveNewStockPrice(this.addStockPrice.value).subscribe(data => {
-      console.log(data);
-      console.log("data insered succesfully");
-    }, (err) => {
-      console.log('ERRRR:' + JSON.stringify(err));
-    })
+    });
   }
 
 }

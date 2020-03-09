@@ -21,20 +21,18 @@ export class CompanyListComponent implements OnInit {
   getCompany() {
     this.companyService.getCompanyData().subscribe(data => {
       this.companyList = data;
-      console.log(data);
-    });
+    })
   }
   deleteCompany(company: Company) {
     this.companyService.deleteCompany(company.id.toString()).subscribe(res => {
-      console.log(res);
-      this.getCompany();
+      this.getCompany()
     });
   }
 
   updateCompany(company: Company) {
     localStorage.removeItem('companyId');
     localStorage.setItem('companyId', company.id.toString());
-    this.router.navigate(['update-company']);
+    this.router.navigate(['/admin/update-company']);
   }
 
 }

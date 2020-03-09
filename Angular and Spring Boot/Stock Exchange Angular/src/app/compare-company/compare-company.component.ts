@@ -32,28 +32,26 @@ export class CompareCompanyComponent implements OnInit {
         this.company.push(comp.companyName)
       }
     });
-    
-      this.companyList1 = this.compareCompany.get('selectCompany1').valueChanges
-        .pipe(
-          startWith(''),
-          map(value => this._filter(value))
-        );
-  
-      this.companyList2 = this.compareCompany.get('selectCompany2').valueChanges
+
+    this.companyList1 = this.compareCompany.get('selectCompany1').valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filter(value))
+      );
+
+    this.companyList2 = this.compareCompany.get('selectCompany2').valueChanges
       .pipe(
         startWith(''),
         map(value => this._filter(value))
       );
   }
-  
+
   compareCompanies() {
-    console.log(this.compareCompany.value);
-    alert(this.compareCompany.value);
+    alert(this.compareCompany.value)
   }
 
   private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-    console.log(filterValue);
+    const filterValue = value.toLowerCase()
 
     return this.company.filter(option => option.toLowerCase().includes(filterValue));
   }

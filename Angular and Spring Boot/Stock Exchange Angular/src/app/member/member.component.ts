@@ -21,13 +21,11 @@ export class MemberComponent implements OnInit {
   getUsers() {
     this.userService.getUserData().subscribe(data => {
       this.userList = data;
-      console.log(data);
-    });
+    })
   }
-  deleteUser(user:User) {
+  deleteUser(user: User) {
     this.userService.deleteUser(user.id.toString()).subscribe(res => {
-      console.log(res);
-      this.getUsers();
+      this.getUsers()
     });
   }
 

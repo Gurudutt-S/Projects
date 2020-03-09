@@ -6,12 +6,12 @@
     <div class="container-fluid col-12 col-md-10">
         <form class="p-1 p-md-5 jumbotron shadow" [formGroup]="addIpo" (ngSubmit)="saveIpo()">
 
-            <div class="form-group ">
+            <div class="form-group">
                 <label for="companyName">Company Name:</label>
                 <input type="text" class="form-control" id="companyName" formControlName="companyName"
                     placeholder=" Add Company Name Here">
             </div>
-            <div class="row">
+            <div class="row no-gutters">
                 <div class="form-group col-12 col-md-6">
                     <label for="stockExchange">Stock Exchange:</label>
                     <input type="text" class="form-control" id="stockExchange" formControlName="stockExchange"
@@ -23,7 +23,7 @@
                         placeholder=" Price in Rupees">
                 </div>
             </div>
-            <div class="row">
+            <div class="row no-gutters">
                 <div class="form-group col-12 col-md-6">
                     <label for="noOfShares">No. of Shares:</label>
                     <input type="text" class="form-control" id="noOfShares" formControlName="noOfShares"

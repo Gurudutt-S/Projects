@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule} from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,10 +36,10 @@ import { UserCompanyComponent } from './user-company/user-company.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompanyChartComponent } from './company-chart/company-chart.component';
 
-import {HighchartsChartComponent} from 'highcharts-angular';
+import { HighchartsChartComponent } from 'highcharts-angular';
 import { SectorChartComponent } from './sector-chart/sector-chart.component';
 import { UpdateUserProfileComponent } from './update-user-profile/update-user-profile.component';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
 

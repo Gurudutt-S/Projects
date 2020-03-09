@@ -20,22 +20,20 @@ export class ManageStockPriceComponent implements OnInit {
 
   getStockPrice() {
     this.stockPriceService.getAllStockPriceData().subscribe(data => {
-      this.stockPriceList = data;
-      console.log(data);
+      this.stockPriceList = data
     });
   }
 
   deleteStockPrice(stockPrice: StockPrice) {
     this.stockPriceService.deleteStockPrice(stockPrice.id.toString()).subscribe(res => {
-      console.log(res);
-      this.getStockPrice();
+      this.getStockPrice()
     });
   }
 
   updateStockPrice(stockPrice: StockPrice) {
     localStorage.removeItem('stockPriceId');
     localStorage.setItem('stockPriceId', stockPrice.id.toString());
-    this.router.navigate(['update-stockPrice']);
+    this.router.navigate(['/admin/update-stockPrice']);
   }
 
 }

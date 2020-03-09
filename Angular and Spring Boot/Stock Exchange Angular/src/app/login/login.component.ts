@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserServiceService } from '../services/user-service.service';
 import { User } from '../models/user';
-import { AuthServiceService } from '../service/auth-service.service';
+import { AuthServiceService } from '../services/auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
     let username = this.loginForm.get('userName').value;
     let password = this.loginForm.get('password').value;
     const result = this.auth.authenticate(username, password);
-    console.log(result);
 
     //   let uname = this.loginForm.controls.userName.value;
     //   let password = this.loginForm.controls.password.value;

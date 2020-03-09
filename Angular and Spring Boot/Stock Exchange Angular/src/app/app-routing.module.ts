@@ -50,7 +50,7 @@ const routes: Routes = [
       { path: 'user-company', component: UserCompanyComponent },
       { path: 'company-chart', component: CompanyChartComponent },
       { path: 'sector-chart', component: SectorChartComponent },
-      { path: 'update-user-profile', component: UpdateUserProfileComponent}
+      { path: 'update-user-profile', component: UpdateUserProfileComponent }
     ]
   },
   {
@@ -66,13 +66,14 @@ const routes: Routes = [
       { path: 'add-exchange', component: AddStockExchangeComponent },
       { path: 'add-ipo', component: AddIpoComponent },
       { path: 'add-stockPrice', component: AddStockPriceComponent },
-      { path: 'update-user', component: UpdateUserComponent }
+      { path: 'update-user', component: UpdateUserComponent },
+      { path: 'update-ipo', component: UpdateIpoComponent },
+      { path: 'update-company', component: UpdateCompanyComponent },
+      { path: 'update-exchange', component: UpdateExchangeComponent },
+      { path: 'update-stockPrice', component: UpdateStockPriceComponent }
     ]
   },
-  { path: 'update-ipo', component: UpdateIpoComponent },
-  { path: 'update-company', component: UpdateCompanyComponent },
-  { path: 'update-exchange', component: UpdateExchangeComponent },
-  { path: 'update-stockPrice', component: UpdateStockPriceComponent },
+
 
   { path: 'activate', component: ActivateComponent }
 ];

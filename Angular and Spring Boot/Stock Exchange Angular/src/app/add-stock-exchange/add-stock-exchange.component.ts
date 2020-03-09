@@ -9,30 +9,26 @@ import { ExchangeService } from '../services/exchange.service';
 })
 export class AddStockExchangeComponent implements OnInit {
 
-  addStockExchange:FormGroup;
+  addStockExchange: FormGroup;
 
-  constructor(private formBulder:FormBuilder,private exchangeService:ExchangeService) { }
+  constructor(private formBulder: FormBuilder, private exchangeService: ExchangeService) { }
 
   ngOnInit() {
 
-    this.addStockExchange=this.formBulder.group({
-      id:[''],
-      stockExchangeName:[''],
-      breif:[''],
-      address:[''],
-      remarks:['']
+    this.addStockExchange = this.formBulder.group({
+      id: [''],
+      stockExchangeName: [''],
+      breif: [''],
+      address: [''],
+      remarks: ['']
     });
 
   }
 
   saveExchange() {
     this.exchangeService.saveNewExchange(this.addStockExchange.value).subscribe(data => {
-      console.log(data);
-      console.log('exchange inserted succesfully');
-      alert("Data inserted succesfully")
-    }, (err) => {
-      console.log('ERRRR:' + JSON.stringify(err));
-    })
+      alert("Data inserted succesfully");
+    });
   }
 
 }

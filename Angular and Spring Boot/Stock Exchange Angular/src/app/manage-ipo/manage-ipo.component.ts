@@ -21,12 +21,10 @@ export class ManageIpoComponent implements OnInit {
   getIpo() {
     this.ipoService.getIpoData().subscribe(data => {
       this.ipoList = data;
-      console.log(data);
     });
   }
   deleteIpo(ipo: Ipo) {
     this.ipoService.deleteIpo(ipo.id.toString()).subscribe(res => {
-      console.log(res);
       this.getIpo();
     });
   }
@@ -34,7 +32,7 @@ export class ManageIpoComponent implements OnInit {
   updateIpo(ipo: Ipo) {
     localStorage.removeItem('ipoId');
     localStorage.setItem('ipoId', ipo.id.toString());
-    this.router.navigate(['update-ipo']);
+    this.router.navigate(['/admin/update-ipo']);
   }
 
 }

@@ -4,9 +4,11 @@
     }
     .display-4{
         text-align: center;
+        font-size: 3rem;
     }
     .display-6{
         text-align: center;
+        display: none;
     }
 }
 

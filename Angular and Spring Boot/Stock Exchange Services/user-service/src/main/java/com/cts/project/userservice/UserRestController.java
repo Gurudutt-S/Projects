@@ -33,7 +33,7 @@ public class UserRestController {
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@GetMapping("/login")
-	public ResponseEntity<?> login() {
+	public ResponseEntity<?> login() {												
 		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
 	}
 

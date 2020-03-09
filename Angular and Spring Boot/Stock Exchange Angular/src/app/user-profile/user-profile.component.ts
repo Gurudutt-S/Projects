@@ -29,7 +29,7 @@ export class UserProfileComponent implements OnInit {
       this.userService.getUserById(id).subscribe(
         data => {
           this.userProfile.patchValue(data);
-          this.userList=data;
+          this.userList = data;
         }
       );
     }

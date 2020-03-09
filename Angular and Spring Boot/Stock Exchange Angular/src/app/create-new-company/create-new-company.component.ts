@@ -12,7 +12,7 @@ export class CreateNewCompanyComponent implements OnInit {
 
   addCompany: FormGroup;
 
-  constructor(private formBulder: FormBuilder, private companyService: CompanyService,private route:Router) { }
+  constructor(private formBulder: FormBuilder, private companyService: CompanyService, private route: Router) { }
 
   ngOnInit() {
 
@@ -30,12 +30,8 @@ export class CreateNewCompanyComponent implements OnInit {
 
   saveCompany() {
     this.companyService.saveNewCompany(this.addCompany.value).subscribe(data => {
-      console.log(data);
-      console.log('Company inserted succesfully');
-      alert("Data inserted succesfully");
-      this.route.navigate(['/manage-company']);
-    }, (err) => {
-      console.log('ERRRR:' + JSON.stringify(err));
+      alert("Data inserted succesfully")
+      this.route.navigate(['/manage-company'])
     })
 
   }

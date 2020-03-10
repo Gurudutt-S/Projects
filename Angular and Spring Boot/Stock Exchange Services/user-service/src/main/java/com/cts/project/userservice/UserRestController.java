@@ -64,6 +64,7 @@ public class UserRestController {
 
 	@PutMapping(value = "/activate")
 	public ResponseEntity<?> activateUser(@RequestBody String email) {
+		System.out.println(email);
 		try {
 			Boolean status = userService.activateUser(email);
 			return new ResponseEntity<Boolean>(status, HttpStatus.OK);

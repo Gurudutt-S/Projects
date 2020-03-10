@@ -33,8 +33,8 @@ export class UserServiceService {
     return this.httpClient.get<User>(this.httpUrl + id);
   }
 
-  serviceActivation(obj) {
-    return this.httpClient.put('http://localhost:8000/activate', obj)
+  serviceActivation(email) {
+    return this.httpClient.put('http://localhost:8000/activate', email)
   }
 
   getUserByUsername(name: string): Observable<User> {

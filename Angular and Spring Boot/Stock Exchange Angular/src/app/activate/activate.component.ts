@@ -16,8 +16,8 @@ export class ActivateComponent implements OnInit {
     var urlad = document.URL
     var strarr = urlad.split("?")
     var str = strarr[1]
-    str = str.substring(0, str.length - 1);
-    this.service.serviceActivation({ email: str }).subscribe(dt => {
+    let email = str.substring(0, str.length - 1);
+    this.service.serviceActivation(email).subscribe(dt => {
       if (dt.result == 1) {
         this.msg = "Congratulations!!! your account activated.."
       }

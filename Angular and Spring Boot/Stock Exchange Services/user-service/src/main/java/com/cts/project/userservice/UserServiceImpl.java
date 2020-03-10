@@ -6,6 +6,8 @@ import java.util.Optional;
 
 import javax.mail.internet.MimeMessage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -20,6 +22,8 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	JavaMailSender jms;
+	
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Override
 	public List<UserDTO> getAllUsers() {
@@ -45,21 +49,22 @@ public class UserServiceImpl implements UserService {
 	public UserDTO saveUser(UserDTO user) {
 		User newUser = new User();
 		BeanUtils.copyProperties(user, newUser);
-		User users = userRepo.save(newUser);
-
+		newUser.setUserType("ROLE_USER");
+		newUser = userRepo.save(newUser);
+		logger.info("Email to --> {}",newUser.getEmail());
 		try {
 			MimeMessage mimeMessage = jms.createMimeMessage();
 			MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
 			helper.setFrom("babymol.bobby@gmail.com");
-			helper.setTo(users.getEmail());
+			helper.setTo(newUser.getEmail());
 			helper.setSubject("Thanks for joining Stock Charts");
-			helper.setText("\"Please click on the 'http://localhost:4200/activate?" + newUser.getEmail()
-					+ "+ \"' to activate your account.\"");
+			helper.setText("\"Please click on the <a href='http://localhost:4200/activate?" + newUser.getEmail()
+					+ "'>link</a> to activate your account.\"");
 			jms.send(mimeMessage);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		BeanUtils.copyProperties(users, user);
+		BeanUtils.copyProperties(newUser, user);
 		return user;
 	}
 
@@ -79,6 +84,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean activateUser(String email) {
 		User user = userRepo.findByEmail(email);
+		logger.info("Email --> {}",email);
 		if (!user.isEnabled()) {
 			user.setEnabled(true);
 			userRepo.save(user);

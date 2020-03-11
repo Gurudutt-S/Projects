@@ -26,11 +26,12 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.cors().and().csrf().disable().authorizeRequests()
 			.antMatchers("/**").permitAll()
 			.antMatchers("/user-service/login").permitAll()
-			.antMatchers("/user-service/user**").permitAll()
+			.antMatchers("/user-service/user").permitAll()
 			.antMatchers("/user-service/activate").permitAll()
 			.antMatchers("/user-service/usersignup").permitAll()
 			.antMatchers("/user-service/**").access("hasRole('USER')")
 			.antMatchers("/user-service/admin/**").access("hasRole('ADMIN')")
+			.antMatchers("company-service/company").permitAll()
 			.and().httpBasic();
 	}
 

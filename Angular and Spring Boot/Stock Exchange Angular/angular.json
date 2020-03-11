@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "StockCharts"
+  "defaultProject": "StockCharts",
+  "cli": {
+    "analytics": "d1908c74-01f1-4d02-a9bb-01a74c55065c"
+  }
 }

@@ -42,7 +42,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'user-page', component: UserLandingPageComponent, children: [
-      { path: '', redirectTo: 'user-profile', pathMatch: 'full' },
+      { path: '', redirectTo: 'user-ipo-list', pathMatch: 'full' },
       { path: 'user-profile', component: UserProfileComponent },
       { path: 'user-ipo-list', component: UserIpoListComponent },
       { path: 'compare-company', component: CompareCompanyComponent },

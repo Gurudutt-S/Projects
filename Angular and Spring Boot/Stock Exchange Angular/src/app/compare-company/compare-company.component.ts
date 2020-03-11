@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { CompanyService } from '../services/company.service';
-import { Company } from '../models/company';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 
@@ -51,8 +50,7 @@ export class CompareCompanyComponent implements OnInit {
   }
 
   private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase()
-
+    const filterValue = value.toLowerCase();   
     return this.company.filter(option => option.toLowerCase().includes(filterValue));
   }
 }

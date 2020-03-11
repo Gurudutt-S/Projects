@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AuthServiceService } from './auth-service.service';
-import { HttpRequest, HttpHandler } from '@angular/common/http';
+import { HttpRequest, HttpHandler, HttpInterceptor } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpInterceptorService {
+export class HttpInterceptorService implements HttpInterceptor {
 
   constructor(public auth: AuthServiceService) { }
 

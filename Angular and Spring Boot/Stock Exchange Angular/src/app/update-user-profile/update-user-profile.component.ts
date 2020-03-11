@@ -27,7 +27,7 @@ export class UpdateUserProfileComponent implements OnInit {
       userType: [''],
       enabled: ['']
     });
-    const id = localStorage.getItem('loginId');
+    const id = localStorage.getItem('profile_id');
     if (+id > 0) {
       this.userService.getUserById(id).subscribe(user => {
         this.userProfile.patchValue(user);

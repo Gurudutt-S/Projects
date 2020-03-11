@@ -20,13 +20,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this._fb.group({
-      userName: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', Validators.required]
     });
 
-    this.userService.getUserData().subscribe(data => {
-      this.users = data;
-    })
+    // this.userService.getUserData().subscribe(data => {
+    //   this.users = data;
+    // })
 
   }
 
@@ -36,9 +36,21 @@ export class LoginComponent implements OnInit {
 
   login() {
 
-    let username = this.loginForm.get('userName').value;
+    let username = this.loginForm.get('username').value;
     let password = this.loginForm.get('password').value;
     const result = this.auth.authenticate(username, password);
+
+    result.subscribe(data => {
+      sessionStorage.removeItem('userId');
+      sessionStorage.setItem('userId', data.id.toString());
+      if (sessionStorage.getItem('userType') == 'admin') {
+        this.router.navigate(['/admin']);
+      }
+      if (sessionStorage.getItem('userType') == 'user') {
+        this.router.navigate(['/user-page']);
+      }
+
+    })
 
     //   let uname = this.loginForm.controls.userName.value;
     //   let password = this.loginForm.controls.password.value;

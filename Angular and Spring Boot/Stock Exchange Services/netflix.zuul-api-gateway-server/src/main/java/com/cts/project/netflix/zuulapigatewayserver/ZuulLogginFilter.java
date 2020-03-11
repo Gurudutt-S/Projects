@@ -1,4 +1,4 @@
-package com.cts.project.filter;
+package com.cts.project.netflix.zuulapigatewayserver;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,7 +11,7 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
 @Component
-public class ZuilLogginFilter extends ZuulFilter {
+public class ZuulLogginFilter extends ZuulFilter {
 
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -24,7 +24,8 @@ public class ZuilLogginFilter extends ZuulFilter {
 	@Override
 	public Object run() throws ZuulException {
 		HttpServletRequest request = RequestContext.getCurrentContext().getRequest();
-		logger.info("Request --> {} and URI --> {} ", request, request.getRequestURI());
+		logger.info("Request--> {} and URI --> {}", request, request.getRequestURI());
+//		logger.info("Auth Token --> {}",request.getHeader("Authorization"));
 		return null;
 	}
 

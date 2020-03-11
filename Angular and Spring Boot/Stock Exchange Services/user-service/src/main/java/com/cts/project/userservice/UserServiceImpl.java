@@ -2,6 +2,7 @@ package com.cts.project.userservice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import javax.mail.internet.MimeMessage;
@@ -22,7 +23,7 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	JavaMailSender jms;
-	
+
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Override
@@ -51,7 +52,7 @@ public class UserServiceImpl implements UserService {
 		BeanUtils.copyProperties(user, newUser);
 		newUser.setUserType("ROLE_USER");
 		newUser = userRepo.save(newUser);
-		logger.info("Email to --> {}",newUser.getEmail());
+		logger.info("Email to --> {}", newUser.getEmail());
 		try {
 			MimeMessage mimeMessage = jms.createMimeMessage();
 			MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
@@ -84,7 +85,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean activateUser(String email) {
 		User user = userRepo.findByEmail(email);
-		logger.info("Email --> {}",email);
+		logger.info("Email --> {}", email);
 		if (!user.isEnabled()) {
 			user.setEnabled(true);
 			userRepo.save(user);
@@ -97,6 +98,14 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserDTO getUserByUsername(String name) {
 		User user = userRepo.findByUsername(name);
+		UserDTO userDTO = new UserDTO();
+		BeanUtils.copyProperties(user, userDTO);
+		return userDTO;
+	}
+
+	@Override
+	public UserDTO getUserByUsernnameAndPassword(String username, String password) throws NoSuchElementException {
+		User user = userRepo.findByUsernameAndPassword(username, password).get();
 		UserDTO userDTO = new UserDTO();
 		BeanUtils.copyProperties(user, userDTO);
 		return userDTO;

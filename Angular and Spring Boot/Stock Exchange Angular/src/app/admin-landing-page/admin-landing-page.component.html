@@ -24,7 +24,7 @@
                 <li class="nav-item"><a [routerLink]="['./import-data']" [routerLinkActive]="['active']"
                         class="nav-link">Document Upload</a></li>
             </ul>
-            <a [routerLink]="['/home']" class="text-success  text-decoration-none">Logout</a>
+           <button class="btn"><a class="text-success  text-decoration-none" (click)="logout()">Logout</a></button>
         </div>
 
     </nav>

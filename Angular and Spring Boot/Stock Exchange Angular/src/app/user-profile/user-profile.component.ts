@@ -24,8 +24,8 @@ export class UserProfileComponent implements OnInit {
       phone: [''],
       email: ['']
     });
-    const id = localStorage.getItem('loginId');
-    if (id !== null) {
+    const id = sessionStorage.getItem('userId');
+    if (+id>0) {
       this.userService.getUserById(id).subscribe(
         data => {
           this.userProfile.patchValue(data);

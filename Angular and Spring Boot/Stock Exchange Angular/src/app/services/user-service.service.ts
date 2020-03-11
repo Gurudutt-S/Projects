@@ -8,16 +8,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserServiceService {
 
-  httpUrl = "http://localhost:8000/user/";
+  httpUrl = "http://localhost:8765/user-service/user/";
 
   constructor(private httpClient: HttpClient) { }
 
   getUserData(): Observable<User[]> {
-    return this.httpClient.get<User[]>('http://localhost:8000/user');
+    return this.httpClient.get<User[]>(this.httpUrl);
   }
 
   saveNewUser(user: User): Observable<User> {
-    return this.httpClient.post<User>(this.httpUrl, user);
+    return this.httpClient.post<User>('http://localhost:8765/user-service/usersignup/', user);
   }
 
   deleteUser(id: string): Observable<User> {
@@ -34,7 +34,7 @@ export class UserServiceService {
   }
 
   serviceActivation(email) {
-    return this.httpClient.put('http://localhost:8000/activate', email)
+    return this.httpClient.put('http://localhost:8765/user-service/activate', email)
   }
 
   getUserByUsername(name: string): Observable<User> {

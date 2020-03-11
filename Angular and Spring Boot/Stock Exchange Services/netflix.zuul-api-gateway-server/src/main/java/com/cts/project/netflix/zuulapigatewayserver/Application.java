@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @EnableZuulProxy
 @EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages = "com.cts.project")
+@SpringBootApplication(scanBasePackages = "com.cts.project.netflix")
 public class Application {
 
 	public static void main(String[] args) {

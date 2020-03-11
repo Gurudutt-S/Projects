@@ -15,7 +15,9 @@ public interface UserService {
 	public UserDTO updateUser(UserDTO user);
 
 	public boolean activateUser(String email);
-	
+
 	public UserDTO getUserByUsername(String name);
+
+	public UserDTO getUserByUsernnameAndPassword(String username, String password);
 
 }

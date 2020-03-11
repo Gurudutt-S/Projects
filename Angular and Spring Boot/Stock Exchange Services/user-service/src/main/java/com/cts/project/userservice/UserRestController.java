@@ -1,7 +1,11 @@
 package com.cts.project.userservice;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,8 +37,29 @@ public class UserRestController {
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@GetMapping("/login")
-	public ResponseEntity<?> login() {												
-		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+	public ResponseEntity<?> login(HttpServletRequest request) {
+		String authorization = request.getHeader("Authorization");
+		logger.info("Login attempted ---> {}", authorization);
+		String username = null;
+		String password = null;
+		if (authorization != null && authorization.startsWith("Basic")) {
+			String base64Credentials = authorization.substring("Basic".length()).trim();
+			byte[] credDecoded = Base64.getDecoder().decode(base64Credentials);
+			String credentials = new String(credDecoded, StandardCharsets.UTF_8);
+			username = credentials.split(":")[0];
+			password = credentials.split(":")[1];
+			logger.info("Uername --> {}",username);
+			logger.info("Password --> {}",password);
+		}
+		try {
+			UserDTO user = userService.getUserByUsernnameAndPassword(username, password);
+			logger.info("User Logged using username --> {}", username);
+			return new ResponseEntity<UserDTO>(user, HttpStatus.OK);
+		} catch (Exception e) {
+			System.out.println(e.getStackTrace());
+			logger.info("unauthorized access --> {}", e.getStackTrace().toString());
+			return new ResponseEntity<String>("No user found", HttpStatus.BAD_REQUEST);
+		}
 	}
 
 	@GetMapping("/user")
@@ -57,7 +82,7 @@ public class UserRestController {
 		}
 	}
 
-	@PostMapping("/user")
+	@PostMapping("/usersignup")
 	public ResponseEntity<UserDTO> saveUser(@RequestBody UserDTO userDTO) {
 		return new ResponseEntity<UserDTO>(userService.saveUser(userDTO), HttpStatus.OK);
 	}

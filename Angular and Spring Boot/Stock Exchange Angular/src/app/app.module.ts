@@ -11,7 +11,7 @@ import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-pa
 import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component';
 import { DocumentUploadComponent } from './document-upload/document-upload.component';
 import { MemberComponent } from './member/member.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { CreateNewCompanyComponent } from './create-new-company/create-new-company.component';
 import { CompanyListComponent } from './company-list/company-list.component';
@@ -42,6 +42,7 @@ import { UpdateUserProfileComponent } from './update-user-profile/update-user-pr
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
+import { HttpInterceptorService } from './services/http-interceptor.service';
 
 
 @NgModule({
@@ -90,7 +91,13 @@ import { MatInputModule } from '@angular/material/input'
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

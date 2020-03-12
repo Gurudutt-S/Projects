@@ -31,7 +31,7 @@ export class AddIpoComponent implements OnInit {
   saveIpo() {
     this.ipoService.saveNewIpo(this.addIpo.value).subscribe(data => {
       alert("Data inserted succesfully");
-      this.router.navigate(['manage-ipo']);
+      this.router.navigate(['/admin/manage-ipo']);
     });
   }
 

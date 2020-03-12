@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserServiceService {
 
-  httpUrl = "http://localhost:8765/user-service/user/";
+  httpUrl = environment.host + "user-service/user/";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,7 +18,7 @@ export class UserServiceService {
   }
 
   saveNewUser(user: User): Observable<User> {
-    return this.httpClient.post<User>('http://localhost:8765/user-service/usersignup/', user);
+    return this.httpClient.post<User>(environment.host + 'user-service/usersignup/', user);
   }
 
   deleteUser(id: string): Observable<User> {
@@ -34,11 +35,11 @@ export class UserServiceService {
   }
 
   serviceActivation(email) {
-    return this.httpClient.put('http://localhost:8765/user-service/activate', email)
+    return this.httpClient.put(environment.host + 'user-service/activate', email)
   }
 
   getUserByUsername(name: string): Observable<User> {
-    return this.httpClient.get<User>(this.httpUrl+"username/" + name);
+    return this.httpClient.get<User>(this.httpUrl + "username/" + name);
   }
 
   isAdmin(): boolean {

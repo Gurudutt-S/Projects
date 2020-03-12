@@ -38,7 +38,8 @@ export class UpdateCompanyComponent implements OnInit {
   }
   updateTheCompany(company: Company) {
     this.companyService.updateCompanyInfo(this.updateCompany.value).subscribe(comp => {
-      this.route.navigate(['manage-company']);
+      localStorage.removeItem('companyId');
+      this.route.navigate(['/admin/manage-company']);
     });
   }
 

@@ -30,8 +30,9 @@ export class SignUpComponent implements OnInit {
 
   saveUser() {
     this.userService.saveNewUser(this.signupForm.value).subscribe(data => {
-      // alert("Data inserted succesfully");
+      alert("Data inserted succesfully");
       $('#signUpModal').modal('show');
+      this.router.navigate(['/home'])
     });
   }
 

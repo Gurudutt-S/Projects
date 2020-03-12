@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ExchangeService } from '../services/exchange.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-stock-exchange',
@@ -11,7 +12,7 @@ export class AddStockExchangeComponent implements OnInit {
 
   addStockExchange: FormGroup;
 
-  constructor(private formBulder: FormBuilder, private exchangeService: ExchangeService) { }
+  constructor(private formBulder: FormBuilder, private exchangeService: ExchangeService, private router: Router) { }
 
   ngOnInit() {
 
@@ -28,6 +29,7 @@ export class AddStockExchangeComponent implements OnInit {
   saveExchange() {
     this.exchangeService.saveNewExchange(this.addStockExchange.value).subscribe(data => {
       alert("Data inserted succesfully");
+      this.router.navigate(['/admin/manage-exchange'])
     });
   }
 

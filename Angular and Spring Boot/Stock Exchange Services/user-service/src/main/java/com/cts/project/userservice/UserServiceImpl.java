@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
 			helper.setTo(newUser.getEmail());
 			helper.setSubject("Thanks for joining Stock Charts");
 			helper.setText("\"Please click on the <a href='http://localhost:4200/activate?" + newUser.getEmail()
-					+ "'>link</a> to activate your account.\"");
+					+ "'>link</a> to activate your account.\'",true);
 			jms.send(mimeMessage);
 		} catch (Exception e) {
 			e.printStackTrace();

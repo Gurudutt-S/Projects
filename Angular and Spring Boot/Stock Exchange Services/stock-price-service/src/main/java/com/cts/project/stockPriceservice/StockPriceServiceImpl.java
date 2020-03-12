@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-import javax.mail.Multipart;
-
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -58,16 +56,14 @@ public class StockPriceServiceImpl implements StockPriceService {
 		return price;
 	}
 
-	
-
 	@Override
 	public importSummary addStockPricesFromExcelSheet(MultipartFile file) throws Exception {
-		InputStream in=file.getInputStream();
-		int currentRowNum=1;
-		int currentCellNum=0;
-		LocalDate startDate=LocalDate.MAX;
-		LocalDate endDate=LocalDate.MIN;
-		
+		InputStream in = file.getInputStream();
+		int currentRowNum = 1;
+		int currentCellNum = 0;
+		LocalDate startDate = LocalDate.MAX;
+		LocalDate endDate = LocalDate.MIN;
+
 		List<String> duplicates = new ArrayList<String>();
 		List<StockPrice> stockPricesEntities = new ArrayList<StockPrice>();
 		Set<String> companyCodes = new HashSet<String>();
@@ -82,15 +78,14 @@ public class StockPriceServiceImpl implements StockPriceService {
 					int stockPrice = (int) row.getCell(currentCellNum++).getNumericCellValue();
 					companyCodes.add(companyCode);
 					stockExchanges.add(stockExchangeName);
-					LocalDate date = row.getCell(currentCellNum++).getDateCellValue()
-							.toInstant()
-							.atZone(ZoneId.of("+05:30"))
-							.toLocalDate();
+					LocalDate date = row.getCell(currentCellNum++).getDateCellValue().toInstant()
+							.atZone(ZoneId.of("+05:30")).toLocalDate();
 					startDate = date.isBefore(startDate) ? date : startDate;
 					endDate = date.isAfter(endDate) ? date : endDate;
 					LocalTime time = LocalTime.parse(row.getCell(currentCellNum++).getStringCellValue().trim());
 					if (!stockPriceRepo.getIfAlreadyExists(companyCode, stockExchangeName, date, time).isPresent()) {
-						StockPrice stockPriceEntity = new StockPrice(companyCode, stockExchangeName, stockPrice, date, time);
+						StockPrice stockPriceEntity = new StockPrice(companyCode, stockExchangeName, stockPrice, date,
+								time);
 						stockPricesEntities.add(stockPriceEntity);
 					} else {
 						duplicates.add("The record at row " + (currentRowNum + 1) + " is duplicate.");
@@ -118,7 +113,7 @@ public class StockPriceServiceImpl implements StockPriceService {
 					companyCode = companyCode.trim();
 					String stockExchangeName = row.getCell(currentCellNum++).getStringCellValue().trim();
 					int stockPrice = (int) row.getCell(currentCellNum++).getNumericCellValue();
-					
+
 					companyCodes.add(companyCode);
 					stockExchanges.add(stockExchangeName);
 					LocalDate date = row.getCell(currentCellNum++).getDateCellValue().toInstant()
@@ -127,8 +122,8 @@ public class StockPriceServiceImpl implements StockPriceService {
 					endDate = date.isAfter(endDate) ? date : endDate;
 					LocalTime time = LocalTime.parse(row.getCell(currentCellNum++).getStringCellValue().trim());
 					if (!stockPriceRepo.getIfAlreadyExists(companyCode, stockExchangeName, date, time).isPresent()) {
-						StockPrice stockPriceEntity = new StockPrice(companyCode, stockExchangeName,
-								stockPrice, date, time);
+						StockPrice stockPriceEntity = new StockPrice(companyCode, stockExchangeName, stockPrice, date,
+								time);
 						stockPricesEntities.add(stockPriceEntity);
 					} else {
 						duplicates.add("The record at row " + (currentRowNum + 1) + " is duplicate.");
@@ -150,10 +145,13 @@ public class StockPriceServiceImpl implements StockPriceService {
 		stockPriceRepo.saveAll(stockPricesEntities);
 		return new importSummary(stockPricesEntities.size(), startDate, endDate, companyCodes, stockExchanges,
 				duplicates);
-		
-	}
-	}
-	
-	
 
+	}
 
+	@Override
+	public List<StockPriceOnPeriod> getStockPriceBetweenDates(String companyCode, String stockExchange,
+			LocalDate startDate, LocalDate endDate, String Periodicity) {
+		return stockPriceRepo.getStockPriceBetweenDates(companyCode, stockExchange, startDate, endDate);
+	}
+
+}

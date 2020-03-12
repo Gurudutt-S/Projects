@@ -1,37 +1,39 @@
 <div class="row">
     <div class="col-md-8 offset-md-2">
-        <form class=" container responsive pb-3" [formGroup]="signupForm" (ngSubmit)="saveUser()">
+        <form class=" container responsive pb-2 mt-5" [formGroup]="signupForm" (ngSubmit)="saveUser()">
             <div class="card-header bg-dark">
-                <h2 class="display-5 text-center py-3 text-light">Enter your Details Here</h2>
+                <h2 class="display-5 text-center  text-muted"><i class="fa fa-user-plus"
+                        aria-hidden="true"></i>&nbsp;Sign Up</h2>
             </div>
 
             <div class="jumbotron p-4 bg-light shadow rounded">
                 <div class="form-group">
-                    <label for="username">Username:</label>
+                    <label for="username"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;username:</label>
                     <input type="text" class="form-control" id="username" formControlName="username"
-                        placeholder=" Should contain letters and numbers">
+                        placeholder=" Should contain letters and numbers" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">password:</label>
+                    <label for="password"><i class="fa fa-key fa-lg" aria-hidden="true"></i>&nbsp;password:</label>
                     <input type="password" class="form-control" id="password" formControlName="password"
-                        placeholder=" Use Strong password">
+                        placeholder=" Use Strong password" required>
                 </div>
                 <div class="row no-gutters">
                     <div class="form-group col-lg col-md px-lg- px-md-11">
-                        <label for="email">Email:</label>
+                        <label for="email"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>&nbsp;e-mail:</label>
                         <input type="email" class="form-control " id="email" formControlName="email"
-                            placeholder=" asd@asd.com">
+                            placeholder=" asd@asd.com" required>
                     </div>
                     <div class="form-group col-lg col-md px-lg-1 px-md-1">
-                        <label for="phone">phone:</label>
+                        <label for="phone"><i class="fa fa-phone-square fa-lg"
+                                aria-hidden="true"></i>&nbsp;phone:</label>
                         <input type="number" class="form-control " id="phone" formControlName="phone"
-                            placeholder=" Phone Number">
+                            placeholder=" Phone Number" required>
                     </div>
                 </div>
 
-                <div class="text-center mt-3 mb-5">
-                    <input type="reset" [disabled]="!signupForm.valid" class="btn  btn-info btn-sm-sm  px-4  mx-3">
-                    <input type="submit" [disabled]="!signupForm.valid" class="btn  btn-success btn-sm-sm  px-4  mx-3">
+                <div class="text-center mt-3 ">
+                    <input type="reset" [disabled]="!signupForm.valid" class="btn  btn-dark  px-4  mx-3">
+                    <input type="submit" [disabled]="!signupForm.valid" class="btn  btn-dark  px-4  mx-3">
                 </div>
             </div>
         </form>
@@ -53,4 +55,3 @@
         </div>
     </div>
 </div>
-

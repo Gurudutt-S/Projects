@@ -38,7 +38,8 @@ export class UpdateIpoComponent implements OnInit {
 
   updateTheIpo(ipo: Ipo) {
     this.ipoService.UpdateIpoInfo(this.updateIpo.value).subscribe(u => {
-      this.router.navigate(['manage-ipo'])
+      localStorage.removeItem('ipoId');
+      this.router.navigate(['/admin/manage-ipo'])
     });
   }
 

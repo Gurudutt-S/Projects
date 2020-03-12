@@ -31,7 +31,7 @@ export class CreateNewCompanyComponent implements OnInit {
   saveCompany() {
     this.companyService.saveNewCompany(this.addCompany.value).subscribe(data => {
       alert("Data inserted succesfully")
-      this.route.navigate(['/manage-company'])
+      this.route.navigate(['/admin/manage-company'])
     })
 
   }

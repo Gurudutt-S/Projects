@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Exchange } from '../models/exchange';
 import { StockPrice } from '../models/StockPrice';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StockPriceService {
 
-  httpUrl = "http://localhost:8006/stockPrice/";
+  httpUrl = environment.host + "stock-price-service/stockPrice/";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -34,7 +35,7 @@ export class StockPriceService {
   }
 
   uploadStockSheet(formData: FormData): Observable<void> {
-    return this.httpClient.post<void>(this.httpUrl + "uploadStocksSheet", formData);
+    return this.httpClient.post<void>(environment.host + "stock-price-service/stockPrice/uploadStocksSheet", formData);
   }
 
 }

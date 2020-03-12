@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { StockPriceService } from '../services/stock-price.service';
 
 @Component({
   selector: 'app-company-chart',
@@ -7,14 +8,16 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./company-chart.component.css']
 })
 export class CompanyChartComponent implements OnInit {
+  stockDate: any[];
+  stockPrice:any[];
 
-  title = 'myHighchart';
+  title = 'Stock Charts';
 
   data = [{
-    name: 'ItSolutionStuff.com',
-    data: [500, 700, 555, 444, 777, 877, 944, 567, 666, 789, 456, 654]
+    name: 'Company 1',
+    data: this.stockPrice
   }, {
-    name: 'Nicesnippets.com',
+    name: 'Company 2',
     data: [677, 455, 677, 877, 455, 778, 888, 567, 785, 488, 567, 654]
   }];
 
@@ -24,22 +27,30 @@ export class CompanyChartComponent implements OnInit {
       type: "spline"
     },
     title: {
-      text: "Monthly Site Visitor"
+      text: "Daily Stock Price"
     },
     xAxis: {
       categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     },
     yAxis: {
       title: {
-        text: "Visitors"
+        text: "StockPrice"
       }
     },
     series: this.data
   };
 
-  constructor() { }
+  constructor(private stockPriceService: StockPriceService) { }
 
   ngOnInit() {
+
+    this.stockPriceService.getAllStockPriceData().subscribe(data => {
+      for (let stock of data) {
+        this.stockDate.push(stock.date);
+        this.stockPrice.push(stock.currentPrice);
+      }
+    });
+
   }
 
 }

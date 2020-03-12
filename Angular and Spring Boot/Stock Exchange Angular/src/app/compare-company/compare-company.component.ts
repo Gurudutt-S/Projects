@@ -32,13 +32,13 @@ export class CompareCompanyComponent implements OnInit {
       }
     });
 
-    this.companyList1 = this.compareCompany.get('selectCompany1').valueChanges
+    this.companyList1 = this.compareCompany.get('selectCompany1')!.valueChanges
       .pipe(
         startWith(''),
         map(value => this._filter(value))
       );
 
-    this.companyList2 = this.compareCompany.get('selectCompany2').valueChanges
+    this.companyList2 = this.compareCompany.get('selectCompany2')!.valueChanges
       .pipe(
         startWith(''),
         map(value => this._filter(value))

@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Exchange } from '../models/exchange';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExchangeService {
 
-  httpUrl = "http://localhost:8005/stockExchange/";
+  httpUrl = environment.host + "stock-exchange-service/stockExchange/";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -29,7 +30,7 @@ export class ExchangeService {
     return this.httpClient.put<Exchange>(this.httpUrl, exchange);
   }
 
-  getExchangeById(id: string):Observable<Exchange> {
+  getExchangeById(id: string): Observable<Exchange> {
     return this.httpClient.get<Exchange>(this.httpUrl + id);
   }
 

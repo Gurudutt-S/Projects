@@ -35,7 +35,7 @@ export class UpdateStockPriceComponent implements OnInit {
 
   updateTheStockPrice(stockPrice: StockPrice) {
     this.stockPriceService.updateStockPrice(this.updateStockPrice.value).subscribe(data => {
-      this.router.navigate(['manage-stockPrice']);
+      this.router.navigate(['/admin/manage-stockPrice']);
     })
   }
 }

@@ -1,5 +1,6 @@
 package com.cts.project.stockPriceservice;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.mail.Multipart;
@@ -19,5 +20,8 @@ public interface StockPriceService {
 	public StockPrice updateStockPrice(StockPrice stockPrice);
 	
 	public importSummary addStockPricesFromExcelSheet(MultipartFile file)throws Exception;
+
+	List<StockPriceOnPeriod> getStockPriceBetweenDates(String companyCode, String stockExchange, LocalDate startDate,
+			LocalDate endDate, String Periodicity);
 
 }

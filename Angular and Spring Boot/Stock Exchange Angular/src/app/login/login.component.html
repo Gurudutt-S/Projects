@@ -2,20 +2,22 @@
     <div class="col-md-6 offset-md-3">
         <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-group responsive pb-2 mt-5 container">
             <div class="card-header rounded bg-dark shadow">
-                <h2 class="display-5 text-center text-muted">Sign In</h2>
+                <h2 class="display-5 text-center text-muted"><i class="fa fa-sign-in"
+                        aria-hidden="true"></i>&nbsp;Sign In</h2>
             </div>
 
             <div class="card p-4 shadow">
-                <label>Username:</label>
+                <label><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;Username:</label>
                 <input type="text" class="form-control mb-3" formControlName="username"
-                    placeholder="Enter your user name">
-                <label>Password:</label>
+                    placeholder="Enter your user name" required>
+                <label><i class="fa fa-key fa-lg" aria-hidden="true"></i>&nbsp;Password:</label>
                 <input type="password" class="form-control mb-3" formControlName="password"
-                    placeholder="Enter your password">
+                    placeholder="Enter your password" required>
 
                 <div class="text-center mt-3">
-                    <input [disabled]="!loginForm.valid" type="reset" class="btn btn-sm-sm btn-info px-3 mx-3">
-                    <input [disabled]="!loginForm.valid" type="submit" class="btn btn-sm-sm btn-success px-3">
+                    <input [disabled]="!loginForm.valid" type="reset" class="btn  btn-dark px-3 mx-3">
+                    <input [disabled]="!loginForm.valid" type="submit" value="Sign In"
+                        class="btn  btn-dark border-dark px-3">
                 </div>
             </div>
         </form>

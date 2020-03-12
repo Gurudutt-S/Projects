@@ -36,7 +36,8 @@ export class UpdateExchangeComponent implements OnInit {
 
   updateTheExchange(exchange: Exchange) {
     this.exchangeService.updateExchangeinfo(this.updateStockExchange.value).subscribe(exch => {
-      this.router.navigate(['manage-exchange'])
+      localStorage.removeItem('exchangeId')
+      this.router.navigate(['/admin/manage-exchange'])
     })
   }
 

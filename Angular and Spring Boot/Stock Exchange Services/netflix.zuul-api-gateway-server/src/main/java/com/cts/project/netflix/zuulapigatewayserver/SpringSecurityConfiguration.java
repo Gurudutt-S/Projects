@@ -29,9 +29,12 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.antMatchers("/user-service/user").permitAll()
 			.antMatchers("/user-service/activate").permitAll()
 			.antMatchers("/user-service/usersignup").permitAll()
+			.antMatchers("/company-service/**").permitAll()
+			.antMatchers("/initial-public-offering-service/**").permitAll()
+			.antMatchers("/stock-exchange-service/**").permitAll()
 			.antMatchers("/user-service/**").access("hasRole('USER')")
 			.antMatchers("/user-service/admin/**").access("hasRole('ADMIN')")
-			.antMatchers("company-service/company").permitAll()
+			.antMatchers("/stock-price-service/stockPrice/uploadStocksSheet/**").access("hasRole('ADMIN')")
 			.and().httpBasic();
 	}
 

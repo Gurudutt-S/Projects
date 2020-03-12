@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { StockPriceService } from '../services/stock-price.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-stock-price',
@@ -11,7 +12,7 @@ export class AddStockPriceComponent implements OnInit {
 
   addStockPrice: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private stockPriceService: StockPriceService) { }
+  constructor(private formBuilder: FormBuilder, private stockPriceService: StockPriceService,private router:Router) { }
 
   ngOnInit() {
     this.addStockPrice = this.formBuilder.group({
@@ -25,6 +26,7 @@ export class AddStockPriceComponent implements OnInit {
 
   saveStockPrice() {
     this.stockPriceService.saveNewStockPrice(this.addStockPrice.value).subscribe(data => {
+      this.router.navigate(['/admin/manage-stockPrice']);
     });
   }
 

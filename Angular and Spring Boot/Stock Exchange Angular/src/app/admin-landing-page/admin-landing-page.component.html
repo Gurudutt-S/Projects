@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
 
         <a [routerLink]="['/admin']" class="text-light  text-decoration-none display-5">
-            <span class="text-info">ADMIN</span></a>
+            <span class="text-info"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;ADMIN</span></a>
 
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#adminNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -19,12 +19,11 @@
                         class="nav-link">IPO</a></li>
                 <li class="nav-item"><a [routerLink]="['./manage-exchange']" [routerLinkActive]="['active']"
                         class="nav-link">Stock Exchange</a></li>
-                <li class="nav-item"><a [routerLink]="['./manage-stockPrice']" [routerLinkActive]="['active']"
-                        class="nav-link">Stock Price</a></li>
                 <li class="nav-item"><a [routerLink]="['./import-data']" [routerLinkActive]="['active']"
                         class="nav-link">Document Upload</a></li>
             </ul>
-           <button class="btn"><a class="text-success  text-decoration-none" (click)="logout()">Logout</a></button>
+            <button class="btn"><a class="text-success  text-decoration-none" (click)="logout()"><i
+                        class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp;Logout</a></button>
         </div>
 
     </nav>

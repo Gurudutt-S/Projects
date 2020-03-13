@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { CompanyService } from '../services/company.service';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-compare-company',
@@ -19,7 +20,7 @@ export class CompareCompanyComponent implements OnInit {
   compareCompany: FormGroup;
   company: any[] = [];
 
-  constructor(private formBulder: FormBuilder, private companyService: CompanyService) { }
+  constructor(private formBulder: FormBuilder, private companyService: CompanyService, private router: Router) { }
 
   ngOnInit() {
     this.compareCompany = this.formBulder.group({
@@ -45,12 +46,16 @@ export class CompareCompanyComponent implements OnInit {
       );
   }
 
-  compareCompanies() {
-    alert(this.compareCompany.value)
+  compare() {
+    localStorage.removeItem('company1')
+    localStorage.setItem('company1', this.compareCompany.controls.selectCompany1.value);
+    localStorage.removeItem('company2');
+    localStorage.setItem('company2', this.compareCompany.controls.selectCompany2.value);
+    this.router.navigate(['/user-page/company-chart']);
   }
 
   private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();   
+    const filterValue = value.toLowerCase();
     return this.company.filter(option => option.toLowerCase().includes(filterValue));
   }
 }

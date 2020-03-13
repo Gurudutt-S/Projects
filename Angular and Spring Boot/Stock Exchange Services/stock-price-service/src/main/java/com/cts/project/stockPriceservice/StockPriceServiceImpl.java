@@ -82,7 +82,8 @@ public class StockPriceServiceImpl implements StockPriceService {
 							.atZone(ZoneId.of("+05:30")).toLocalDate();
 					startDate = date.isBefore(startDate) ? date : startDate;
 					endDate = date.isAfter(endDate) ? date : endDate;
-					LocalTime time = LocalTime.parse(row.getCell(currentCellNum++).getStringCellValue().trim());
+					LocalTime time = row.getCell(currentCellNum++).getDateCellValue().toInstant()
+							.atZone(ZoneId.of("+05:30")).toLocalTime();
 					if (!stockPriceRepo.getIfAlreadyExists(companyCode, stockExchangeName, date, time).isPresent()) {
 						StockPrice stockPriceEntity = new StockPrice(companyCode, stockExchangeName, stockPrice, date,
 								time);
@@ -120,7 +121,8 @@ public class StockPriceServiceImpl implements StockPriceService {
 							.atZone(ZoneId.of("+05:30")).toLocalDate();
 					startDate = date.isBefore(startDate) ? date : startDate;
 					endDate = date.isAfter(endDate) ? date : endDate;
-					LocalTime time = LocalTime.parse(row.getCell(currentCellNum++).getStringCellValue().trim());
+					LocalTime time = row.getCell(currentCellNum++).getDateCellValue().toInstant()
+							.atZone(ZoneId.of("+05:30")).toLocalTime();
 					if (!stockPriceRepo.getIfAlreadyExists(companyCode, stockExchangeName, date, time).isPresent()) {
 						StockPrice stockPriceEntity = new StockPrice(companyCode, stockExchangeName, stockPrice, date,
 								time);

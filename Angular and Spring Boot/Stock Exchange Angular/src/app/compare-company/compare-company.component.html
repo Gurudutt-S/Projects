@@ -9,8 +9,8 @@
                     <input type="text" placeholder="Select company 1" aria-label="Number" matInput
                         formControlName="selectCompany1" [matAutocomplete]="mat1">
                     <mat-autocomplete #mat1="matAutocomplete">
-                        <mat-option *ngFor="let option of companyList1 | async" [value]="Company">
-                            {{option}}
+                        <mat-option *ngFor="let company of companyList1 | async" [value]="company">
+                            {{company}}
                         </mat-option>
                     </mat-autocomplete>
                 </mat-form-field>
@@ -21,15 +21,15 @@
                     <input type="text" placeholder="Select company 2" aria-label="Number" matInput
                         formControlName="selectCompany2" [matAutocomplete]="mat2">
                     <mat-autocomplete #mat2="matAutocomplete">
-                        <mat-option *ngFor="let option of companyList2 | async" [value]="company">
-                            {{option}}
+                        <mat-option *ngFor="let company of companyList2 | async" [value]="company">
+                            {{company}}
                         </mat-option>
                     </mat-autocomplete>
                 </mat-form-field>
             </div>
 
             <div class="text-center">
-                <button class="btn border-dark" [routerLink]="['/user-page/company-chart']">Compare</button>
+                <button class="btn border-dark" (click)="compare()">Compare</button>
             </div>
 
             <!-- 

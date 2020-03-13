@@ -1,7 +1,7 @@
 import { Time } from '@angular/common';
 
 export class StockPrice {
-    id: string;
+    id: number;
     companyCode: string;
     stockExchange: string;
     currentPrice: number;

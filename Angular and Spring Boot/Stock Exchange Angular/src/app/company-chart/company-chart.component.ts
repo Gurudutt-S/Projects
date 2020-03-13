@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { StockPriceService } from '../services/stock-price.service';
+import { Company } from '../models/company';
+import { StockPrice } from '../models/StockPrice';
+import { CompanyService } from '../services/company.service';
 
 @Component({
   selector: 'app-company-chart',
@@ -8,49 +11,107 @@ import { StockPriceService } from '../services/stock-price.service';
   styleUrls: ['./company-chart.component.css']
 })
 export class CompanyChartComponent implements OnInit {
-  stockDate: any[];
-  stockPrice:any[];
-
-  title = 'Stock Charts';
-
-  data = [{
-    name: 'Company 1',
-    data: this.stockPrice
-  }, {
-    name: 'Company 2',
-    data: [677, 455, 677, 877, 455, 778, 888, 567, 785, 488, 567, 654]
-  }];
-
-  highcharts = Highcharts;
+  c1: number;
+  c2: number;
+  e1: string;
+  e2: string;
+  company: Company[];
+  stprice: StockPrice[];
+  d1: number[] = [];
+  d2: number[] = [];
+  i: number;
+  title = "app";
+  chart;
+  updateFlag = false;
+  Highcharts = Highcharts;
+  chartConstructor = "chart";
+  chartCallback;
   chartOptions = {
     chart: {
-      type: "spline"
+      type: "column"
     },
-    title: {
-      text: "Daily Stock Price"
+    series: [
+      {
+        name: '',
+        data: []
+      },
+      {
+        name: '',
+        data: []
+      }
+    ],
+    exporting: {
+      enabled: true
     },
     xAxis: {
-      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+      categories: []
     },
     yAxis: {
+      allowDecimals: true,
       title: {
-        text: "StockPrice"
+        text: "Price"
       }
-    },
-    series: this.data
+    }
   };
 
-  constructor(private stockPriceService: StockPriceService) { }
+
+  constructor(private companyService: CompanyService, private stockPriceService: StockPriceService) {
+
+  }
+  chartOne = Highcharts;
+  chartOneOptions: any;
 
   ngOnInit() {
-
-    this.stockPriceService.getAllStockPriceData().subscribe(data => {
-      for (let stock of data) {
-        this.stockDate.push(stock.date);
-        this.stockPrice.push(stock.currentPrice);
+    this.chartCallback = chart => {
+      this.chart = chart;
+    };
+    this.c1 = +localStorage.getItem("c1");
+    this.c2 = +localStorage.getItem("c2");
+    this.companyService.getCompanyData().subscribe(data => {
+      this.company = data;
+      for (this.i = 0; this.i < this.company.length; this.i++) {
+        if (data[this.i].id == this.c1) {
+          this.e1 = data[this.i].companyName;
+        }
+        if (data[this.i].id == this.c2) {
+          this.e2 = data[this.i].companyName;
+        }
       }
     });
 
+    this.stockPriceService.getAllStockPriceData().subscribe(data => {
+      this.stprice = data;
+      for (this.i = 0; this.i < this.stprice.length; this.i++) {
+        if (data[this.i].id == this.c1) {
+          this.d1.push(data[this.i].currentPrice);
+        }
+        if (data[this.i].id == this.c2) {
+          this.d2.push(data[this.i].currentPrice);
+        }
+      }
+      this.updateChart();
+    });
+
   }
+  updateChart() {
+    const self = this,
+      chart = this.chart;
+    chart.showLoading();
+    setTimeout(() => {
+      chart.hideLoading();
+      self.chartOptions.series = [
+        {
+          name: this.e1,
+          data: this.d1
+        },
+        {
+          name: this.e2,
+          data: this.d2
+        }
+      ];
+      self.updateFlag = true;
+    }, 2000);
+  }
+
 
 }

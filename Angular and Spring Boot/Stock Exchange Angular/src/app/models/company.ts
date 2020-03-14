@@ -1,11 +1,11 @@
 export class Company {
-    id: String;
-    companyName: String;
-    CEOName: String;
-    turnOver: number;
-    boardOfDirectors: String;
-    sector: String;
-    description: String;
-    IPOName: String;
+    id: number;
+    companyName: string;
+    ceoName: string;
+    turnover: string;
+    boardOfDirectors: string;
+    sector: string;
+    description: string;
+    IPOName: string;
     
 }

@@ -11,10 +11,12 @@ import { CompanyService } from '../services/company.service';
   styleUrls: ['./company-chart.component.css']
 })
 export class CompanyChartComponent implements OnInit {
-  c1: number;
-  c2: number;
+  c1: string;
+  c2: string;
   e1: string;
   e2: string;
+  cCode1: string;
+  cCode2: string;
   company: Company[];
   stprice: StockPrice[];
   d1: number[] = [];
@@ -65,16 +67,19 @@ export class CompanyChartComponent implements OnInit {
     this.chartCallback = chart => {
       this.chart = chart;
     };
-    this.c1 = +localStorage.getItem("c1");
-    this.c2 = +localStorage.getItem("c2");
+
+    this.c1 = localStorage.getItem("company1");
+    this.c2 = localStorage.getItem("company2");
     this.companyService.getCompanyData().subscribe(data => {
       this.company = data;
       for (this.i = 0; this.i < this.company.length; this.i++) {
-        if (data[this.i].id == this.c1) {
+        if (this.company[this.i].companyName == this.c1) {
           this.e1 = data[this.i].companyName;
+          this.cCode1 = data[this.i].id.toString();
         }
-        if (data[this.i].id == this.c2) {
+        if (this.company[this.i].companyName == this.c2) {
           this.e2 = data[this.i].companyName;
+          this.cCode2 = data[this.i].id.toString();
         }
       }
     });
@@ -82,10 +87,11 @@ export class CompanyChartComponent implements OnInit {
     this.stockPriceService.getAllStockPriceData().subscribe(data => {
       this.stprice = data;
       for (this.i = 0; this.i < this.stprice.length; this.i++) {
-        if (data[this.i].id == this.c1) {
+        if (data[this.i].companyCode == this.cCode1) {
           this.d1.push(data[this.i].currentPrice);
+
         }
-        if (data[this.i].id == this.c2) {
+        if (data[this.i].companyCode == this.cCode2) {
           this.d2.push(data[this.i].currentPrice);
         }
       }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from '../services/auth-service.service';
 import { Router } from '@angular/router';
+import { UserServiceService } from '../services/user-service.service';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-user-landing-page',
@@ -9,9 +11,21 @@ import { Router } from '@angular/router';
 })
 export class UserLandingPageComponent implements OnInit {
 
-  constructor(private auth: AuthServiceService, private router: Router) { }
+  uname: User[]
+  username: string;
+
+  constructor(private auth: AuthServiceService, private router: Router, private userService: UserServiceService) { }
 
   ngOnInit() {
+    const id = sessionStorage.getItem('username');
+    this.userService.getUserData().subscribe(name => {
+      this.uname = name;
+      for (let user of this.uname) {
+        if (user.username == id) {
+          this.username = id.toUpperCase();
+        }
+      }
+    })
   }
 
   logout() {

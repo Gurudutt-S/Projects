@@ -4,6 +4,7 @@ import { CompanyService } from '../services/company.service';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { Company } from '../models/company';
 
 @Component({
   selector: 'app-compare-company',
@@ -18,6 +19,7 @@ export class CompareCompanyComponent implements OnInit {
   companyList2: Observable<string[]>;
 
   compareCompany: FormGroup;
+  companyList: any[];
   company: any[] = [];
 
   constructor(private formBulder: FormBuilder, private companyService: CompanyService, private router: Router) { }
@@ -28,6 +30,7 @@ export class CompareCompanyComponent implements OnInit {
       selectCompany2: ['']
     });
     this.companyService.getCompanyData().subscribe(data => {
+      this.companyList = data;
       for (let comp of data) {
         this.company.push(comp.companyName)
       }
@@ -44,6 +47,7 @@ export class CompareCompanyComponent implements OnInit {
         startWith(''),
         map(value => this._filter(value))
       );
+
   }
 
   compare() {
@@ -52,6 +56,7 @@ export class CompareCompanyComponent implements OnInit {
     localStorage.removeItem('company2');
     localStorage.setItem('company2', this.compareCompany.controls.selectCompany2.value);
     this.router.navigate(['/user-page/company-chart']);
+
   }
 
   private _filter(value: string): string[] {
